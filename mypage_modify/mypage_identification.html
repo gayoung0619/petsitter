@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, ma ximum-scale=1.0, minimum-scale=1.0, width=device-width, viewport-fit=cover">
+  <title>휴매니존</title>
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/modal.css">
+  <link rel="stylesheet" href="../css/form_common.css">
+
+  <script src="../js/jquery-1.12.4.min.js"></script>
+  <script src="../js/modal.js"></script>
+  <script src="../js/common.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('input[type=text]').on('input', function () {
+          if($(this).val() == ''){
+              $(this).siblings('.wid97').removeClass('on');
+          }else{
+              $(this).siblings('.wid97').addClass('on');
+          }
+          $('.btn_close2').click(function (){
+              $(this).siblings('.wid97').removeClass('on');
+          });
+      });
+    });
+   </script>
+  <style>
+      .form label{
+          margin-bottom: 0 !important;
+      }
+  </style>
+</head>
+<body>
+    <div class="goback_area"> 
+        <div class="goback sprite md_open_btn" aria-haspopup="dialog" title="대화상자" data-href="#modal8"></div>
+        <p>본인인증</p>
+    </div>
+ 
+    <h3 class="tit2">본인확인을 위해<br>휴대전화 인증을 확인합니다.</h3>
+
+    <form id="formAccountPw" class="form" action="">
+        <fieldset>
+            <legend class="blind">본인확인 인증 폼</legend> 
+
+            <div class="form_wrap"> 
+                <label for="phoneNum">휴대전화</label>
+                <input type="text" placeholder="휴대전화 번호를 입력해 주세요" id="phoneNum">
+                <button type="button" class="md_open_btn wid97" aria-haspopup="dialog" title="대화상자" data-href="#modal1">인증요청</button>
+                <button type="button" class="sprite btn_close2"></button>
+            </div>
+            <p class="hint_error">*입력하신 휴대폰번호 형식이 잘못되었습니다.</p>
+
+            <div class="form_wrap">
+                <label for="num">인증번호</label>
+                <input type="text" placeholder="인증번호를 입력해주세요." id="num">
+                <span class="count">03:00</span>
+                <button type="button" class="md_open_btn wid97" aria-haspopup="dialog" title="대화상자" data-href="#modal4">인증확인</button>
+            </div>
+            <p class="hint_auth">인증완료</p>
+            <p class="hint_error">*입력하신 인증번호가 올바르지 않습니다.</p>
+            <p class="md_open_btn" aria-haspopup="dialog" title="대화상자" data-href="#modal2">인증번호를 받지 못하셨나요?</p>
+        </fieldset>
+    </form> 
+
+    <button type="button" class="btn_green wid100 ">확인</button>
+     
+
+
+
+    <!-- 모달창들 -->
+    <div class="md_cnt" id="modal1" role="dialog" aria-modal="true" aria-labelledby="mdTit1">
+        <h3 id="mdTit1">입력하신 번호로 SMS인증<br>
+        번호가 발송되었습니다.</h3>
+        <p>통신사에 따라 인증번호 발송이 늦어질 수 있습니다.<br>
+        문자 메세지로 발송된 인증번호를 3:00 분이내에<br> 
+        입력해주세요.
+        </p>
+        <button type="button" class="btn_green md_close_btn" data-link="last">확인</button>
+    </div>
+     
+    <div class="md_cnt" id="modal2" role="dialog" aria-modal="true" aria-labelledby="mdTit2">
+         <h3 id="mdTit2">인증번호를 받지 못하셨나요?</h3>
+         <p>전화번호가 정확한지 확인해 주세요.<br>
+        통신사에 따라 인증번호 발송이 늦어질 수 있습니다.<br>
+        계속해서 문자 메세지가 오지 않으면, 다시 인증번호를<br>
+        요청해 주세요.</p>
+        <button type="button" class="resend">인증번호 재발송</button>
+        <button type="button" class="other_num">다른번호로 인증</button>
+
+        <button type="button" class="md_close_btn sprite" data-link="last"></button>
+    </div>
+
+    <div class="md_cnt" id="modal4" role="dialog" aria-modal="true">
+        <p>입력된 정보로 가입된 회원이 없습니다<br>
+           다시 확인해주세요.</p>
+       <button type="button" class="md_close_btn" data-link="last">확인</button>
+   </div>
+
+    <div class="md_cnt" id="modal8" role="dialog" aria-modal="true" aria-labelledby="mdTit8">
+        <p class="mdTit8">작성된 내용을 취소하시겠습니까?<br>
+            취소하시면 작성하신 정보가 저장되지 않습니다.
+        </p>
+        <div class="btn_wrap"> 
+            <button type="button">계속하기</button>
+            <button type="button" class="md_close_btn" data-link="last">취소</button>
+        </div>
+    </div>
+
+    <div class="md_cnt" id="modalIdentification" role="dialog" aria-modal="true" aria-labelledby="mdTit1">
+        <h3 id="mdTit1">고객님의 전화번호 본인인증이<br>
+        완료되었습니다</h3>
+        <p>고객님의 휴대전화 010-1234-1234<br>
+            수정이 완료되었습니다.
+        </p>
+        <button type="button" class="btn_green">회원정보 페이지로 이동하기</button>
+        <button type="button" class="btn_green" data-link="last">메인페이지로 이동하기</button>
+    </div>
+
+
+</body>
+</html> 

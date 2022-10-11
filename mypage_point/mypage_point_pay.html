@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, viewport-fit=cover">
+  <title>휴매니존</title>
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/modal.css">
+  <link rel="stylesheet" href="../css/check.css">
+  <link rel="stylesheet" href="../css/form_common.css">
+  <link rel="stylesheet" href="../css/mypage/mypage.css">
+
+
+  <script src="../js/jquery-1.12.4.min.js"></script>
+  <script src="../js/common.js"></script>
+  <script src="../js/modal.js"></script>
+  <script>
+    $(document).ready(function () {
+      $(document).on("focusout", "input", function()	{
+	        $(this).val( $(this).val().replace(",","") );
+	        $(this).val( $(this).val().replace(/[^-\.0-9]/gi,"") );
+	        $(this).val( $(this).val().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") );
+	        if($(this).val() != '' ) {
+		        $(this).val( $(this).val()+'원');
+	        }		
+      });
+
+      $('.form_charge li').click(function () {
+        const priceTxt = $(this).text();
+        if($(this).hasClass('on')){
+          $(this).removeClass('on');
+        }else{
+          $(this).addClass('on').siblings().removeClass('on');
+          $('input').val(priceTxt);
+        }
+      });
+      $('.form_charge input').click(function () {
+        $(this).val('');
+        $('.form_charge li').removeClass('on');
+        $('.btn_green').removeAttr('style');
+      });
+      
+      $('.bd_dark_cnt button').click(function (){
+        if($(this).hasClass('on')){
+          $(this).removeClass('on');
+        }else{
+          $(this).addClass('on').siblings().removeClass('on');
+        }
+      });
+
+      $('#Pay .md_close_btn').click(function () {
+        $('.must1').prop('checked', true);
+      });
+
+      $('#Service .md_close_btn').click(function () {
+        $('.must2').prop('checked', true);
+      });
+
+      $('#Alert .md_close_btn').click(function () {
+        $('.must3').prop('checked', true);
+      });
+      
+      $('.md_close_btn').click(function () {
+        if($('.must1').prop('checked') && $('.must2').prop('checked') && $('.must3').prop('checked')){
+            $('#allow_all').prop('checked', true);
+        }
+      });
+    
+    });
+  </script>
+  <style>
+    body{
+      background-color: #F5F5F5;
+    }
+  </style>
+
+</head>
+<body>
+    <div class="goback_area">
+      <div class="goback sprite md_open_btn" aria-haspopup="dialog" title="대화상자" data-href="#modal8"></div>
+      <p>충전</p> 
+    </div>
+
+    <form id="formCharge" class="form form_charge" action="">
+        <fieldset>   
+            <legend class="blind">충전 금액 폼</legend>
+            <div class="form_wrap">
+                <label for="charge" class="blind">충전금액 선택</label>
+                <input type="text" id="charge" placeholder="충전할 금액을 입력해주세요">
+                <button type="button" class="sprite btn_close2"></button>
+            </div>
+            <p class="hint_error ">*포인트 충전은 1000원단위만 가능합니다</p>
+        </fieldset>
+        <div>
+          <ul>
+             <li>+3,000원</li>
+             <li>+5,000원</li>
+             <li>+1만원</li>
+             <li>+3만원</li>
+             <li>+5만원</li>
+             <li>+10만원</li>
+             <li>+30만원</li>
+             <li>+60만원</li>
+          </ul>
+        </div>
+    </form>
+
+
+    <div class="payment"> 
+        <div class="bd_dark">
+            <strong>결제수단 선택</strong>
+            <div class="bd_dark_cnt">
+                <button type="button" class="pay_card">카드결제</button>
+                <button type="button" class="pay_phone">휴대폰 결제</button>
+            </div>
+        </div>
+
+        <div class="alert_txt">
+            <p>법인카드는 무이자 할부 적용이 되지 않습니다.</p>
+            <p>소액 결제의 경우 PG사 정책에 따라 결제금액 제한이 있을 수 있습니다.</p>
+        </div>
+
+        <div class="agree_list2">
+            <div class="allow_box">
+              <input type="checkbox" id="allow_all" name="allow_all">
+              <label for="allow_all">모두 동의합니다</label>
+            </div>
+      
+            <ul>
+              <li>
+                <input type="checkbox" id="allowPay" name="allowPay" class="ckbox must must1">
+                <label for="allowPay">[필수] 결제대행서비스 약관동의</label>
+                <div class="md_open_btn sprite2" aria-haspopup="dialog" title="대화상자" data-href="#Pay"></div>
+              </li>
+
+              <li>
+                <input type="checkbox" id="allowService" name="allowService" class="ckbox must must2">
+                <label for="allowService">[필수] 휴매니존 유료서비스약관동의</label>
+                <div class="md_open_btn sprite2" aria-haspopup="dialog" title="대화상자" data-href="#Service"></div>
+              </li>
+
+              <li>
+                <input type="checkbox" id="allowAlert" name="allowAlert" class="ckbox must must3">
+                <label for="allowAlert">[필수] 하단 유의사항 동의</label>
+                <div class="md_open_btn sprite2" aria-haspopup="dialog" title="대화상자" data-href="#Alert"></div>
+              </li>
+            </ul>
+        </div>
+
+        <div class="bd_dark">
+            <strong>유의사항</strong>
+            <div class="bd_dark_cnt">
+                <p>결제금액과 포인트지급은 1:1 배율로 충전금액 3.000원을 선택하시면
+                    포인트 3,000원이 충전됩니다.</p>
+                <p>3,000원 충전시 실제 결제금액은 부가가치세 10% 포함된 금액으로,
+                    3,300원입니다.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <button type="button" class="wid100 btn_green">결제하기</button>
+
+
+    <div class="md_cnt modal_policy" id="Pay" role="dialog" aria-modal="true" aria-labelledby="mdTit1">
+      <h4 id="mdTit1">약관</h4>
+      <div class="txt">
+        <p>Amet minim Amet minim </p>
+        <p>Amet minim</p>
+        <p>Amet minimAmet minimAmet minimAmet minim<br>Amet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimvv</p>
+      </div>
+      <button type="button" class="md_close_btn" data-link="last">확인</button>
+    </div>
+    <div class="md_cnt modal_policy" id="Service" role="dialog" aria-modal="true" aria-labelledby="mdTit1">
+      <h4 id="mdTit1">약관</h4>
+      <div class="txt">
+        <p>Amet minim Amet minim </p>
+        <p>Amet minim</p>
+        <p>Amet minimAmet minimAmet minimAmet minim<br>Amet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimvv</p>
+      </div>
+      <button type="button" class="md_close_btn" data-link="last">확인</button>
+    </div>
+    <div class="md_cnt modal_policy" id="Alert" role="dialog" aria-modal="true" aria-labelledby="mdTit1">
+      <h4 id="mdTit1">약관</h4>
+      <div class="txt">
+        <p>Amet minim Amet minim </p>
+        <p>Amet minim</p>
+        <p>Amet minimAmet minimAmet minimAmet minim<br>Amet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimvv</p>
+      </div>
+      <button type="button" class="md_close_btn" data-link="last">확인</button>
+    </div>
+
+    <div class="md_cnt" id="modal8" role="dialog" aria-modal="true" aria-labelledby="mdTit8">
+      <p class="mdTit8">작성된 내용을 취소하시겠습니까?<br>
+          취소하시면 작성하신 정보가 저장되지 않습니다.
+      </p>
+      <div class="btn_wrap"> 
+          <button type="button">계속하기</button>
+          <button type="button" class="md_close_btn" data-link="last">취소</button>
+      </div>
+    </div>
+   
+</body>
+
+
+
+</html>  

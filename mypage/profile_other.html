@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, viewport-fit=cover">
+  <title>휴매니존</title>
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/modal.css">
+  <link rel="stylesheet" href="../css/mypage/mypage.css">
+
+
+  <script src="../js/jquery-1.12.4.min.js"></script>
+  <script src="../js/common.js"></script>
+  <script src="../js/modal.js"></script>
+  <style>
+    body{
+        background-color: #FFFFFF;
+    }
+    .aside_wrap + p{
+        color: #292929;
+    }
+  </style>
+</head>
+<body>
+    <header>
+        <button class="aside_open" type="button"><div class="sprite"></div></button>
+        <div id="dim2"></div>
+        <div class="aside_wrap">
+            <div class="aside_header">
+                <button class="aside_close" type="button"><div class="sprite"></div></button>
+                <h2>카테고리</h2>
+            </div>
+            <div class="aside_list">
+                <ul>
+                    <li>
+                        <a href="">
+                            <div class="aside_icon sprite3"></div>
+                            <em class="aside_txt">나눔돌봄</em>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div class="aside_icon sprite3"></div>
+                            <em class="aside_txt">피드</em>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div class="aside_icon sprite3"></div>
+                            <em class="aside_txt">동물병원</em>
+                        </a>
+                    </li>
+                    <li class="walk">
+                        <a href="">
+                            <div class="aside_icon sprite3"></div>
+                            <em class="aside_txt">산책하기</em>
+                        </a>
+                    </li>
+                    <li class="mypage">
+                        <a href="">
+                            <div class="aside_icon sprite3"></div>
+                            <em class="aside_txt">마이페이지</em>
+                        </a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <a href="">나눔돌봄 신청내역</a>
+                        <span class="sprite2"></span>
+                    </li>
+                    <li>
+                        <a href="">나눔돌봄 신청받은내역</a>
+                        <span class="sprite2"></span>
+                    </li>
+                </ul>
+                <!-- <div class="login_area">
+                    <p>신규 가입시 1,000 포인트 혜택!</p>
+                    <div class="btn_box">
+                        <button type="button" class="wid97">회원가입</button>
+                        <button type="button" class="wid97">로그인</button>
+                    </div>
+                </div> -->
+            </div>
+            <div class="aside_footer">
+                <ul>
+                    <li><a href="">고객센터</a></li>
+                    <li><a href="">공지사항</a></li>
+                    <li><a href="">1:1문의하기</a></li>
+                </ul>
+            </div> 
+        </div>
+        <p>프로필</p>
+        <div class="alarm">
+            <div class="sprite"></div>
+            <div class="bd"></div>
+        </div>
+    </header>  
+
+    <div class="profile_top">
+      <div class="profile_center">
+          <div class="profile_logo">
+              <img src="../images/mypage_profile.png" alt="">
+          </div>
+          <p>작성된 닉네임 · 초소형 활동가</p>
+      </div>
+      <button type="button"class="chat_with">채팅하기</button>
+      <div class="list_top">
+        <ul>
+            <li class="md_open_btn" aria-haspopup="dialog" title="대화상자" data-href="#modalScope">
+              <em>5.0</em>
+              <div>
+                <span>돌봄 별점</span>
+                <span class="alert_icon"></span>
+            </div>
+            </li>
+            <li>
+              <em>1000</em>
+              <div>
+                  <span>돌봄수</span>
+              </div>
+            </li>
+            <li class="md_open_btn" aria-haspopup="dialog" title="대화상자" data-href="#modalLevel">
+              <em>LV1</em>
+              <div>
+                  <span>나의레벨</span>
+                  <span class="alert_icon"></span>
+              </div>
+            </li>
+        </ul>
+     </div>
+    </div>  
+
+
+
+
+
+      <!-- 별점 모달창 -->
+    <div class="md_cnt" id="modalScope" role="dialog" aria-modal="true">
+        <strong>별점안내</strong>
+        <div class="rate"></div>
+        <p>나눔돌봄 활동시 받은 별점의 평균 점수로<br>
+           가입기간 누적으로 합산됩니다
+        </p>
+        <p>&#42; 초기 지급 별졈 : 2점</p>
+        
+        <button type="button" class="md_close_btn sprite"></button>
+   </div>
+
+     <!-- 레벨 모달창 -->
+    <div class="md_cnt" id="modalLevel" role="dialog" aria-modal="true">
+        <strong>레벨 뱃지 </strong>
+        <p>레벨업시 <span>1000포인트</span> 지급 해드려요<br>
+        활동타이틀은 가입기간 누적으로 합산됩니다 </p>
+        <ul>
+            <li>
+                <div class="badge"></div>
+                <div class="level_txt">
+                    <div>LV1</div>
+                    <div>0 - 29개 활동 타이틀 획득시</div>
+                </div>
+            </li>
+            <li>
+                <div class="badge"></div>
+                <div class="level_txt">
+                    <div>LV2</div>
+                    <div>30 - 59개 활동 타이틀 획득시</div>
+                </div>
+            </li>
+            <li>
+                <div class="badge"></div>
+                <div class="level_txt">
+                    <div>LV3</div>
+                    <div>60 - 89개 활동 타이틀 획득시</div>
+                </div>
+            </li>
+            <li>
+                <div class="badge"></div>
+                <div class="level_txt">
+                    <div>LV4</div>
+                    <div>90 - 119개 활동 타이틀 획득시</div>
+                </div>
+            </li>
+            <li>
+                <div class="badge"></div>
+                <div class="level_txt">
+                    <div>LV5</div>
+                    <div>120 - 149개 활동 타이틀 획득시</div>
+                </div>
+            </li>
+            <li>
+                <div class="badge"></div>
+                <div class="level_txt">
+                    <div>LV6</div>
+                    <div>150개 활동 타이틀 획득시</div>
+                </div>
+            </li>
+        </ul>
+        <button type="button" class="md_close_btn sprite"></button>
+   </div>
+
+</body>
+
+</html>

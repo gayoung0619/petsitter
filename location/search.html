@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, viewport-fit=cover">
+  <title>휴매니존</title>
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/modal.css">
+  <link rel="stylesheet" href="../css/location/location_search.css">
+
+
+  <script src="../js/jquery-1.12.4.min.js"></script>
+  <script>
+      $(document).ready(function () {
+          //input 입력시 버튼 show
+        $('.btn_close2').hide();
+        $('input').on('input', function () {
+            $(this).siblings('.btn_close2').show();
+        });
+        $('.btn_close2').click(function (){
+            $(this).hide();
+        });
+        //닫기버튼클릭시 입력한 글자제거
+         $('.btn_close2').click(function () {
+            var inputtext = $(this).siblings('input').val("");
+            $(inputtext).text("");
+        });
+
+        $('.md_open_btn').click(function () {
+            const $openBtn = $(this);
+            const $mdCnt = $($(this).attr('data-href'));
+            const $closeBtn = $mdCnt.find('.md_close_btn');
+
+            const wrapHei = $('#wrap').outerHeight();
+            $('html, body').css({height: wrapHei, overflow: 'hidden'});
+
+            $mdCnt.siblings().attr({'aria-hidden': true, inert: ''});
+
+            $mdCnt.before('<div id="dim"></div>');
+            const $dim = $('#dim');
+            $dim.stop().fadeIn().next().css('visibility', 'visible').find('[data-link="first"]').focus();
+
+            $closeBtn.on('click', function () { 
+                $('html, body').removeAttr('style');
+                    $dim.stop().fadeOut(function () {
+                        $(this).remove();
+                });
+      
+                $mdCnt.css('visibility', 'hidden').siblings().removeAttr('aria-hidden inert');
+
+                $openBtn.focus();
+            });
+            $('#modalvi .btn_wrap button:first-of-type').click(function () {
+                $openBtn.parent('.area_wrap').hide();
+            });
+        });
+
+
+      });
+  </script>
+  <style>
+      body{
+          background-color: #F5F5F5;
+      }
+  </style>
+</head>
+<body>
+    <div class="goback_area">
+        <div class="goback sprite"></div>
+    </div>
+  
+    <div class="search_box">
+        <h3 class="tit2" class="tit2">주소를 검색하여<br>동네를 설정해 주세요.</h3>
+        <div>
+            <div class="sprite btn_close2"></div>
+            <input type="text" placeholder="예&#41; 논현동 81-10">
+            <button type="button">
+                <div class="sprite"></div>
+            </button>
+        </div>
+        <button type="button">
+            <span class="sprite2"></span>
+            <span>현 위치로 주소 설정</span>
+        </p>
+    </div>
+
+    <div class="setting_box">
+        <div class="setting_area">
+            <h3>현재 설정 동네</h3>
+            <a href="">
+                <div class="area_wrap">
+                    <strong>논현동</strong>
+                    <p>강남구 논현동 81-10 101호 오감코퍼레이션</p>
+                    <p><span>도로명</span>논현로134길9 101호 오감코퍼레이션</p>
+                </div>
+            </a>
+        </div>
+    
+        <div class="setting_before">
+            <h3>설정내역 동네</h3>
+            <div class="area_wrap area_wrap1">
+                <strong>논현동</strong>
+                <p>강남구 논현동 81-10 101호 오감코퍼레이션</p>
+                <p><span>도로명</span>논현로134길9 101호 오감코퍼레이션</p>
+                <div class="btn_close sprite md_open_btn" aria-haspopup="dialog" title="대화상자" data-href="#modalvi"></div>
+            </div>
+
+            <div class="area_wrap area_wrap2">
+                <strong>야탑동</strong>
+                <p>강남구 논현동 81-10 101호 오감코퍼레이션</p>
+                <p><span>도로명</span>논현로134길9 101호 오감코퍼레이션</p>
+                <div class="btn_close sprite md_open_btn" aria-haspopup="dialog" title="대화상자" data-href="#modalvi"></div>
+            </div>
+
+            <div class="area_wrap area_wrap3">
+                <strong>강남동</strong>
+                <p>강남구 논현동 81-10 101호 오감코퍼레이션</p>
+                <p><span>도로명</span>논현로134길9 101호 오감코퍼레이션</p>
+                <div class="btn_close sprite md_open_btn" aria-haspopup="dialog" title="대화상자" data-href="#modalvi"></div>
+            </div>
+        </div>
+    </div>
+  
+    <div class="md_cnt" id="modalvi" role="dialog" aria-modal="true" aria-labelledby="mdTit1">
+        <p>설정내역 동네를 삭제 하시겠습니까?<br> 삭제하시면 설정된 정보가 저장되지않습니다</p>
+        <div class="btn_wrap">
+            <button type="button" class="md_close_btn">삭제하기</button>
+            <button type="button" class="md_close_btn">닫기</button>
+        </div>
+    </div>
+
+
+
+
+  </body>
+</html>

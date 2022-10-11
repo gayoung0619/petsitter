@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, viewport-fit=cover">
+  <title>휴매니존</title>
+  <link rel="stylesheet" href="../css/swiper-bundle.css">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/modal.css">
+  <link rel="stylesheet" href="../css/login/login_checkbox.css">
+  <link rel="stylesheet" href="../css/form_common.css">
+
+  <script src="../js/jquery-1.12.4.min.js"></script>
+  <script src="../js/common.js"></script>
+  <script src="../js/modal.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#modalPolicy2 .md_close_btn').click(function () {
+        $('.must1').prop('checked', true);
+      });
+
+      $('#modalPolicy3 .md_close_btn').click(function () {
+        $('.must2').prop('checked', true);
+      });
+
+      $('#modalPolicy4 .md_close_btn').click(function () {
+        $('.must3').prop('checked', true);
+      });
+
+    });
+  </script>
+</head>
+<body>
+  <div class="agree_box">
+    <div class="logo"></div> 
+    <h3 class="tit2">반갑습니다.<br>아래 약관에 동의해주세요.</h3>
+    <div class="agree_list">
+      <div class="allow_box">
+        <input type="checkbox" id="allow_all" name="allow_all">
+        <label for="allow_all">모두 동의합니다</label>
+      </div>
+
+      <ul>
+        <li>
+          <input type="checkbox" id="allow_age" name="allow_age" class="ckbox must">
+          <label for="allow_age">[필수] 만 14세 이상</label>
+        </li>
+        <li>
+          <input type="checkbox" id="allow_location" name="allow_location" class="ckbox must must1">
+          <label for="allow_location">[필수] 위치 기반 서비스 약관 동의</label>
+          <div class="md_open_btn sprite2" aria-haspopup="dialog" title="대화상자" data-href="#modalPolicy2"></div>
+        </li>
+        <li>
+          <input type="checkbox" id="allow_push" name="allow_push" class="ckbox">
+          <label for="allow_push">[선택] 마케팅 정보 앱 푸시 알림 수신 동의</label>
+          <p>이벤트 혜택정보를 받아보실 수 있습니다.</p>   
+        </li>
+        <li>
+          <input type="checkbox" id="allow_account" name="allow_account" class="ckbox must must2">
+          <label for="allow_account">[필수] 휴매니존 계정 약관</label>
+          <div class="md_open_btn sprite2" aria-haspopup="dialog" title="대화상자" data-href="#modalPolicy3"></div>
+        </li>
+        <li>
+          <input type="checkbox" id="allow_privacy" name="allow_privacy" class="ckbox must must3">
+          <label for="allow_privacy">[필수] 휴매니존 개인정보 수집 이용 동의</label>
+          <div class="md_open_btn sprite2" aria-haspopup="dialog" title="대화상자" data-href="#modalPolicy4"></div>
+        </li>
+      </ul>
+      
+      <p class="hint_error">* 필수 선택사항을 선택하여야 회원가입이 진행됩니다</p>
+
+    </div>
+
+  </div>
+  <button type="button" class="btn_green wid100">확인</button>
+
+
+  <div class="md_cnt modal_policy" id="modalPolicy2" role="dialog" aria-modal="true" aria-labelledby="mdTit1">
+    <h4 id="mdTit1">약관</h4>
+    <div class="txt">
+      <p>Amet minim Amet minim </p>
+      <p>Amet minim</p>
+      <p>Amet minimAmet minimAmet minimAmet minim<br>Amet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimvv</p>
+    </div>
+    <button type="button" class="md_close_btn" data-link="last">확인</button>
+  </div>
+  <div class="md_cnt modal_policy" id="modalPolicy3" role="dialog" aria-modal="true" aria-labelledby="mdTit1">
+    <h4 id="mdTit1">약관</h4>
+    <div class="txt">
+      <p>Amet minim Amet minim </p>
+      <p>Amet minim</p>
+      <p>Amet minimAmet minimAmet minimAmet minim<br>Amet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimvv</p>
+    </div>
+    <button type="button" class="md_close_btn" data-link="last">확인</button>
+  </div>
+  <div class="md_cnt modal_policy" id="modalPolicy4" role="dialog" aria-modal="true" aria-labelledby="mdTit1">
+    <h4 id="mdTit1">약관</h4>
+    <div class="txt">
+      <p>Amet minim Amet minim </p>
+      <p>Amet minim</p>
+      <p>Amet minimAmet minimAmet minimAmet minim<br>Amet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimvv</p>
+    </div>
+    <button type="button" class="md_close_btn" data-link="last">확인</button>
+  </div>
+  
+</body>
+</html>

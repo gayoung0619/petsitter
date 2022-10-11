@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>휴매니존</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/modal.css">
+    <link rel="stylesheet" href="../css/mypage/mypage_progress.css">
+
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script src="../js/tab.js"></script>
+    <script src="../js/modal.js"></script>
+    <script>
+        $(document).ready(function () {
+            setDateBox();
+
+        });
+        function setDateBox() {
+            var date = new Date();
+            var year = "";
+            var com_year = date.getFullYear();
+            // 발행 뿌려주기
+            // 올해 기준으로 -1년부터 +5년을 보여준다.
+            for(var y = (com_year-1); y <= (com_year+3); y++){
+                $(".select_year").append("<li value='"+ y +"'>"+ y +"</li>");
+            }
+            // 월 뿌려주기(1월부터 12월)
+            var month;
+            for(var i = 1; i <= 12; i++){
+                $(".select_month").append("<li value='"+ i +"'>"+ i +"</li>");
+            }
+            var day;
+            for(var i = 1; i <= 31; i++){
+                $(".select_day").append("<li value='"+ i +"'>"+ i +"</li>");
+            }
+            $('.modal_selectul li').click(function () {
+                const liTxt = $(this).text();
+                console.log(liTxt);
+                $('.modal_selected').removeClass('on');
+                $(this).parent().prev().addClass('active');
+                $(this).parent().prev().children('.modal_txt').text(liTxt);
+                $(this).parent().parent().removeClass('on').addClass('active');
+            });
+        }
+
+        //Javascript, 페이징 무한스크롤링
+        var count = 0;
+        //스크롤 바닥 감지
+        window.onscroll = function(e) {
+            //추가되는 임시 콘텐츠
+            //window height + window scrollY 값이 document height보다 클 경우,
+            if((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+                //실행할 로직 (콘텐츠 추가)
+                count++;
+                var addContent = '<div class="section"><div class="writer_wrap"><div class="writer_info2"><a href=""><div class="writer"><div class="pic"><img src="../images/default_img.png" alt=""></div><div class="info"><p>신청자 닉네임 <span>LV1</span></p><p>논현1동</p></div></div></a><div class="tab_txt c_ga">예약취소</div></div><div class="writer_cnt2"><div class="reservation_left"><div class="reservation_tit">예약 진행 일자</div><div class="reservation_date">09월 02일 &#40;월&#41; 08:00 - 09:00</div></div><button type="button" class="sprite2"></button></div></div></div>'
+                //article에 추가되는 콘텐츠를 append
+                $('#tabpanel3').append(addContent);
+            }
+        };
+        $(document).ready(function(){
+            var loading = $('<div id="loading" class="loading"></div><img id="loading_img" alt="loading" src="../images/viewLoading.gif" />').appendTo(document.body).hide();
+            $(window).ajaxStart(function(){
+                loading.show();
+            })
+            .ajaxStop(function(){
+                loading.hide();
+            });
+        });
+
+
+        
+    </script>
+    <style>
+        .tablist{
+            border-top: 0.8px solid #E2E2E2;
+        }
+        .section:not(:first-of-type) {
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="goback_area">
+        <div class="goback sprite"></div>
+        <p>돌봄 신청된 내역</p>
+    </div> 
+
+
+    <div class="main_tab">
+        <ul role="tablist" aria-label="돌봄 신청된 내역" class="tablist">
+          <li role="tab" aria-controls="tabpanel1" id="tab1" class="tab first">예약중</li>
+          <li role="tab" aria-controls="tabpanel2" id="tab2" class="tab">진행완료</li>
+          <li role="tab" aria-controls="tabpanel3" id="tab3" class="tab last">예약취소</li>
+          <li class="period md_open_btn" aria-haspopup="dialog" title="대화상자" data-href="#modalPeriod">기간선택</li>
+        </ul>
+
+        <div class="proceed">
+            <div class="section">
+                <div class="writer_wrap">
+                    <div class="writer_info2">
+                        <a href="">
+                            <div class="writer">
+                                <div class="pic">
+                                    <img src="../images/default_img.png" alt="">
+                                </div>
+                                <div class="info">
+                                    <p>신청자 닉네임 <span>LV1</span></p>
+                                    <p>논현1동</p>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="tab_txt c_g">진행중</div>
+                    </div>
+                    
+                    <div class="writer_cnt2" onclick="location.href=''">
+                        <div class="reservation_left">
+                            <div class="reservation_tit">예약 진행 일자</div>
+                            <div class="reservation_date">09월 02일 &#40;월&#41; 08:00 - 09:00</div>
+                        </div>
+                        <button type="button" class="sprite2"></button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div role="tabpanel" aria-labelledby="tab1" id="tabpanel1"  class="tabpanel">
+            <div class="section">
+                <div class="writer_wrap">
+                    <div class="writer_info2">
+                        <a href="">
+                            <div class="writer">
+                                <div class="pic">
+                                    <img src="../images/default_img.png" alt="">
+                                </div>
+                                <div class="info">
+                                    <p>신청자 닉네임 <span>LV1</span></p>
+                                    <p>논현1동</p>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="tab_txt c_g">예약중</div>
+                    </div>
+                    
+                    <div class="writer_cnt2" onclick="location.href=''">
+                        <div class="reservation_left">
+                            <div class="reservation_tit">예약 진행 일자</div>
+                            <div class="reservation_date">09월 02일 &#40;월&#41; 08:00 - 09:00</div>
+                        </div>
+                        <button type="button" class="sprite2"></button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div role="tabpanel" aria-labelledby="tab2" id="tabpanel2"  class="tabpanel">
+            <div class="section">
+                <div class="writer_wrap">
+                    <div class="writer_info2">
+                        <a href="">
+                            <div class="writer">
+                                <div class="pic">
+                                    <img src="../images/default_img.png" alt="">
+                                </div>
+                                <div class="info">
+                                    <p>신청자 닉네임 <span>LV1</span></p>
+                                    <p>논현1동</p>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="tab_txt c_g">진행완료</div>
+                    </div>
+                    
+                    <div class="writer_cnt2" onclick="location.href=''">
+                        <div class="reservation_left">
+                            <div class="reservation_tit">예약 진행 일자</div>
+                            <div class="reservation_date">09월 02일 &#40;월&#41; 08:00 - 09:00</div>
+                        </div>
+                        <button type="button" class="sprite2"></button>
+                    </div>
+                    <!-- <div class="btn_review">
+                        <p>리뷰작성하기</p>
+                    </div> -->
+                </div>
+                 
+                <div class="writer_wrap">
+                    <div class="writer_info2">
+                        <a href="">
+                            <div class="writer">
+                                <div class="pic">
+                                    <img src="../images/default_img.png" alt="">
+                                </div>
+                                <div class="info">
+                                    <p>신청자 닉네임 <span>LV1</span></p>
+                                    <p>논현1동</p>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="tab_txt c_g">진행완료</div>
+                    </div>
+                    
+                    <a class="writer_cnt2" onclick="location.href=''">
+                        <div class="reservation_left">
+                            <div class="reservation_tit">예약 진행 일자</div>
+                            <div class="reservation_date">09월 02일 &#40;월&#41; 08:00 - 09:00</div>
+                        </div>
+                        <button type="button" class="sprite2"></button>
+                    </a>
+                    
+                </div>
+
+            </div>
+        </div>
+
+        <div role="tabpanel" aria-labelledby="tab3" id="tabpanel3"  class="tabpanel">
+            <div class="section">
+                <div class="writer_wrap">
+                    <div class="writer_info2">
+                        <a href="">
+                            <div class="writer">
+                                <div class="pic">
+                                    <img src="../images/default_img.png" alt="">
+                                </div>
+                                <div class="info">
+                                    <p>신청자 닉네임 <span>LV1</span></p>
+                                    <p>논현1동</p>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="tab_txt c_ga">예약취소</div>
+                    </div>
+                    
+                    <div class="writer_cnt2" onclick="location.href=''">
+                        <div class="reservation_left">
+                            <div class="reservation_tit">예약 진행 일자</div>
+                            <div class="reservation_date">09월 02일 &#40;월&#41; 08:00 - 09:00</div>
+                        </div>
+                        <button type="button" class="sprite2"></button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="section">
+                <div class="writer_wrap">
+                    <div class="writer_info2">
+                        <a href="">
+                            <div class="writer">
+                                <div class="pic">
+                                    <img src="../images/default_img.png" alt="">
+                                </div>
+                                <div class="info">
+                                    <p>신청자 닉네임 <span>LV1</span></p>
+                                    <p>논현1동</p>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="tab_txt c_ga">예약취소</div>
+                    </div>
+                    
+                    <div class="writer_cnt2" onclick="location.href=''">
+                        <div class="reservation_left">
+                            <div class="reservation_tit">예약 진행 일자</div>
+                            <div class="reservation_date">09월 02일 &#40;월&#41; 08:00 - 09:00</div>
+                        </div>
+                        <button type="button" class="sprite2"></button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- 산책종료 모달창 -->
+    <div class="md_cnt" id="modalPeriod" role="dialog" aria-modal="true" aria-labelledby="mdTit1">
+        <h3 id="mdTit1">기간선택</h3>
+        <div class="select_date">
+            <p class="start_date">시작일 선택</p>
+            <p class="end_date">종료일 선택</p>
+        </div>
+       <button type="button" class="search" data-link="first">조회</button>
+       <button type="button" class="md_close_btn sprite" data-link="last"></button> 
+       
+       <div class="select_dim"></div>
+    </div>
+
+    <div class="modal_select modal_start">
+        <p>날짜를 선택해주세요</p>
+        <div class="modal_selectbox_wrap">
+            <div class="modal_selectbox">
+                <div class="modal_selected year">
+                    <span class="modal_txt">연도</span>
+                    <span class="arrow"></span>
+                </div>
+                <div class="modal_selectul select_year">
+                </div>
+            </div>
+
+            <div class="modal_selectbox">
+                <div class="modal_selected month">
+                    <span class="modal_txt">월</span>
+                    <span class="arrow"></span>
+                </div>
+                <ul class="modal_selectul select_month">
+                </ul>
+            </div>
+
+            <div class="modal_selectbox">
+                <div class="modal_selected day">
+                    <span class="modal_txt">일</span>
+                    <span class="arrow"></span>
+                </div>
+                <ul class="modal_selectul select_day">
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="btn_wrap">
+            <button type="button">취소</button>
+            <button type="button">확인</button>
+        </div>
+    </div>
+
+    <div class="modal_select modal_end">
+        <p>날짜를 선택해주세요</p>
+        <div class="modal_selectbox_wrap">
+            <div class="modal_selectbox">
+                <div class="modal_selected year">
+                    <span class="modal_txt">2022</span>
+                    <span class="arrow"></span>
+                </div>
+                <ul class="modal_selectul select_year">
+                </ul>
+            </div>
+
+            <div class="modal_selectbox">
+                <div class="modal_selected month">
+                    <span class="modal_txt">1</span>
+                    <span class="arrow"></span>
+                </div>
+                <ul class="modal_selectul select_month">
+                </ul>
+            </div>
+
+            <div class="modal_selectbox">
+                <div class="modal_selected day">
+                    <span class="modal_txt">1</span>
+                    <span class="arrow"></span>
+                </div>
+                <ul class="modal_selectul select_day">
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="btn_wrap">
+            <button type="button">취소</button>
+            <button type="button">확인</button>
+        </div>
+    </div>
+
+
+    <!-- <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f54ce666be90230e1fb6d699e883a375"></script>
+    <script>
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+        mapOption = { 
+            center: new kakao.maps.LatLng(37.515693486027935, 127.03091997710196), // 지도의 중심좌표
+            level: 3 // 지도의 확대 레벨
+        };
+
+        var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+
+        var imageSrc = '../images/icon_marker.png', // 마커이미지의 주소입니다    
+        imageSize = new kakao.maps.Size(42, 42), // 마커이미지의 크기입니다
+        imageOption = {offset: new kakao.maps.Point(27, 69)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+      
+        // 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+        var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
+        markerPosition = new kakao.maps.LatLng(37.515693486027935, 127.03091997710196); // 마커가 표시될 위치입니다
+
+        // 마커를 생성합니다
+        var marker = new kakao.maps.Marker({
+        position: markerPosition, 
+        image: markerImage // 마커이미지 설정 
+        });
+
+
+        // 지도를 클릭한 위치에 표출할 마커입니다
+        var marker = new kakao.maps.Marker({ 
+        // 지도 중심좌표에 마커를 생성합니다 
+        position: map.getCenter() 
+        }); 
+        // 지도에 마커를 표시합니다
+        marker.setMap(map);
+
+        // 지도에 클릭 이벤트를 등록합니다
+        // 지도를 클릭하면 마지막 파라미터로 넘어온 함수를 호출합니다
+        kakao.maps.event.addListener(map, 'click', function(mouseEvent) {        
+    
+        // 클릭한 위도, 경도 정보를 가져옵니다 
+        var latlng = mouseEvent.latLng; 
+    
+        // 마커 위치를 클릭한 위치로 옮깁니다
+        marker.setPosition(latlng);
+    
+        });
+    </script> -->
+
+</body>
+</html>             

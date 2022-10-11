@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, viewport-fit=cover">
+  <title>휴매니존</title>
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/modal.css">
+  <link rel="stylesheet" href="../css/form_common.css">
+  <link rel="stylesheet" href="../css/modify.css">
+
+  <script src="../js/jquery-1.12.4.min.js"></script>
+  <script src="../js/common.js"></script>
+  <script src="../js/modal.js"></script>
+  <script>
+    $(document).ready(function () {
+      $(document).on("focusout", "input", function()	{
+	        $(this).val( $(this).val().replace(",","") );
+	        $(this).val( $(this).val().replace(/[^-\.0-9]/gi,"") );
+	        $(this).val( $(this).val().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") );
+	        if($(this).val() != '' ) {
+		        $(this).val( $(this).val()+'P');
+            $('.btn_green').css('background-color', '#9AC31C');  
+	        }		
+      });
+
+      $('.price_wrap li').click(function () {
+        const priceTxt = $(this).text();
+        if($(this).hasClass('on')){
+          $(this).removeClass('on');
+          $('.btn_green').removeAttr('style');
+        }else{
+          $(this).addClass('on').siblings().removeClass('on');
+          $(this).parent().prev().children().children('.form_wrap').children('input').val(priceTxt);
+          $('.btn_green').css('background-color', '#9AC31C');
+        }
+      });
+      $('.form_wrap input').click(function () {
+        $(this).val('');
+        $('.price_wrap li').removeClass('on');
+        $('.btn_green').removeAttr('style');
+      });
+      $('.btn_close2').click(function () {
+        $('.btn_green').removeAttr('style');
+      });
+
+    });
+  </script>
+  <style>
+    body{
+      background-color: #FFFFFF;
+    }
+    .progress_bar .bar_green{
+      width: 60%;
+    }
+  </style>
+</head>
+<body>
+    <div class="goback_area"> 
+      <div class="goback sprite md_open_btn" aria-haspopup="dialog" title="대화상자" data-href="#modal8"></div>
+      <p>돌봄 금액</p>
+    </div>
+    <div class="wrap">
+      <div class="progress_bar">
+        <div class="bar_green"></div>
+      </div>
+      <h3 class="tit2"><span>돌봄 30분당</span><br>지급받을 포인트 금액을 입력해주세요</h3>
+  
+      <form id="formPrice" class="form form_price" action="">
+        <fieldset>   
+            <legend class="blind">지급받을 포인트 금액 폼</legend>
+            <div class="form_wrap">
+                <label for="price" class="blind">포인트금액 선택</label>
+                <input type="text" id="price">
+                <button type="button" class="sprite btn_close2"></button>
+            </div>
+            <p class="hint_error">*포인트 받을금액은 1000원단위만 가능합니다</p>
+        </fieldset>
+      </form>
+      <ul class="price_wrap">
+         <li>5,000P</li>
+         <li>10,000P</li>
+         <li>15,000P</li>
+         <li>20,000P</li>
+      </ul>
+    </div>
+
+
+    <button type="button" class="btn_green wid100">저장</button>
+
+    <div class="md_cnt" id="modal8" role="dialog" aria-modal="true" aria-labelledby="mdTit8">
+      <p class="mdTit8">작성된 내용을 취소하시겠습니까?<br>
+          취소하시면 작성하신 정보가 저장되지 않습니다.
+      </p>
+      <div class="btn_wrap"> 
+          <button type="button">계속하기</button>
+          <button type="button" class="md_close_btn" data-link="last">취소</button>
+      </div>
+    </div>
+
+</body>
+</html>  

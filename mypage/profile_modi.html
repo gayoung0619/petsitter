@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, viewport-fit=cover">
+  <title>휴매니존</title>
+  <link rel="stylesheet" href="../css/swiper-bundle.css">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/modal.css">
+  <link rel="stylesheet" href="../css/form_common.css">
+  <link rel="stylesheet" href="../css/mypage/mypage.css">
+
+
+  <script src="../js/jquery-1.12.4.min.js"></script>
+  <script src="../js/swiper-bundle.min.js"></script>
+  <script src="../js/common.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/modal.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('input[type=text]').on('input', function () {
+          if($(this).val() == ''){
+              $(this).siblings('.wid97').removeClass('on');
+          }else{
+              $(this).siblings('.wid97').addClass('on');
+          }
+          $('.btn_close2').click(function (){
+              $(this).siblings('.wid97').removeClass('on');
+          });
+      });
+    });
+   </script>
+</head>
+<body>
+    <div class="goback_area">
+        <div class="goback sprite md_open_btn" aria-haspopup="dialog" title="대화상자" data-href="#modal8"></div>
+        <p>프로필수정</p>
+    </div>
+
+    <div class="profile_modi_wrap">
+        <div class="profile_modi_center">
+            <div class="profile_logo_modi">
+                <form action="">
+                    <label for="file" class="profile_logo_icon">
+                        <p class="edit">편집</p>
+                    </label>
+                    <input type="file" id="file" namme="file" class="blind">
+                    <label for="file" class="upload-name"></label>
+                </form>
+            </div>
+        </div>
+
+        <!-- 접근권한 팝업모달창 -->
+        <!-- <div class="profile_modi_center md_open_btn" aria-haspopup="dialog" title="대화상자" data-href="#modalpic">
+            <div class="profile_logo_modi">
+                <div class="profile_logo_icon">
+                    <p class="edit">편집</p>
+                </div>
+            </div>
+        </div> -->
+    </div>  
+    
+    
+    <form id="formNick" class="form" action="">
+        <fieldset>   
+            <legend class="blind">닉네임설정 폼</legend>
+            <div class="form_wrap">
+                <label for="nickname">닉네임</label>
+                <input type="text" placeholder="닉네임 (3-5자리)" id="nickname">
+                <button type="button" class="md_open_btn wid97">중복확인</button>
+                <button type="button" class="sprite btn_close2"></button>
+            </div>
+            <p class="hint_auth">*사용가능</p>
+            <p class="hint_error">*닉네임은 3자 이상 5자 이하로 설정해주세요</p>
+            <p class="hint_error">*중복된 닉네임이 존재합니다</p>
+        </fieldset>
+    </form>
+    
+    <!-- <div class="complete_wrap">
+        <dl>
+            <dt>닉네임</dt>
+            <dd>작성된 닉네임</dd>
+        </dl>
+    </div> -->
+
+
+      
+
+    <button type="button" class="wid100 btn_green">저장</button>
+
+
+    <!-- 사진 접근권한 모달창 -->
+    <div class="md_cnt" id="modalpic" role="dialog" aria-modal="true" aria-labelledby="mdTit1">
+        <h3 id="mdTit1">모든 사진 접근 권한을<br>허용해 주세요</h3>
+        <p>사진 접근 권한을 설정하지 않을 경우<br>사진을 가져올수없습니다</p>
+        <div class="btn_wrap">
+            <button type="button" data-link="first">모든사진 접근권한 허용하기</button>
+            <button type="button" class="md_close_btn" data-link="last">닫기</button> 
+        </div>
+   </div>
+
+
+   <div class="md_cnt" id="modal8" role="dialog" aria-modal="true" aria-labelledby="mdTit8">
+        <p class="mdTit8">작성된 내용을 취소하시겠습니까?<br>
+            취소하시면 작성하신 정보가 저장되지 않습니다.
+        </p>
+         <div class="btn_wrap"> 
+            <button type="button">계속하기</button>
+            <button type="button" class="md_close_btn" data-link="last">취소</button>
+        </div>
+    </div>
+
+   
+
+</body>
+</html>

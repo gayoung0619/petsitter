@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, viewport-fit=cover">
+  <title>휴매니존</title>
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/modal.css">
+  <link rel="stylesheet" href="../css/form_common.css">
+  <link rel="stylesheet" href="../css/pet/pet.css">
+
+  <script src="../js/jquery-1.12.4.min.js"></script>
+  <script src="../js/common.js"></script>
+  <script src="../js/modal.js"></script>
+  <script>
+      $(document).ready(function () {
+        $('.complete_wrap dd').click(function () {
+            if($(this).children('button').hasClass('on')){
+                $(this).children('button').removeClass('on');
+                $('.btn_green').removeAttr('style');
+            }else{
+                $(this).children('button').addClass('on').parents('.complete_wrap').siblings().find('button').removeClass('on');
+                $('.btn_green').css('background-color', '#9AC31C');
+            }
+        });
+      });
+  </script>
+</head>
+<body>
+    <div class="goback_area">
+        <div class="goback sprite md_open_btn" aria-haspopup="dialog" title="대화상자" data-href="#modal8"></div>
+        <p>반려동물 등록</p>
+    </div>
+
+    <h3 class="tit2">나의 <span>반려동물 프로필을</span><br>
+        코드로 등록하기
+    </h3>
+
+    <form action="" class="form">
+        <div class="form_wrap">
+            <label for="profileCode">프로필코드</label>
+            <input type="text" id="profileCode" class="profile_code" placeholder="프로필코드를 등록하세요">
+            <div class="sprite btn_close2"></div>
+        </div>
+    </form>
+
+    <div class="code_pet">
+        <div class="complete_wrap">
+            <dl>
+                <dt>코드로 등록된 반려동물</dt>
+                <dd>
+                    <div class="pic">
+                        <img src="../images/profile.png" alt="">
+                    </div>
+                    <p>등록된 반려동물 이름</p>
+                    <button type="button"></button>
+                </dd>
+            </dl>
+    
+        </div>
+    </div>
+
+    <button type="button" class="md_open_btn btn_green wid100" aria-haspopup="dialog" title="대화상자" data-href="#modalCodeRg">확인</button>
+
+    <div class="md_cnt" id="modalCodeRg" role="dialog" aria-modal="true" aria-labelledby="mdTit1">
+        <h3 id="mdTit1">
+            <div class="pic">
+                <img src="../images/profile.png" alt="">
+            </div>
+            <p>선택된 반려동물을<br>등록 하시겠습니까?</p>
+        </h3>
+        <p>선택된 반려동물 : 푸푸</p>
+        <div class="btn_wrap">
+            <button type="button">확인</button>
+            <button type="button" class="md_close_btn" data-link="last">취소</button>
+        </div>
+    </div>
+
+    <div class="md_cnt" id="modal8" role="dialog" aria-modal="true" aria-labelledby="mdTit8">
+        <p class="mdTit8">작성된 내용을 취소하시겠습니까?<br>
+            취소하시면 작성하신 정보가 저장되지 않습니다.
+        </p>
+        <div class="btn_wrap"> 
+            <button type="button">계속하기</button>
+            <button type="button" class="md_close_btn" data-link="last">취소</button>
+        </div>
+    </div>
+</body>
+</html> 

@@ -1,0 +1,146 @@
+@charset "utf-8";
+body{
+    background: #F9F9F9;
+}
+.goback_area{
+    background-color: transparent;
+}
+.setting_box{
+    padding: 0;
+    margin-top: 60px;
+    border-top: none;
+}
+.area_wrap{
+    text-align: center;
+    padding: 20px 16px;
+    background: #ffffff;
+}
+.setting_detail > p{
+    color: #373737;
+}
+.setting_detail div .bar_wrap{
+    color: #626262 !important;
+}
+.area_wrap > p{
+    margin-top: 4px;
+}
+.setting_detail{
+    margin-top: 32px;
+}
+.setting_detail strong{
+    font-size: 20px;
+}
+.setting_detail p{
+    position: relative;
+    font-size: 14px;
+    margin-top: 6px;
+}
+.setting_detail p::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 111px;
+    background: #373737;
+    height: 0.5px;
+}
+.setting_detail + button{
+    width: 100%;
+    background: #9AC31C;
+    font-size: 14px;
+    border-radius: 10px;
+    color: #FFFFFF;
+    height: 50px;
+    border: none;
+}
+.icon_position{
+    content: "";
+    position: absolute;
+    top: -40px;
+    left: 7px;
+    background: url(../../images/login_icon_02.svg) no-repeat;
+    width: 42px;
+    height: 42px;
+    background-position: 0 -76px;
+
+}
+.setting_detail > div{
+    position: relative;
+}
+.setting_detail .bar_wrap{
+    position: relative;
+    height: 5px;
+    margin: 41px 22px 48px 22px;
+}
+
+.bar{
+    position: absolute;
+    top: 0;
+    background: #EFEFEF;
+    height: 5px;
+    width: calc(100% / 3 - 1px);
+}
+.bar1{
+    left: 0;
+    border-radius: 10px 0 0 10px;
+}
+.bar2{
+    left: 50%;
+    transform: translateX(-50%);
+}
+.bar3{
+    right: 0;
+    border-radius: 0 10px 10px 0;
+}
+
+
+.setting_detail > div > span:first-of-type{
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
+.setting_detail > div > span:last-of-type{
+    position: absolute;
+    top: 10px;
+    right: 0;
+}
+.setting_icon{
+    position: relative;
+}
+.setting_icon .circle{
+    border: 1px solid #DBDBDB;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+.setting_icon .circle1{
+    width: 200px;
+    height: 200px;
+    top: 55px;
+}
+.setting_icon .circle2{
+    width: 140px;
+    height: 140px;
+    top: 30px;
+}
+.setting_icon .circle3{
+    width: 80px;
+    height: 80px;
+    top: 30px;
+}
+.setting_icon .sprite2{
+    background-position: 5px -76px;
+    width: 42px;
+    height: 42px;
+    margin: 20px auto;
+}

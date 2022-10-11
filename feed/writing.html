@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, viewport-fit=cover">
+  <title>휴매니존</title>
+  <link rel="stylesheet" href="../css/swiper-bundle.css">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/modal.css">
+  <link rel="stylesheet" href="../css/feed/feed.css">
+  <link rel="stylesheet" href="../css/feed/writing.css">
+
+  <script src="../js/jquery-1.12.4.min.js"></script>
+  <script src="../js/swiper-bundle.min.js"></script>
+  <script src="../js/swiper.js"></script>
+  <script src="../js/modal2.js"></script>
+  <script src="../js/modal.js"></script>
+  <script src="../js/common.js"></script>
+  <script src="../js/feed.js"></script>
+  <script>
+    //Javascript, 페이징 무한스크롤링
+    var count = 7;
+    //스크롤 바닥 감지
+    window.onscroll = function(e) {
+    //추가되는 임시 콘텐츠
+    //window height + window scrollY 값이 document height보다 클 경우,
+    if((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+    	//실행할 로직 (콘텐츠 추가)
+        count++;
+        var addContent = '<article class="section section4"><div class="writer_info"><div class="writer"><a href=""><div class="pic"><img src="../images/default_img.png" alt=""></div><div class="info"><p>작성된 닉네임 <span>LV1</span></p><div><span>논현1동</span> <span>· 1일전</span></div></div></a><div class="more"><div class="more_btn md_open_btn" aria-haspopup="dialog" title="대화상자" data-href="#modalModify2"><div></div><div></div><div></div></div></div></div><div class="reply"><p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequ</p><span class="likes">좋아요 <span>1</span></span><span class="comment">답글쓰기</span></div> </div></article>'
+        //article에 추가되는 콘텐츠를 append
+            $('body').append(addContent);
+        }
+    };
+    </script>
+
+    <style>
+        .content{
+            margin-top: 40px;
+        }
+        .section1{
+            padding: 0;
+        }
+        .section1:not(:first-of-type){
+            padding: 0;
+        }
+        .writer_info2{
+            padding: 24px;
+        }
+        .writer_cnt2{
+            padding: 24px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="goback_area">
+        <div class="goback sprite md_open_btn" aria-haspopup="dialog" title="대화상자" data-href="#modal8"></div>
+        <p>피드 글보기</p>
+    </div>
+
+    <div class="reply_box">
+        <textarea class="textarea_size" onkeyup="adjustHeight();" placeholder="댓글" spellcheck="false"></textarea>
+        <button type="button">입력</button>
+    </div>
+
+    <section class="content">
+        <article class="section section1">
+            <div class="writer_info2">
+                <div class="writer">
+                    <a href="">
+                        <div class="pic">
+                            <img src="../images/default_img.png" alt="">
+                        </div>
+                        <div class="info">
+                            <p>작성된 닉네임 <span>LV1</span></p>
+                            <p>논현1동</p>
+                        </div>
+                    </a>
+                    <div class="more">
+                        <div class="more_btn">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <p class="time">14시간전</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="writer_cnt2">
+                <a href="">
+                    <div class="feed_top">
+                        <div class="filter_tab bg_gr">강아지</div>
+                    </div>
+                    <div class="feed_cnt">
+                        <h4>Amet minim mollit non deserunt ullamco est sit</h4>
+                        <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.Amet minim mollit non deserunt ullamco est sitaliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p> 
+                    </div>
+                </a>
+                <div class="feed_bottom">
+                    <div class="comment_wrap">
+                        <span class="comment">1,000</span>
+                        <div class="loves">1,687 </div> 
+                    </div>
+                </div>
+            </div>
+
+        </article> 
+
+        <!-- 이미지가 들어가는 피드 -->
+        <article class="section section1">
+            <div class="writer_info2">
+                <div class="writer">
+                    <a href="">
+                        <div class="pic">
+                            <img src="../images/default_img.png" alt="">
+                        </div>
+                        <div class="info">
+                            <p>작성된 닉네임 <span>LV1</span></p>
+                            <p>논현1동</p>
+                        </div>
+                    </a>
+                    <div class="more">
+                        <div class="more_btn">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <p class="time">14시간전</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="writer_cnt2">
+                <a href="">
+                    <div class="feed_top">
+                        <div class="filter_tab bg_gr">강아지</div>
+                    </div>
+                </a>
+                <div class="feed_cnt">
+                    <a href="">
+                        <h4>Amet minim mollit non deserunt ullamco est sit</h4>
+                        <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.Amet minim mollit non deserunt ullamco est sitaliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p> 
+                    </a>
+                    <div class="img_area">
+                        <div class="img172">
+                            <img src="../images/test.jpg" alt="" class="md_pic_btn" aria-haspopup="dialog" title="대화상자" data-href="#modalPic">
+                        </div>
+                    </div>
+                </div>
+                <div class="feed_bottom">
+                    <div class="comment_wrap">
+                        <span class="comment">1,000</span>
+                        <div class="loves">1,687 </div> 
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <article class="section section1">
+            <div class="writer_info2">
+                <div class="writer">
+                    <a href="">
+                        <div class="pic">
+                            <img src="../images/default_img.png" alt="">
+                        </div>
+                        <div class="info">
+                            <p>작성된 닉네임 <span>LV1</span></p>
+                            <p>논현1동</p>
+                        </div>
+                    </a>
+                    <div class="more">
+                        <div class="more_btn">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <p class="time">14시간전</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="writer_cnt2">
+                <a href="">
+                    <div class="feed_top">
+                        <div class="filter_tab bg_gr">강아지</div>
+                    </div>
+                </a>
+                <div class="feed_cnt">
+                    <a href="">
+                        <h4>Amet minim mollit non deserunt ullamco est sit</h4>
+                        <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.Amet minim mollit non deserunt ullamco est sitaliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p> 
+                    </a>
+                    <div class="img_area">
+                        <div class="img84">
+                            <img src="../images/test.jpg" alt="" class="md_pic_btn" aria-haspopup="dialog" title="대화상자" data-href="#modalPic">
+                        </div>
+                        <div class="img84">
+                            <img src="../images/test.jpg" alt="" class="md_pic_btn" aria-haspopup="dialog" title="대화상자" data-href="#modalPic">
+                        </div>
+                    </div>
+                </div>
+                <div class="feed_bottom">
+                    <div class="comment_wrap">
+                        <span class="comment">1,000</span>
+                        <div class="loves">1,687 </div> 
+                    </div>
+                </div>
+            </div>
+
+        </article>
+
+        <article class="section section1">
+            <div class="writer_info2">
+                <div class="writer">
+                    <a href="">
+                        <div class="pic">
+                            <img src="../images/default_img.png" alt="">
+                        </div>
+                        <div class="info">
+                            <p>작성된 닉네임 <span>LV1</span></p>
+                            <p>논현1동</p>
+                        </div>
+                    </a>
+                    <div class="more">
+                        <div class="more_btn">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <p class="time">14시간전</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="writer_cnt2">
+                <a href="">
+                    <div class="feed_top">
+                        <div class="filter_tab bg_gr">강아지</div>
+                    </div>
+                </a>
+                <div class="feed_cnt">
+                    <a href="">
+                        <h4>Amet minim mollit non deserunt ullamco est sit</h4>
+                        <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.Amet minim mollit non deserunt ullamco est sitaliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p> 
+                    </a>
+                    <div class="img_area">
+                        <div class="img84">
+                            <img src="../images/test.jpg" alt="" class="md_pic_btn" aria-haspopup="dialog" title="대화상자" data-href="#modalPic">
+                        </div>
+                        <div class="nowrap">
+                            <div class="img84">
+                                <img src="../images/test.jpg" alt="" class="md_pic_btn" aria-haspopup="dialog" title="대화상자" data-href="#modalPic">
+                            </div>
+                            <div class="img84">
+                                <img src="../images/test.jpg" alt="" class="md_pic_btn" aria-haspopup="dialog" title="대화상자" data-href="#modalPic">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="feed_bottom">
+                    <div class="comment_wrap">
+                        <span class="comment">1,000</span>
+                        <div class="loves">1,687 </div> 
+                    </div>
+                </div>
+            </div>
+
+        </article>
+
+        <article class="section section1">
+            <div class="writer_info2">
+                <div class="writer">
+                    <a href="">
+                        <div class="pic">
+                            <img src="../images/default_img.png" alt="">
+                        </div>
+                        <div class="info">
+                            <p>작성된 닉네임 <span>LV1</span></p>
+                            <p>논현1동</p>
+                        </div>
+                    </a>
+                    <div class="more">
+                        <div class="more_btn">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <p class="time">14시간전</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="writer_cnt2">
+                <a href="">
+                    <div class="feed_top">
+                        <div class="filter_tab bg_gr">강아지</div>
+                    </div>
+                </a>
+                <div class="feed_cnt">
+                    <a href="">
+                        <h4>Amet minim mollit non deserunt ullamco est sit</h4>
+                        <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.Amet minim mollit non deserunt ullamco est sitaliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>  
+                    </a>
+                    <div class="img_area">
+                        <div class="img84">
+                            <img src="../images/test.jpg" alt="" class="md_pic_btn" aria-haspopup="dialog" title="대화상자" data-href="#modalPic">
+                        </div>
+                        <div class="nowrap">
+                            <div class="img84">
+                                <img src="../images/test.jpg" alt="" class="md_pic_btn" aria-haspopup="dialog" title="대화상자" data-href="#modalPic">
+                            </div>
+                            <div class="img84 pic_more">
+                                <img src="../images/test.jpg" alt="">
+                                <p class="more_txt md_pic_btn" aria-haspopup="dialog" title="대화상자" data-href="#modalPic">+1</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="feed_bottom">
+                    <div class="comment_wrap">
+                        <span class="comment">1,000</span>
+                        <div class="loves">1,687 </div> 
+                    </div>
+                </div>
+            </div>
+
+        </article>
+
+        <article class="section section2">
+            <div class="writer_info">
+                <div class="writer">
+                    <a href="">
+                        <div class="pic">
+                            <img src="../images/default_img.png" alt="">
+                        </div>
+                        <div class="info">
+                            <p>작성된 닉네임 <span>LV1</span></p>
+                            <div>
+                                <span>논현1동</span> 
+                                <span>· 1일전</span>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="more">
+                        <div class="more_btn">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="reply">
+                    <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequ</p>
+                    <span class="likes">좋아요 <span>1</span></span>
+                    <span class="comment">답글쓰기</span>
+                </div>
+            </div>
+            <div class="writer_info">
+                <div class="writer">
+                    <a href="">
+                        <div class="pic">
+                            <img src="../images/default_img.png" alt="">
+                        </div>
+                        <div class="info">
+                            <p>작성된 닉네임 <span>LV1</span></p>
+                            <div>
+                                <span>논현1동</span> 
+                                <span>· 1일전</span>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="more">
+                        <div class="more_btn">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="reply">
+                    <p>Amet minim mollit non deserunt ullamco est sit aliqua </p>
+                    <span class="likes">좋아요 <span>1</span></span>
+                </div>
+            </div>
+            <div class="writer_info">
+                <div class="writer">
+                    <a href="">
+                        <div class="pic">
+                            <img src="../images/default_img.png" alt="">
+                        </div>
+                        <div class="info">
+                            <p>작성된 닉네임 <span>LV1</span></p>
+                            <div>
+                                <span>논현1동</span> 
+                                <span>· 1일전</span>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="more">
+                        <div class="more_btn">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="reply">
+                    <p>Amet minim mollit non deserunt ullamco est sit aliqua </p>
+                    <span class="likes">좋아요 <span>1</span></span>
+                </div>
+            </div>
+            <div class="writer_info panel" aria-labelledby="acdnHeader" id="acdnPanel">
+                <div class="writer">
+                    <a href="">
+                        <div class="pic">
+                            <img src="../images/default_img.png" alt="">
+                        </div>
+                        <div class="info">
+                            <p>작성된 닉네임 <span>LV1</span></p>
+                            <div>
+                                <span>논현1동</span> 
+                                <span>· 1일전</span>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="more">
+                        <div class="more_btn">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="reply">
+                    <p>Amet minim mollit non deserunt ullamco est sit aliqua </p>
+                    <span class="likes">좋아요 <span>1</span></span>
+                </div>
+            </div>
+            <div class="reply_btn">
+                <button type="button" aria-controls="acdnPanel" id="acdnHeader"class="header">ㄴ답글 1개 보기</button>
+            </div>
+            <a href="reply.html"><div class="reply_bd">답글 입력하기</div></a>
+        </article>
+
+        <article class="section section3">
+            <div class="writer_info">
+                <div class="writer">
+                    <a href="">
+                        <div class="pic">
+                            <img src="../images/default_img.png" alt="">
+                        </div>
+                        <div class="info">
+                            <p>작성된 닉네임 <span>LV1</span></p>
+                            <div>
+                                <span>논현1동</span> 
+                                <span>· 1일전</span>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="more">
+                        <div class="more_btn">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="reply">
+                    <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequ</p>
+                    <span class="likes">좋아요 <span>1</span></span>
+                    <span class="comment">답글쓰기</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="section section4">
+            <div class="writer_info">
+                <div class="writer">
+                    <a href="">
+                        <div class="pic">
+                            <img src="../images/default_img.png" alt="">
+                        </div>
+                        <div class="info">
+                            <p>작성된 닉네임 <span>LV1</span></p>
+                            <div>
+                                <span>논현1동</span> 
+                                <span>· 1일전</span>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="more">
+                        <div class="more_btn">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="reply">
+                    <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequ</p>
+                    <span class="likes">좋아요 <span>1</span></span>
+                    <span class="comment">답글쓰기</span>
+                </div> 
+            </div>
+        </article>
+    </section>
+    
+    
+    <!-- 여기서 부터 쭉 모달창, 클릭시 모달창 뜨는 버튼태그에 아이디명 수정하면 해당 모달창으로 연결됨   --> 
+    <div class="md_cnt" id="modalPic" role="dialog" aria-modal="true">
+        <div class="modal_pic">
+            <div class="swiper-container modal_slider">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide modalpic slider1">
+                      <img src="../images/modal.jpg">
+                  </div>
+                  <div class="swiper-slide modalpic slider2">
+                      <img src="../images/modal.jpg">
+                  </div>
+                  <div class="swiper-slide modalpic slider3">
+                      <img src="../images/modal.jpg">
+                  </div>
+                  <div class="swiper-slide modalpic slider4">
+                      <img src="../images/modal.jpg">
+                  </div>
+                  <div class="swiper-slide modalpic slider5">
+                      <img src="../images/modal.jpg">
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+        <button type="button" class="close_btn md_close_btn" data-link="last"></button>
+    </div>
+
+    <div class="md_cnt" id="modalDelect" role="dialog" aria-modal="true">
+        <h3 id="mdTit1">해당글은 목적에<br>맞지않아 삭제되었습니다</h3>
+        <button type="button" class="md_close_btn" data-link="last">확인</button>
+    </div>
+
+    <div class="md_cnt" id="modalModify" role="dialog" aria-modal="true">
+        <button type="button">수정</button>
+        <button type="button">삭제</button>
+        <button type="button" class="md_close_btn" data-link="last">닫기</button>
+    </div>
+    
+
+    <div class="md_cnt" id="modalReport" role="dialog" aria-modal="true">
+        <button type="button">신고</button>
+        <button type="button" class="md_close_btn" data-link="last">닫기</button>
+    </div>
+
+    <div class="md_cnt" id="modalModifyMd" role="dialog" aria-modal="true" aria-labelledby="mdTit1">
+        <h3 id="mdTit1">작성하신 글의 <span>수정</span>을 하시겠습니까?</h3>
+        <p>수정을 원하시면 수정하기를 진행해 주세요</p>
+       <button type="button">수정하기</button>
+       <button type="button">닫기</button>
+       <button type="button" class="md_close_btn sprite" data-link="last"></button>
+   </div>
+
+    <div class="md_cnt" id="modalModifyCth" role="dialog" aria-modal="true" aria-labelledby="mdTit1">
+        <h3 id="mdTit1">작성하신 글의 <span>삭제</span>를 하시겠습니까?</h3>
+        <p>수정을 원하시면 수정하기를 진행해 주세요</p>
+       <button type="button">삭제하기</button>
+       <button type="button">닫기</button>
+       <button type="button" class="md_close_btn sprite" data-link="last"></button>
+   </div>
+
+    <div class="md_cnt" id="modalReportRp" role="dialog" aria-modal="true" aria-labelledby="mdTit1">
+        <h3 id="mdTit1">선택하신 글 <span>신고</span>를 하시겠습니까?</h3>
+        <p>신고를 원하시면 신고하기를 선택해주세요</p>
+       <button type="button">신고하기</button> 
+       <button type="button">닫기</button>
+       <button type="button" class="md_close_btn sprite" data-link="last"></button>
+   </div>
+
+   <div class="md_cnt" id="modal8" role="dialog" aria-modal="true" aria-labelledby="mdTit8">
+        <p class="mdTit8">작성된 내용을 취소하시겠습니까?<br>
+            취소하시면 작성하신 정보가 저장되지 않습니다.
+        </p>
+        <div class="btn_wrap"> 
+            <button type="button">계속하기</button>
+            <button type="button" class="md_close_btn" data-link="last">취소</button>
+        </div>
+    </div>
+
+
+</body>
+<script>
+    $(document).ready(function () {
+        var textEle = $('textarea');
+        textEle.on('keyup', function() {
+            $(this).css('max-height','100px');
+            $(this).height($(this).scrollHeight - 18);
+            adjustHeight();
+        });
+        textEle.on('keyup', function() {
+            $(this).css('max-height','100px');
+            adjustHeight();
+        });
+    });
+    function adjustHeight() {
+        var textEle = $('textarea');
+        textEle[0].style.height = 'auto';
+        var textEleHeight = textEle.prop('scrollHeight');
+        textEle.css('height', textEleHeight - 9);
+    };
+    
+</script>
+</html> 

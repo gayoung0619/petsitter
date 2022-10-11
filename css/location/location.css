@@ -1,0 +1,56 @@
+@charset "UTF-8";
+.logo{
+    background: url(../../images/logo.png) no-repeat center / contain;
+    width: 130px;
+    height: 103px;
+    margin: 256px auto;
+}
+
+#dim{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgb(0, 0, 0, .65);
+    width: 100%;
+    height: 100%;
+  }
+  .allow{
+    position: relative;
+    margin: 122px auto;
+    background: #ffffff;
+    padding: 28px 28px 0 28px;
+    width: 343px;
+    height: 450px;
+    line-height: 20px;
+  }
+  .allow h3{
+    color: #373737;
+    font-size: 18px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #CCCCCC;
+  }
+  .allow h3 span{
+    color: #9AC31C;
+    font-weight: 700;
+  }
+  .allow .txt{
+    margin-top: 10px;
+    font-size: 13px;
+  }
+  .allow .txt div{
+    padding-top: 14px;
+  }
+  .allow .txt div strong{
+    font-weight: 700;
+    color: #373737;
+  }
+  .allow button{
+    width: 100%;
+    background-color: #9AC31C;
+    color: #ffffff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 32px 0;
+    font-size: 16px;
+  }

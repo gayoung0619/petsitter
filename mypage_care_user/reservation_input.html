@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, viewport-fit=cover">
+  <title>휴매니존</title>
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/modal.css">
+  <link rel="stylesheet" href="../css/form_common.css">
+
+  <script src="../js/jquery-1.12.4.min.js"></script>
+  <script src="../js/modal.js"></script>
+  <script src="../js/common.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('input').on('input', function () {
+          if($('input').val() == ''){
+              $('.btn_green').removeAttr('style');
+          }else{
+              $('.btn_green').css({'background-color' : '#9AC31C', 'color' : '#FFFFFF'});
+          }
+          $('.btn_close2').click(function (){
+              $('.btn_green').removeAttr('style');
+          });
+      });
+    });
+  </script>
+</head>
+<body>
+    <div class="goback_area">
+        <div class="goback sprite md_open_btn" aria-haspopup="dialog" title="대화상자" data-href="#modal8"></div>
+        <p>예약취소하기</p>
+    </div>
+
+    <h3 class="tit2">예약 취소 사유를<br><span class="c_g">입력해주세요</span><br></h3>
+
+    <form id="formReserCan" class="form" action=" ">
+      <fieldset>
+          <legend class="blind">예약취소 사유 폼</legend>
+          <div class="form_wrap">
+              <label for="reserCancel">예약취소 사유</label>
+              <input type="text" placeholder="예약 취소사유를 직접입력해주세요 " id="reserCancel">
+              <button type="button" class="sprite btn_close2"></button>
+          </div>
+      </fieldset> 
+     </form>
+
+
+    <button type="button" class="btn_green wid100">저장</button>
+
+    <div class="md_cnt" id="modal8" role="dialog" aria-modal="true" aria-labelledby="mdTit8">
+        <p class="mdTit8">작성된 내용을 취소하시겠습니까?<br>
+            취소하시면 작성하신 정보가 저장되지 않습니다.
+        </p>
+        <div class="btn_wrap"> 
+            <button type="button">계속하기</button>
+            <button type="button" class="md_close_btn" data-link="last">취소</button>
+        </div>
+    </div>
+
+</body>
+</html>  

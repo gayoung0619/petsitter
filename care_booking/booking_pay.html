@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, viewport-fit=cover">
+  <title>휴매니존</title>
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/modal.css">
+  <link rel="stylesheet" href="../css/check.css">
+  <link rel="stylesheet" href="../css/booking/booking.css">
+
+  <script src="../js/jquery-1.12.4.min.js"></script>
+  <script src="../js/common.js"></script>
+  <script src="../js/modal.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#allowAge .md_close_btn').click(function () {
+        $('.must1').prop('checked', true);
+      });
+      $('#allowLocation .md_close_btn').click(function () {
+        $('.must2').prop('checked', true);
+      });
+      $('.md_close_btn').click(function () {
+        if($('.must1').prop('checked') && $('.must2').prop('checked')){
+            $('#allow_all').prop('checked', true);
+        }
+      });
+    });
+  </script>
+
+  <style>
+      body{
+          background-color: #F9F9F9;
+      }
+  </style>
+
+</head>
+<body>
+    <div class="goback_area">
+      <div class="goback sprite md_open_btn" aria-haspopup="dialog" title="대화상자" data-href="#modal8"></div>
+      <p>예약결제하기</p> 
+    </div>
+    <div class="content"> 
+
+        <div class="info_reservation">
+            <div class="info_top">
+              <p>결제 정보를 확인해주세요</p>
+              <strong>총요금 <span>60,000 P</span></strong>
+            </div>
+  
+            <div class="info_bottom">
+              <p>나의강아지이름</p>
+              <strong>09월 02일&#40;월&#41; 08:00 - 09:00</strong>
+  
+            </div>
+        </div>
+
+        <div class="point_pay">
+            <div class="point_title">
+                <h4>휴매니존 포인트 결제하기</h4>
+                <p>*결제금은 안전을 위해 휴매니존의 포인트만을 사용합니다</p>
+            </div>
+    
+            <div class="point_cnt">
+                <table>
+                    <caption class="blind">포인트 현황</caption>
+                    <colgroup>
+                        <col class="wid224">
+                        <col class="wid184">
+                    </colgroup>
+                    <tr>
+                        <th>보유 포인트</th>
+                        <td>100,000P</td>
+                    </tr>
+                    <tr>
+                        <th>차감 포인트 금액</th>
+                        <td>-60,000P</td>
+                    </tr>
+                    <tr>
+                        <th>결제후 포인트잔액</th>
+                        <td>40,000P</td>
+                    </tr>
+                </table>
+                <p class="hint_error">* 보유 포인트 잔액이 부족합니다.</p>
+                <button>포인트 충전</button>
+            </div>
+            
+        </div>
+
+        <div class="agree_list2">
+            <div class="allow_box">
+                <input type="checkbox" id="allow_all" name="allow_all">
+                <label for="allow_all">모두 동의합니다</label>
+            </div>
+      
+            <ul>
+              <li>
+                <input type="checkbox" id="allow_age" name="allow_age" class="ckbox must must1">
+                <label for="allow_age">[필수] 휴매니존 유료서비스약관동의</label>
+                <div class="md_open_btn sprite2" aria-haspopup="dialog" title="대화상자" data-href="#allowAge"></div>
+              </li>
+
+              <li>
+                <input type="checkbox" id="allow_location" name="allow_location" class="ckbox must must2">
+                <label for="allow_location">[필수] 하단 유의사항 동의</label>
+                <div class="md_open_btn sprite2" aria-haspopup="dialog" title="대화상자" data-href="#allowLocation"></div>
+              </li>
+            </ul>
+        </div>
+
+        <div class="bd_dark">
+            <strong>유의사항</strong>
+            <div class="bd_dark_cnt">
+                <p>&#183; 결제예약시 서비스 제공자에게 서비스 완료후 지급됩니다.</p>
+                <p>&#183; 예약 완료후 중도 취소할경우 포인트 환급이 상황에 따라 늦어질수있습니다.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <button type="button" class="btn_green wid100 md_open_btn" aria-haspopup="dialog" title="대화상자" data-href="#modalPay">결제완료</button> 
+
+    <div class="md_cnt" id="modalPay" role="dialog" aria-modal="true" aria-labelledby="payTit">
+        <h4 id="payTit">고객님의 나눔돌봄 예약이<br>
+            <span class="c_g">완료</span>되었습니다</h4>
+        <p>나눔돌봄 신청내역은 프로필 에서 확인가능합니다 </p>
+        <button type="button" class="md_close_btn" data-link="last">확인</button>
+    </div>
+
+    <div class="md_cnt modal_policy" id="allowAge" role="dialog" aria-modal="true" aria-labelledby="mdTit1">
+        <h4 id="mdTit1">약관</h4>
+        <div class="txt">
+          <p>Amet minim Amet minim </p>
+          <p>Amet minim</p>
+          <p>Amet minimAmet minimAmet minimAmet minim<br>Amet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimvv</p>
+        </div>
+        <button type="button" class="md_close_btn" data-link="last">확인</button>
+    </div>
+
+    <div class="md_cnt modal_policy" id="allowLocation" role="dialog" aria-modal="true" aria-labelledby="mdTit1">
+        <h4 id="mdTit1">약관</h4>
+        <div class="txt">
+          <p>Amet minim Amet minim </p>
+          <p>Amet minim</p>
+          <p>Amet minimAmet minimAmet minimAmet minim<br>Amet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimAmet minimvv</p>
+        </div>
+        <button type="button" class="md_close_btn" data-link="last">확인</button>
+    </div>
+
+    <div class="md_cnt" id="modal8" role="dialog" aria-modal="true" aria-labelledby="mdTit8">
+      <p class="mdTit8">작성된 내용을 취소하시겠습니까?<br>
+          취소하시면 작성하신 정보가 저장되지 않습니다.
+      </p>
+      <div class="btn_wrap"> 
+          <button type="button">계속하기</button>
+          <button type="button" class="md_close_btn" data-link="last">취소</button>
+      </div>
+    </div>
+   
+</body>
+
+
+
+</html>  

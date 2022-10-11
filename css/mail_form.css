@@ -1,0 +1,97 @@
+@charset "utf-8";
+.mailform_wrap{
+    background-color: #F9F9F9;
+}
+header{
+    padding: 60px 0 34px 24px;
+    background-color: #F9F9F9;
+}
+header .logo{
+    background: url(../images/logo4.png) no-repeat center / cover;
+    width: 220px;
+    height: 40px;
+}
+.mailform{
+    padding: 0 24px 42px 24px;
+}
+.mailform strong{
+    font-size: 18px;
+    line-height: 34px;
+    padding-bottom: 42px;
+    border-bottom: 6px solid #E2E2E2;
+}
+.mailform dl{
+    margin: 52px 44px 0 44px;
+    display: flex;
+    border: 0.8px solid #E2E2E2;
+    border-radius: 10px;
+    height: 54px;
+    line-height: 52px;
+    padding-left: 17px;
+    color: #373737;
+    font-size: 14px;
+    background-color: #FFFFFF;
+}
+.mailform dl:nth-of-type(2){
+    margin-top: 14px;
+    margin-bottom: 52px;
+}
+.mailform dl dt{
+    width: 102px;
+}
+.mailform dl dd{
+    margin: 0;
+    padding-left: 14px;
+    border-left: 0.8px solid #E2E2E2;
+}
+.mailform dl + p{
+    font-size: 14px;
+    line-height: 32px;
+    padding: 42px 16px 60px 16px;
+    border-top: 1px solid #E2E2E2;
+}
+.mailform dl + p + p{
+    display: none;
+}
+footer{
+    background-color: #DEDEDE;
+    padding: 34px 24px 50px 24px;
+}
+footer address span{
+    margin-right: 7px;
+}
+
+
+@media screen and (max-width: 767px) {
+    .mailform{
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    .mailform dl{
+        font-size: 12px;
+        margin: 52px 0 0 0;
+        padding-left: 16px;
+    }
+    
+    .mailform dl dt{
+        width: 80px;
+    }
+    .mailform dl + p{
+        display: none;
+    }
+    .mailform dl + p + p{
+        display: block;
+        font-size: 14px;
+        line-height: 32px;
+        border-top: 1px solid #E2E2E2;
+        padding-top: 42px;
+    }
+    footer address span{
+        display: block;
+    }
+
+}
+
+
+
+

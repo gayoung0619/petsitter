@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, viewport-fit=cover">
+  <title>휴매니존</title>
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/modal.css">
+  <link rel="stylesheet" href="../css/chat/chat.css">
+
+
+  <script src="../js/jquery-1.12.4.min.js"></script>
+  <script src="../js/common.js"></script>
+  <script src="../js/modal.js"></script>
+  
+</head>
+<body>
+    <div class="goback_area">
+        <div class="goback sprite"></div>
+        <p><span class="strong">작성된 상대닉네임</span> <span class="c_g">LV1</span></p> 
+        <div class="more md_open_btn" aria-haspopup="dialog" title="대화상자" data-href="#modalChat">
+            <div class="more_btn">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="chatting_wrap" id="chattingWrap">
+        <button class="btn_chat">
+            <p>+ 더보기</p>
+        </button>
+
+        <div class="other_wrap">
+            <div class="pic_other"><img src="../images/default_img.png" alt=""></div>
+        </div>
+        <div class="message">
+            <p>안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요</p>
+            <span class="time">오전 00:00</span>
+        </div>
+        <div class="message">
+            <p>안녕하세요안녕하세요안녕하세요안녕요</p>
+            <span class="time">오전 00:00</span>
+        </div>
+        <div class="message">
+            <p>안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요</p>
+            <span class="time">오전 00:00</span>
+        </div>
+
+
+
+        <div class="my_wrap">
+            <div class="pic_me"><img src="../images/default_img.png" alt=""></div>
+        </div>
+        <div class="message_my">
+            <p>안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요</p>
+            <span class="time">오전 00:00</span>
+        </div>
+        <div class="message_my">            
+            <p>안녕하세요</p>
+            <span class="time">오전 00:00</span>
+        </div>
+        <div class="message_my">
+            <p>안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요</p>
+            <span class="time">오전 00:00</span>
+        </div>
+
+
+        <div class="my_wrap">
+            <div class="pic_me"><img src="../images/default_img.png" alt=""></div>
+        </div>
+        <div class="message_my">
+            <p>이것 좀 봐봐</p>
+            <span class="time">오전 00:00</span>
+        </div>
+
+        <div class="other_wrap">
+            <div class="pic_other"><img src="../images/default_img.png" alt=""></div>
+        </div>
+        <div class="message">
+            <p>뭔데</p>
+            <span class="time">오전 00:00</span>
+        </div>
+
+        <div class="my_wrap">
+            <div class="pic_me"><img src="../images/default_img.png" alt=""></div>
+        </div>
+        <div class="message_my">
+            <img src="../images/test.jpg" alt="">
+            <span class="time">오전 00:00</span>
+        </div>
+        <div class="message_my">
+            <img src="../images/event3.jpg" alt="">
+            <span class="time">오전 00:00</span>
+        </div>
+
+        <div class="other_wrap">
+            <div class="pic_other"><img src="../images/default_img.png" alt=""></div>
+        </div>
+        <div class="message">
+            <img src="../images/event5.jpg" alt="">
+            <span class="time">오전 00:00</span>
+        </div>
+        <div class="message">
+            <img src="../images/event4.jpg" alt="">
+            <span class="time">오전 00:00</span>
+        </div>
+        
+        
+        
+
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            var textEle = $('textarea');
+            textEle.on('keyup', function() {
+                $(this).css('max-height','100px');
+                $(this).height($(this).scrollHeight);
+                adjustHeight();
+            });
+            textEle.on('keyup', function() {
+                $(this).css('max-height','100px');
+                adjustHeight();
+            });
+        });
+        function adjustHeight() {
+            var textEle = $('textarea');
+            textEle[0].style.height = 'auto';
+            var textEleHeight = textEle.prop('scrollHeight');
+            textEle.css('height', textEleHeight );
+        };
+    </script>
+
+    <div class="reply_wrap">
+        <button type="button" class="btn_more">
+            <input type="file" id="file" namme="file" class="blind">
+            <label for="file" class="upload-name"></label>
+        </button>
+        <div class="reply_box2">
+            <textarea class="textarea_size" onkeyup="adjustHeight();"></textarea>
+
+            <button type="button" class="send">입력</button>
+        </div>
+    </div>
+
+</body>
+
+<div class="md_cnt" id="modalChat" role="dialog" aria-modal="true">
+    <button type="button">채팅방 나가기</button>
+    <button type="button">신고</button>
+    <button type="button" class="md_close_btn" data-link="last">닫기</button>
+</div>
+
+
+</html>  

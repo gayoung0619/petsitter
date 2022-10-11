@@ -1,0 +1,332 @@
+@charset "utf-8";
+body{
+    background-color: #FFFFFF;
+}
+.event_wrap:nth-of-type(n+2){
+    margin-top: 24px;
+}
+.event_wrap:last-of-type,
+.event_detail{
+    margin-bottom: 24px;
+}
+.event_wrap:first-of-type,
+.event_detail,
+.CS_wrap{
+    margin-top: 84px;
+}
+.event_wrap .event_img img{
+    width: 100%;
+    height: auto;
+}
+.event_txt{
+    padding: 16px 16px 0 16px;
+}
+.event_txt p:first-of-type{
+    color: #A3A3A3;
+    margin-bottom: 4px;
+}
+.event_txt strong{
+    font-size: 23px;
+    font-weight: 700;
+    display: block;
+}
+.event_txt strong + p{
+    font-size: 13px;
+    margin-top: 8px;
+}
+.event_txt a{
+    display: block;
+    text-align: center;
+    width: 150px;
+    height: 36px;
+    line-height: 36px;
+    border: 0.8px solid #E2E2E2;
+    margin-top: 14px;
+}
+.event_detail .event_img{
+    margin-top: 16px;
+}
+.event_detail img{
+    width: 100%;
+    height: auto;
+}
+
+
+/* 알림페이지 */
+.alarm_box, .setting_box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #FFFFFF;
+    padding: 24px 16px;
+    font-size: 14px;
+}
+div .alarm_wrap{
+    margin-top: 84px;
+}
+div .alarm_box:nth-of-type(n+2){
+    margin-top: 6px;
+}
+div .alarm_box:last-of-type{
+    margin-bottom: 6px;
+}
+.alarm_left{
+    display: flex;
+}
+.alarm_left .icon{
+    display: inline-block;
+    background: url(../../images/alarm_icon.png) no-repeat;
+    background-size: cover;
+    width: 52px;
+    height: 52px;
+    margin-right: 8px;
+}
+.alarm_left .alarm_txt{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.alarm_left .alarm_txt span{
+    font-weight: 700;
+    color: #373737;
+}
+.time{
+    color: #A3A3A3;
+}
+.alarm_left .time{
+    font-size: 10px;
+    line-height: 10px;
+}
+.alarm_box button,
+.setting_box button,
+.policy button
+{
+    background-position: 9px -33px;
+}
+.icon.reply{
+    background-position: 0 0;
+}
+.icon.review{
+    background-position: -53px 0;
+}
+.icon.write{
+    background-position: -103px 0;
+}
+.icon.chat{
+    background-position: -156px 0;
+}
+.icon.point{
+    background-position: -208px 0;
+}
+.icon.badge{
+    background-position: -260px 0;
+}
+.icon.inquiry{
+    background-position: -312px 0;
+}
+.icon.reservation{
+    background-position: -364px 0;
+}
+.icon.complete{
+    background-position: -416px 0;
+}
+
+/* 공지사항페이지 */
+.tit2{
+    background-color: #FFFFFF;
+}
+.tit2 span{
+    color: #9AC31C;
+}
+.notice_box, .inquiry_box{
+    padding: 16px;
+    background-color: #FFFFFF;
+}
+.notice_box{
+    border-top: 0.8px solid #F5F5F5;
+}
+.notice_box h4{
+    font-size: 16px;
+}
+.notice_box .time{
+    margin-top: 8px;
+}
+.notice_cnt{
+    padding: 16px;
+    border-top: 0.8px solid #F5F5F5;
+    background-color: #FFFFFF;
+}
+.notice_cnt p{
+    padding-right: 72px;
+}
+
+
+/* 1:1문의페이지 */
+.tit2 + .choise_wrap{
+    margin-top: 14px;
+}
+.inquiry_box{
+    display: flex;
+    justify-content: space-between;
+    vertical-align: center;
+    margin-top: 1px;
+}
+.inquiry_box h4{
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+.inquiry_box > p{
+    line-height: 28px;
+    display: inline-block;
+    width: 70px;
+    height: 30px;
+    border-radius: 5px;
+    text-align: center;
+}
+.inquiry_box .bd_red{
+    border: 0.8px solid #FF5555;
+    color: #FF5555;
+}
+.inquiry_box .bd_green{
+    border: 0.8px solid #9AC31C;
+    color: #9AC31C;
+}
+
+
+
+/* CS */
+.CS_wrap{
+    text-align: center;
+}
+.CS_wrap .CS_icon{
+    display: inline-block;
+    background: url(../../images/icon_CS.png) no-repeat center / cover;
+    width: 100px;
+    height: 100px;
+    vertical-align: center;
+}
+.CS_wrap h3{
+    font-size: 25px;
+    line-height: 25px;
+    margin: 34px 0 8px 0;
+}
+.CS_wrap address{
+    font-size: 18px;
+    color: #9AC31C;
+    margin-top: 24px;
+}
+
+
+/* 앱설정페이지 */
+.setting_wrap{
+    margin-top: 61px;
+}
+.setting_box{
+    padding: 0 16px;
+    height: 90px;
+    margin-top: 0.8px;
+    color: #373737;
+}
+.setting_box .setting_left p:nth-of-type(2){
+    color: #A3A3A3;
+    font-size: 10px;
+}
+
+
+/* 정책 */
+.policy{
+    margin: 0 16px;
+    padding-top: 8px;
+    border-top: 0.8px solid #F5F5F5;
+    color: #373737;
+}
+.policy li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-top: 8px;
+}
+
+/* 찜내역 */
+.main_tab{
+    margin-top: 62px;
+}
+.main_tab .tab.on{
+    background-color: #9AC31C;
+    color: #FFFFFF;
+}
+.main_tab .tablist{
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    overflow: auto;
+}
+.main_tab .tablist li{
+    width: 50%;
+    background-color: #FFFFFF;
+    height: 54px;
+    text-align: center;
+    line-height: 54px;
+}
+.tabpanel{
+    visibility: hidden;
+    max-height: 0;
+    overflow: hidden;
+    margin: 7px 0 8px 0;
+    display: none;
+}
+.tabpanel.on{
+    visibility: visible;
+    max-height: 10000px;
+    display: block;
+}
+
+
+
+
+
+
+.writer_wrapper{
+    background-color: #F5F5F5;
+    padding: 0 16px;
+}
+.writer_wrapper .writer_wrap{
+    background: #FFFFFF;
+    margin-top: 8px;
+    border-radius: 10px;
+}
+.writer_wrapper .writer_info{
+    padding-top: 24px;
+    background-color: #FFFFFF;
+    border-radius: 10px 10px 0 0;
+}
+.writer_wrapper .writer_cnt{
+    padding-bottom: 24px;
+}
+.writer_wrapper .cnt_bottom{
+    justify-content: start;
+}
+.writer_wrapper .cnt_bottom .care_type{
+    margin-right: 6px;
+}
+.c_g .info p span,
+.c_g .horoscope span,
+.c_g .time,
+.c_g .point,
+.c_g .cnt_bottom .care_type{
+    color: #9AC31C;
+    border-color: #9AC31C;
+}
+
+.c_r .info p span,
+.c_r .horoscope span,
+.c_r .time,
+.c_r .point,
+.c_r .cnt_bottom .care_type{
+    color: #FF5555;
+    border-color: #FF5555;
+}
+.c_r .horoscope .star{
+    background-position: -45px 0;
+}

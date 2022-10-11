@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, viewport-fit=cover">
+  <title>휴매니존</title>
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/mypage_tab/mypage_tab.css">
+
+
+  <script src="../js/jquery-1.12.4.min.js"></script>
+  <script src="../js/common.js"></script>
+  <script src="../js/modal.js"></script>
+  <script>
+    $(document).ready(function () {
+        $('.lineclamp').each(function(){
+            var length = 23; //글자수
+            $(this).each(function(){
+                if($(this).text().length >= length){
+                    $(this).text($(this).text().substr(0,length)+'..."');
+                }
+            });
+        });
+
+
+        $('.alarm_box').click(function () {
+            $(this).css('background-color', '#F5F5F5');
+        });
+    });
+  </script>
+  <style>
+      body{
+          background-color: #F5F5F5;
+      }
+  </style>
+  
+</head>
+<body>
+    <div class="goback_area">
+        <div class="goback sprite"></div>
+        <p>알림</p> 
+    </div>
+
+    <div>
+        <div class="alarm_wrap">
+
+            <a href="">
+                <div class="alarm_box">
+                    <div class="alarm_left">
+                        <span class="icon reply"></span>
+                        <div class="alarm_txt">
+                            <div class="lineclamp">뫄뫄뫄 님, “오늘은 저희 집 막둥이 첫눈어찌구저찌구 오늘은 저희 집 막둥이 첫눈어찌구저찌구”</div>
+                            <p>글에 뫄뫄뫄님이 <span>새댓글</span>을 남겼습니다.</p>
+                            <p class="time">45분전</p>
+                        </div>
+                    </div>
+                    <button type="button" class="sprite2"></button>
+                </div>
+            </a>
+
+            <a href="">
+                <div class="alarm_box">
+                    <div class="alarm_left">
+                        <span class="icon review"></span>
+                        <div class="alarm_txt">
+                            <div class="lineclamp">뫄뫄뫄 님, “뫄뫄뫄뫄뫄뫄 님” </div>
+                            <p>시터완료 내역에 후기가 도착했습니다.</p>
+                            <p class="time">45분전</p>
+                        </div>
+                    </div>
+                    <button type="button" class="sprite2"></button>
+                </div>
+            </a>
+
+
+            <a href="">
+                <div class="alarm_box">
+                    <div class="alarm_left">
+                        <span class="icon write"></span>
+                        <div class="alarm_txt">
+                            <div class="lineclamp">뫄뫄뫄 님, “뫄뫄뫄뫄뫄뫄 님” </div>
+                            <p>시터완료 내역에 리뷰를 작성해주세요</p>
+                            <p class="time">45분전</p>
+                        </div>
+                    </div>
+                    <button type="button" class="sprite2"></button>
+                </div>
+            </a>
+
+            <a href="">
+                <div class="alarm_box">
+                    <div class="alarm_left">
+                        <span class="icon chat"></span>
+                        <div class="alarm_txt">
+                            <div class="lineclamp">뫄뫄뫄 님, “뫄뫄뫄뫄뫄뫄 님” </div>
+                            <p>에게 채팅이 왔습니다</p>
+                            <p class="time">45분전</p>
+                        </div>
+                    </div>
+                    <button type="button" class="sprite2"></button>
+                </div>
+            </a>
+
+
+            <a href="">
+                <div class="alarm_box">
+                    <div class="alarm_left">
+                        <span class="icon point"></span>
+                        <div class="alarm_txt">
+                            <div class="lineclamp">뫄뫄뫄 님, “활동 뱃지 LV1” </div>
+                            <p>을 획득하여 달성 포인트가 지급됬습니다</p>
+                            <p class="time">45분전</p>
+                        </div>
+                    </div>
+                    <button type="button" class="sprite2"></button>
+                </div>
+            </a>
+
+            <a href="">
+                <div class="alarm_box">
+                    <div class="alarm_left">
+                        <span class="icon badge"></span>
+                        <div class="alarm_txt">
+                            <div class="lineclamp">뫄뫄뫄 님, “활동 뱃지 LV1” </div>
+                            <p>을 획득하였습니다</p>
+                            <p class="time">45분전</p>
+                        </div>
+                    </div>
+                    <button type="button" class="sprite2"></button>
+                </div>
+            </a>
+
+            <a href="">
+                <div class="alarm_box">
+                    <div class="alarm_left">
+                        <span class="icon inquiry"></span>
+                        <div class="alarm_txt">
+                            <div class="lineclamp">뫄뫄뫄 님, </div>
+                            <p>1:1문의글에 답변이 도착했습니다.</p>
+                            <p class="time">45분전</p>
+                        </div>
+                    </div>
+                    <button type="button" class="sprite2"></button>
+                </div>
+            </a>
+
+            <a href="">
+                <div class="alarm_box">
+                    <div class="alarm_left">
+                        <span class="icon reservation"></span>
+                        <div class="alarm_txt">
+                            <div class="lineclamp">뫄뫄뫄 님께서, </div>
+                            <p>나눔돌봄을 예약했습니다.</p>
+                            <p class="time">45분전</p>
+                        </div>
+                    </div>
+                    <button type="button" class="sprite2"></button>
+                </div>
+            </a>
+
+
+
+            <div class="alarm_box">
+                <div class="alarm_left">
+                    <span class="icon reservation"></span>
+                    <div class="alarm_txt">
+                        <div class="lineclamp">뫄뫄뫄 님,</div>
+                        <p>나눔돌봄이 예약되었습니다.</p>
+                        <p class="time">45분전</p>
+                    </div>
+                </div>
+                <button type="button" class="sprite2"></button>
+            </div>
+
+            <div class="alarm_box">
+                <div class="alarm_left">
+                    <span class="icon complete"></span>
+                    <div class="alarm_txt">
+                        <div class="lineclamp">뫄뫄뫄 님, </div>
+                        <p>나눔돌봄이 완료되었습니다.</p>
+                        <p class="time">45분전</p>
+                    </div>
+                </div>
+                <button type="button" class="sprite2"></button>
+            </div>
+
+        </div>
+
+    </div>
+    
+    </div>
+
+
+
+   
+</body>
+
+
+
+</html>  

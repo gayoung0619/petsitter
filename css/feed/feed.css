@@ -1,0 +1,150 @@
+@charset "utf-8";
+body{
+    background-color: #F5F5F5;
+}
+.goback_area p{
+    color: #292929;
+}
+.filter ul li:first-of-type{
+    width: 26px;
+    height: 26px;
+    padding: 0 6px;
+}
+.filter{
+    margin-top: 60px;
+    height: 54px;
+    border-top: 0.8px solid #E2E2E2;
+    background: #FFFFFF;
+    white-space: nowrap;
+}
+.filter ::-webkit-scrollbar{
+    display: none;
+}
+.filter ul{
+    padding: 14px 0 14px 16px;
+    font-size: 12px;
+    overflow-y: auto;
+}
+.filter ul li{
+    background-color: #F5F5F5;
+    padding: 0 10px;
+    line-height: 25px;
+    border-radius: 5px;
+    color: #575757;
+    margin-right: 8px;
+    display: inline-block;
+}
+.filter ul li img{
+    width: 14px;
+    height: 10px;
+    vertical-align: middle;
+}
+.section .feed_top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 10px;
+}
+.section .filter_tab{
+    background-color: #9AC31C;
+    border-radius: 5px;
+    padding: 0 8px;
+    color: #FFFFFF;
+    line-height: 16px;
+}
+.section .bg_r{
+    background-color: #FF5555;
+}
+.section .bg_g{
+    background-color: #9AC31C;
+}
+.section .bg_gr{
+    background-color: #F5F5F5;
+    color: #9AC31C;
+    font-size: 10px;
+}
+.section .time{
+    color: #A3A3A3;
+}
+.section .feed_cnt{
+    margin: 14px 0 10px 0;
+}
+.section .feed_cnt h4{
+    color: #373737;
+    line-height: 12px;
+}
+.section .feed_cnt p{
+    margin-top: 8px;
+    font-size: 10px;
+    line-height: 14px;
+}
+.section .feed_cnt .price{
+    font-weight: 800;
+    font-size: 12px;
+    color: #373737;
+}
+.section .feed_cnt .more_txt{
+    margin-top: 0;
+}
+
+
+
+
+.section .feed_bottom{
+    font-size: 10px;
+}
+.section .feed_bottom p{
+    display: inline-block;
+}
+.section .feed_bottom p span{
+    color: #9AC31C;
+}
+.section .feed_bottom::after{
+    display: block;
+    clear: both;
+    content:"";
+}
+.section .feed_bottom .comment_wrap{
+    float: right;
+    height: 100%;
+}
+.section .feed_bottom .comment, .section .feed_bottom .loves{
+    position: relative;
+    margin-left: 16px;
+    display: inline-block;
+    line-height: 14px;
+}
+.section .feed_bottom .comment{
+    margin-right: 6px;
+    line-height: 14px;
+}
+.section .feed_bottom .comment::before{
+    content:"";
+    background: url(../../images/icon_comment.png) no-repeat center / cover;
+    position: absolute;
+    top: 0;
+    left: -15px;
+    width: 14px;
+    height: 14px;
+}
+
+.section1 .select .sprite{
+    background-size: cover;
+    background-position: -83px 0;
+    width: 14px;
+    height: 14px;
+    margin-left: 4px;
+}
+
+
+
+.section{
+    margin-top: 7px;
+    background: #FFFFFF;
+}
+.section{
+    padding: 14px 16px 24px 16px;
+}
+.section.select_area{
+    padding: 14px 16px;
+}

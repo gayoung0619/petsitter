@@ -1,0 +1,419 @@
+@charset "utf-8";
+body{
+    background-color: #F5F5F5;
+}
+.goback_area p{
+    color: #292929;
+}
+.tit2, .filter_wrap li{
+    background-color: #FFFFFF;
+}
+.filter_wrap {
+    margin: 0;
+}
+.filter_wrap ul{
+    margin: 0;
+}
+.filter_wrap ul li{
+    height: 80px;
+    line-height: 80px;
+    padding-top: 0;
+    padding-left: 64px;
+    margin-top: 1px;
+}
+.filter_wrap ul li a{
+    padding-left: 17px;
+}
+.filter_wrap ul li::before{
+    content:"";
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+    background: rgb(151, 151, 151);
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+}
+.tit2{
+    padding-top: 28px;
+    margin-top: 60px;
+}
+.progress_bar{
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background: #F5F5F5;
+}
+.progress_bar .bar_green{
+    height: 4px;
+    width: 20%;
+    background-color: #9AC31C;
+    border-radius: 0 100px 100px 0;
+}
+
+.calendar_container {
+    position: relative;
+    width: 100%;
+}
+
+.hide {
+    display:none;
+}
+
+.calendar_container > button {
+    font-weight: bold;
+    position: absolute;
+}
+
+.left_button {
+    top: 23px;
+    left: 44px;
+}
+
+.right_button {
+    top: 23px;
+    right: 44px;
+}
+
+.calendar {
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    margin: 24px 16px;
+    
+}
+.calendar tbody:first-of-type{
+    background-color: #FFFFFF;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 24px;
+    font-size: 16px;
+} 
+.calendar tbody:first-of-type tr{
+    width: 100%;
+    display: block;
+}
+.calendar .title{
+    margin: 0 auto;
+    display: block;
+    color: #373737;
+    font-weight: 400;
+}
+.calendar .week .day{
+    color: #9AC31C;
+    font-size: 12px;
+    font-weight: 400;
+    text-align: center;
+    padding-bottom: 24px;
+}
+
+.calendar tbody:nth-of-type(2){
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    padding: 44px 40px 44px 40px;
+}
+.calendar tbody:nth-of-type(2) tr div{
+    margin: 0 auto;
+    width: 288px;
+}
+
+.calendar_days > button  {
+    width: 38px;
+    height: 38px;
+    text-align: center;
+}
+
+.day {
+    text-align: center;
+    font-size:12px;
+    font-weight: bold;
+    color:rgb(189, 189, 189);
+}
+
+.day_selected{
+    width: 38px;
+    height: 38px;
+    background-color: #9AC31C;
+    border-radius: 50%;
+    color: #FFFFFF;
+}
+
+.floating{
+    height: 60px;
+    padding: 0;
+    font-size: 0;
+    line-height: 0;
+}
+.floating .total_price{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 60px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 12px;
+    background-color: #373737;
+    color: #FFFFFF;
+}
+.floating .total_price span:first-child{
+    font-size: 12px;
+    line-height: 12px;
+}
+.floating .total_price span{
+    font-size: 18px;
+    line-height: 18px;
+}
+.floating .reservation_pay{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #9AC31C;
+    color: #FFFFFF;
+    height: 100%; 
+    width: 50%;
+    font-size: 15px;
+}
+.content{
+    margin: 74px 0 114px 0;
+    line-height: auto;
+}
+.info_reservation{
+   margin: 14px 16px; 
+}
+.info_reservation .info_top, .info_reservation .info_bottom{
+    color: #FFFFFF;
+}
+.info_reservation .info_top{
+    background-color: #8CB708;
+    padding: 14px 24px 14px 24px;
+    border-radius: 10px 10px 0 0;
+}
+.info_reservation .info_bottom{
+    background-color: #9AC31C;
+    padding: 24px;
+    border-radius: 0 0 10px 10px;
+}
+.info_reservation .info_top p{
+    font-size: 10px;
+    line-height: 15px;
+}
+.info_reservation .info_bottom p{
+    font-size: 14px;
+    line-height: 15px;
+}
+.info_reservation strong{
+    font-size: 18px;
+    font-weight: 700;
+    line-height: normal;
+    margin-top: 2px;
+}
+
+.acdn_form > div{
+    margin-top: 6px;
+}
+.accordion_wrap:not(:first-of-type), .policy{
+    margin-top: 6px;
+}
+.acdn_tit button span{
+    font-size: 14px;
+    color: #373737; 
+    font-weight: 700;
+}
+.accordion .acdn_tit{
+    position: relative;
+}
+.accordion .header{
+    width: 100%;
+    text-align: left;
+}
+.accordion .header::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 15px;
+    height: 15px;
+    background: url("../../images/login_icon.svg") no-repeat;
+    background-position: -149px -3px;
+}
+.accordion .header.on::after{
+    transform: rotate(180deg);
+}
+.accordion .panel{visibility: hidden;max-height: 0;overflow: hidden;transition: all 0.5s;}
+.accordion .panel.on{visibility: visible;max-height: 1000px;}
+
+.accordion .panel > div > p{
+    font-size: 10px;
+    color: #A3A3A3;
+    margin-top: 24px;
+}
+.accordion .acdn_form dl,
+.accordion .acdn_form div{
+    margin-top: 6px;
+}
+.accordion .acdn_form dl dt{
+    float: left;
+    line-height: 42px;
+    color: #373737;
+}
+.accordion .acdn_form dl dd{
+    height: 42px;
+    width: calc(100% - 65px);
+    border: 0.8px solid #E2E2E2;
+    border-radius: 10px;
+    margin-left: 65px;
+    padding: 13px 0 0 13px;
+    line-height: 14px;
+}
+.accordion .acdn_form .request dd{
+    border: none;
+}
+/* .accordion .acdn_form dl textarea{
+    border: 0.8px solid #E2E2E2;
+    border-radius: 10px;
+    padding: 14px 16px 14px 16px;
+    resize: none;
+    display: inline-block;
+    width: calc(100% - 65px);
+} */
+.accordion .acdn_form .location dd{
+    height: 62px;
+}
+.accordion .acdn_form .location p + p{
+    margin-top: 6px;
+}
+.accordion .acdn_form .request dd{
+    padding: 0;
+    height: 120px;
+}
+.accordion .acdn_form .request textarea,
+.accordion .acdn_form .request dd p{
+    height: 120px;
+    border: 0.8px solid #E2E2E2;
+    border-radius: 10px;
+    width: 100%;
+    resize: none;
+    padding: 13px
+}
+.accordion .acdn_form .request textarea::placeholder{
+    color: #A3A3A3;
+    font-size: 12px;
+    letter-spacing: -0.8px;
+}
+
+.accordion_wrap, .policy{
+    background: #FFFFFF;
+    font-size: 14px;
+    margin: 6px 16px;
+    padding: 23px;
+    border-radius: 10px;
+    border: 0.8px solid #E2E2E2;
+}
+
+.policy strong{
+    font-weight: 700;
+    color: #373737;
+    line-height: 15px;
+}
+
+.policy p{
+    margin-top: 6px;
+}
+
+.point_pay{
+   
+    position: relative;
+    margin: 0 16px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+}
+.point_title{
+    padding: 44px 0;
+    text-align: center;
+    border-bottom: 0.8px dashed #E2E2E2;
+}
+.point_title h4{
+    font-size: 16px;
+    line-height: 14px;
+}
+.point_title p{
+    font-size: 10px;
+    line-height: 10px;
+    color: #A3A3A3;
+    margin-top: 8px;
+}
+.point_cnt{
+    padding: 44px 24px 98px 24px;
+}
+.point_cnt .wid224{
+    width: 224px;
+}
+.point_cnt .wid184{
+    width: 184px;
+}
+.point_cnt tr{
+    border-bottom: 0.8px solid #E2E2E2;
+    text-align: left;
+    vertical-align: bottom;
+}
+.point_cnt tr:not(:first-of-type){
+    height: 58px;
+    
+}
+.point_cnt tr th{
+    font-size: 12px;
+    font-weight: 400;
+    padding-bottom: 14px;
+}
+.point_cnt tr td{
+    text-align: right;
+    font-size: 16px;
+    padding-bottom: 14px;
+}
+.point_cnt tr:nth-of-type(2) td{
+    color: #FF5555;
+}
+.point_cnt tr:nth-of-type(3) td{
+    color: #9AC31C;
+}
+.point_pay button{
+    position: absolute;
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    background: #9AC31C;
+    color: #FFFFFF;
+    border-radius: 5px;
+    font-size: 12px;
+    right: 24px;
+    bottom: 44px;
+}
+
+.allow_box input[type="checkbox"] + label::before{
+    top: 16px;
+}
+.allow_box input[type="checkbox"] + label::after{
+    top: 16px;
+}
+.point_pay + .agree_list2 ul li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.point_pay + .agree_list2 ul li .sprite2 {
+    background-position: 0 -36px;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+
+

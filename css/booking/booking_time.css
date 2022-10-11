@@ -1,0 +1,38 @@
+@charset "utf-8";
+.tit2{
+    background-color: #FFFFFF;
+}
+.progress_bar .bar_green{
+    width: 60%;
+}
+.time_container{
+    background-color: #FFFFFF;
+    padding: 34px 16px 143px 16px;
+    margin-top: 1px;
+}
+.time_table{
+    width: 343px;
+    margin: 0 auto;
+    font-size: 0;
+    line-height: 0;
+}
+.time_table button{
+    border: 0.8px solid #E2E2E2;
+    width: 113px; 
+    line-height: 29px;
+    border-radius: 100px;
+    font-size: 15px;
+    color: #9AC31C;
+    margin-right: 2px;
+}
+.time_table button:nth-child(3n){
+    margin-right: 0;
+}
+.time_table button:not(:first-of-type){
+    margin-top: 8px;
+}
+.select_item.first, .select_item.last, .select_item.on{
+    background-color: #9AC31C;
+    color: #FFFFFF;
+    border-color: #9AC31C;
+}

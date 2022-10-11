@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, viewport-fit=cover">
+  <title>휴매니존</title>
+  <link rel="stylesheet" href="../css/swiper-bundle.css">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/modal.css">
+  <link rel="stylesheet" href="../css/map.css">
+
+  <script src="../js/jquery-1.12.4.min.js"></script>
+  <script src="../js/swiper-bundle.min.js"></script>
+  <script src="../js/swiper.js"></script>
+  <script src="../js/modal2.js"></script>
+  <script>
+      $(document).ready(function () {
+          $('.balloon1').click(function () {
+              var height = $('.hos_info1').height();
+              if(height > 0){
+                $(this).siblings('.hos_info1').css('height', '0');
+                $(this).removeClass('on');
+              }else{
+                $(this).siblings('.hos_info1').css({'height': '430px', 'visibility': 'visible'});
+                $(this).siblings('.hos_info2').css('height', '0');
+                $(this).siblings('.hos_info3').css('height', '0');
+                $(this).addClass('on').siblings('.balloon').removeClass('on');
+              }
+          });
+          $('.balloon2').click(function () {
+              var height = $('.hos_info2').height();
+              if(height > 0){
+                $(this).siblings('.hos_info2').css('height', '0');
+                $(this).removeClass('on').siblings().removeClass('on');
+              }else{
+                $(this).siblings('.hos_info2').css({'height': '430px', 'visibility': 'visible'});
+                $(this).siblings('.hos_info1').css('height', '0');
+                $(this).siblings('.hos_info3').css('height', '0');
+                $(this).addClass('on').siblings('.balloon').removeClass('on');
+              }
+          });
+          $('.balloon3').click(function () {
+              var height = $('.hos_info3').height();
+              if(height > 0){
+                $(this).siblings('.hos_info3').css('height', '0');
+                $(this).removeClass('on');
+              }else{
+                $(this).siblings('.hos_info3').css({'height': '430px', 'visibility': 'visible'});
+                $(this).siblings('.hos_info1').css('height', '0');
+                $(this).siblings('.hos_info2').css('height', '0');
+                $(this).addClass('on').siblings('.balloon').removeClass('on');
+              }
+          });
+
+          $('.bar').click(function () {
+              $('.hos_info').css('height', '0');
+              $('.balloon').removeClass('on');
+              
+          });
+      });
+  </script>
+  
+</head>
+<body>
+    <div class="goback_area">
+        <div class="goback sprite"></div>
+    </div>
+  
+    <div id="map" style="width:100%;height:100%;"></div>
+
+    <p class="map_tit">지도를 움직여 위치를 설정하세요</p>
+    <div class="balloon balloon1">
+        <div class="balloon_wrap">
+            <div class="balloon_more"></div>
+            <div class="balloon_icon"></div>
+            <p>akjlfkdslefffffg 동물병원</p>
+        </div>
+    </div>
+    <div class="balloon balloon2">
+        <div class="balloon_wrap">
+            <div class="balloon_more"></div>
+            <div class="balloon_icon"></div>
+            <p>akjlfkdslefffffg 동물병원</p>
+        </div>
+    </div>
+    <div class="balloon balloon3">
+        <div class="balloon_wrap">
+            <div class="balloon_more"></div>
+            <div class="balloon_icon"></div>
+            <p>akjlfkdslefffffg 동물병원</p>
+        </div>
+    </div>
+    <button type="button">
+        <div class="sprite2"></div>
+    </button>
+    <div class="mylocation">
+        <strong>현재 나의 위치</strong>
+        <p>강남구 논현동 81-10</p>
+        <p><span>도로명</span>논현로134길9 101호</p>
+    </div>
+    <p>위치변경하기 </p>
+
+
+
+    <div class="hos_info hos_info1">
+        <div class="bar"></div>
+
+        <div class="hos_wrap">
+            <div class="hos_left">
+                <div class="pic"></div>
+            </div>
+    
+            <div class="hos_right">
+                <strong>akjlfkdslefffffg 동물병원</strong>
+                <p>서울시 강남구 논현로 111-11</p>
+                <p><span>02-1234-1234</span><span class="copy">복사</span></p>
+            </div>
+        </div>
+
+        <div class="keyword">
+            <ul>
+                <li>소동물</li>
+                <li>응급진료</li>
+                <li>심장사상충</li>
+                <li>파충류</li>
+                <li>중성화수술</li>
+                <li>간식</li>
+                <li>예방접종</li>
+                <li>애견미용</li>
+            </ul>
+        </div>
+
+        <p><span>운영시간</span><span>평일 10:00 - 21:00 ｜점심시간 13:00 - 14:00</span></p>
+        <p><span>병원정보</span><span>주차가능,국민지원금 사용가능</span></p>
+
+        <div class="pic_more">
+            <ul>
+                <li class="md_pic_btn" aria-haspopup="dialog" title="대화상자" data-href="#modalPic">
+                    <img src="../images/hospital1.jpg" alt="">
+                </li>
+                <li class="md_pic_btn" aria-haspopup="dialog" title="대화상자" data-href="#modalPic">
+                    <img src="../images/hospital1.jpg" alt="">
+                </li>
+                <li class="md_pic_btn" aria-haspopup="dialog" title="대화상자" data-href="#modalPic">
+                    <img src="../images/hospital1.jpg" alt="">
+                    <p>+2</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="hos_info hos_info2">
+        <div class="bar"></div>
+
+        <div class="hos_wrap">
+            <div class="hos_left">
+                <div class="pic"></div>
+            </div>
+    
+            <div class="hos_right">
+                <strong>akjlfkdslefffffg 동물병원</strong>
+                <p>서울시 강남구 논현로 111-11</p>
+                <p><span>02-1234-1234</span><span class="copy">복사</span></p>
+            </div>
+        </div>
+
+        <div class="keyword">
+            <ul>
+                <li>소동물</li>
+                <li>응급진료</li>
+                <li>심장사상충</li>
+                <li>파충류</li>
+                <li>중성화수술</li>
+                <li>간식</li>
+                <li>예방접종</li>
+                <li>애견미용</li>
+            </ul>
+        </div>
+
+        <p><span>운영시간</span><span>평일 10:00 - 21:00 ｜점심시간 13:00 - 14:00</span></p>
+        <p><span>병원정보</span><span>주차가능,국민지원금 사용가능</span></p>
+
+        <div class="pic_more">
+            <ul>
+                <li class="md_pic_btn" aria-haspopup="dialog" title="대화상자" data-href="#modalPic">
+                    <img src="../images/hospital2.jpg" alt="">
+                </li>
+                <li class="md_pic_btn" aria-haspopup="dialog" title="대화상자" data-href="#modalPic">
+                    <img src="../images/hospital2.jpg" alt="">
+                </li>
+                <li class="md_pic_btn" aria-haspopup="dialog" title="대화상자" data-href="#modalPic">
+                    <img src="../images/hospital2.jpg" alt="">
+                    <p>+2</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="hos_info hos_info3">
+        <div class="bar"></div>
+
+        <div class="hos_wrap">
+            <div class="hos_left">
+                <div class="pic"></div>
+            </div>
+    
+            <div class="hos_right">
+                <strong>akjlfkdslefffffg 동물병원</strong>
+                <p>서울시 강남구 논현로 111-11</p>
+                <p><span>02-1234-1234</span><span class="copy">복사</span></p>
+            </div>
+        </div>
+
+        <div class="keyword">
+            <ul>
+                <li>소동물</li>
+                <li>응급진료</li>
+                <li>심장사상충</li>
+                <li>파충류</li>
+                <li>중성화수술</li>
+                <li>간식</li>
+                <li>예방접종</li>
+                <li>애견미용</li>
+            </ul>
+        </div>
+
+        <p><span>운영시간</span><span>평일 10:00 - 21:00 ｜점심시간 13:00 - 14:00</span></p>
+        <p><span>병원정보</span><span>주차가능,국민지원금 사용가능</span></p>
+
+        <div class="pic_more">
+            <ul>
+                <li class="md_pic_btn" aria-haspopup="dialog" title="대화상자" data-href="#modalPic">
+                    <img src="../images/map.jpg" alt="">
+                </li>
+                <li class="md_pic_btn" aria-haspopup="dialog" title="대화상자" data-href="#modalPic">
+                    <img src="../images/map.jpg" alt="">
+                </li>
+                <li class="md_pic_btn" aria-haspopup="dialog" title="대화상자" data-href="#modalPic">
+                    <img src="../images/map.jpg" alt="">
+                    <p>+2</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="md_cnt" id="modalPic" role="dialog" aria-modal="true">
+        <div class="modal_pic">
+            <div class="swiper-container modal_slider">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide modalpic slider1">
+                      <img src="../images/modal.jpg">
+                  </div>
+                  <div class="swiper-slide modalpic slider2">
+                      <img src="../images/modal.jpg">
+                  </div>
+                  <div class="swiper-slide modalpic slider3">
+                      <img src="../images/modal.jpg">
+                  </div>
+                  <div class="swiper-slide modalpic slider4">
+                      <img src="../images/modal.jpg">
+                  </div>
+                  <div class="swiper-slide modalpic slider5">
+                      <img src="../images/modal.jpg">
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+        <button type="button" class="close_btn md_close_btn" data-link="last"></button>
+    </div>
+
+
+
+    <!-- <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f54ce666be90230e1fb6d699e883a375"></script>
+    <script>
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+        mapOption = { 
+            center: new kakao.maps.LatLng(37.515693486027935, 127.03091997710196), // 지도의 중심좌표
+            level: 3 // 지도의 확대 레벨
+        };
+
+        var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+
+        var imageSrc = '../images/icon_marker.png', // 마커이미지의 주소입니다    
+        imageSize = new kakao.maps.Size(42, 42), // 마커이미지의 크기입니다
+        imageOption = {offset: new kakao.maps.Point(27, 69)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+      
+        // 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+        var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
+        markerPosition = new kakao.maps.LatLng(37.515693486027935, 127.03091997710196); // 마커가 표시될 위치입니다
+
+        // 마커를 생성합니다
+        var marker = new kakao.maps.Marker({
+        position: markerPosition, 
+        image: markerImage // 마커이미지 설정 
+        });
+
+
+        // 지도를 클릭한 위치에 표출할 마커입니다
+        var marker = new kakao.maps.Marker({ 
+        // 지도 중심좌표에 마커를 생성합니다 
+        position: map.getCenter() 
+        }); 
+        // 지도에 마커를 표시합니다
+        marker.setMap(map);
+
+        // 지도에 클릭 이벤트를 등록합니다
+        // 지도를 클릭하면 마지막 파라미터로 넘어온 함수를 호출합니다
+        kakao.maps.event.addListener(map, 'click', function(mouseEvent) {        
+    
+        // 클릭한 위도, 경도 정보를 가져옵니다 
+        var latlng = mouseEvent.latLng; 
+    
+        // 마커 위치를 클릭한 위치로 옮깁니다
+        marker.setPosition(latlng);
+    
+        });
+    </script> -->
+</body>
+</html>

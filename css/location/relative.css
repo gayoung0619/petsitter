@@ -1,0 +1,79 @@
+@charset "utf-8";
+.search_box{
+    position: relative;
+    padding: 70px 16px 9px 16px;
+    background-color: #FFFFFF;
+}
+.search_box input::placeholder{
+    font-size: 15px;
+    color: #626262;
+    letter-spacing: -1px;
+}
+.search_box input[type="text"]{
+    line-height: 42px;
+    background: #F5F5F5;
+    border-radius: 0;
+    width: calc(100% - 48px);
+    margin-right: 2px;
+    font-size: 15px;
+}
+.search_box input[type="text"] + button{
+    text-align: center;
+    border: 0.8px solid #E2E2E2;
+    width: 42px;
+    height: 44px;
+    vertical-align: top;
+}
+.btn_close2.sprite{
+    position: absolute;
+    background-position: 0 0;
+    top: 9px;
+    right: 57px;
+}
+.search_box button .sprite{
+    background-position: -233px -1px;
+    width: 30px;
+}
+/* .search_box a{
+    display: inline-block;
+    width: 100%;
+    height: 42px;
+    line-height: 42px;
+    text-align: center;
+    border: 0.8px solid #E2E2E2;
+    margin-top: 10px;
+    font-size: 15px;
+}
+.search_box a span{
+    background-position: 0 0;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 2px;
+} */
+
+
+
+.setting_box{
+    background-color: #F5F5F5;
+    padding-top: 14px;
+    border-top: 0.5px solid #E2E2E2;
+}
+.setting_area h3, .setting_before h3{
+    font-size: 15px;
+    height: 68px;
+    line-height: 68px;
+    padding: 0 16px;
+    color: #373737;
+}
+.setting_box > a:not(:first-of-type){
+    margin-top: 6px;
+    display: block;
+}
+.area_wrap{
+    padding: 20px 16px;
+    background: #ffffff;
+    width: 100%;
+}
+

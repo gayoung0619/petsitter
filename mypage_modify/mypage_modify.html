@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, viewport-fit=cover">
+  <title>휴매니존</title>
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/modal.css">
+  <link rel="stylesheet" href="../css/mypage/mypage.css">
+
+  <script src="../js/jquery-1.12.4.min.js"></script>
+  <script src="../js/modal.js"></script>
+  <script src="../js/common.js"></script>
+  <script>
+      $(document).ready(function () {
+          $('.toggle_btn1').click(function () {
+              if ($('.toggle_btn1').hasClass('on')) {
+                  $(this).removeClass('on').attr('data-href', '#modalAllowMail');
+              }else{
+                  $(this).addClass('on').attr('data-href', '#modalRefuseMail');
+              }
+            });
+
+          $('.toggle_btn2').click(function () {
+              if ($('.toggle_btn2').hasClass('on')) {
+                 $(this).removeClass('on').attr('data-href', '#modalAllowSMS');
+             }else{
+                 $(this).addClass('on').attr('data-href', '#modalRefuseSMS');
+             }
+            });
+      });
+  </script>
+</head>
+<body>
+    <div class="goback_area">
+        <div class="goback sprite md_open_btn"caria-haspopup="dialog" title="대화상자" data-href="#modalBack"></div>
+        <p>내정보관리</p>
+    </div>
+
+    <h3 class="tit2">나의정보를<br>
+        확인하고 수정 할수있습니다
+    </h3>
+
+    <div class="bd_wrap">
+        <div class="bdbox">
+            <h4>기본 회원정보</h4>
+            <dl>
+                <dt>가입 이메일</dt>
+                <dd>abcdefg@naver.com</dd>
+            </dl>
+            <dl>
+                <dt>로그인 방법</dt>
+                <dd>계정로그인</dd>
+            </dl>
+            <button type="button" class="md_open_btn" aria-haspopup="dialog" title="대화상자" data-href="#modalSMS">이메일 수정</button>
+        </div>
+
+        <div class="bdbox">
+            <h4>본인 확인 정보</h4>
+            <dl>
+                <dt>이름</dt>
+                <dd>홍길동</dd>
+            </dl>
+            <dl>
+                <dt>전화번호</dt>
+                <dd>010-1234-1234</dd>
+                <span>인증완료</span>
+                <!-- <span>인증필요</span> -->
+            </dl>
+            <dl>
+                <dt>생년월일</dt>
+                <dd>
+                    <p>0000.00.00</p>
+                    <a href=""><img src="../images/icon_edit.png" alt=""></a>
+                    
+                </dd>
+            </dl>
+            <button type="button">휴대폰 번호 수정</button>
+        </div>
+
+        <div class="bdbox">
+            <h4>주소정보</h4>
+            <dl>
+                <dt>주소</dt>
+                <dd>서울시 강남구 논현동81-10</dd>
+            </dl>
+            <dl>
+                <dt>상세주소</dt>
+                <dd>앱 사용 시 현재설정된 주소로기본등록</dd>
+            </dl>
+            <button type="button">주소 재설정하기</button>
+        </div>
+    </div>
+
+    <div class="agreement">
+        <h4>마케팅 수신 동의</h4>
+        <p>이벤트 혜택정보를 받아보실수있습니다</p>
+        <div class="mail">
+            <div>메일 수신동의</div>
+            <div class="toggle_btn toggle_btn1" aria-haspopup="dialog" title="대화상자" data-href="#modalAllowMail">
+                <span></span>
+            </div>
+        </div>
+        <div class="sms">
+            <div>SMS 수신동의</div>
+            <div class="toggle_btn toggle_btn2" aria-haspopup="dialog" title="대화상자" data-href="#modalAllowSMS">
+                <span></span>
+            </div>
+        </div>
+
+    </div>
+
+    <button type="button">비밀번호 변경하기</button>
+    <p class="Withdrawal"><a href="">회원탈퇴</a></p>
+
+
+    <button type="button" class="btn_green wid100">저장</button>
+
+   
+    <div class="md_cnt" id="modalSMS" role="dialog" aria-modal="true" aria-labelledby="mdTit1">
+        <h3 id="mdTit1">SNS 간편가입 의경우<br>
+            이메일 수정이 불가합니다</h3>
+        <p>sns 간편가입의 경우 이메일 수정이 불가합니다<br>
+            변경을 원할경우 일반계정으로 회원가입 해주세요
+        </p>
+        <button type="button" class="btn_green md_close_btn" data-link="last">닫기</button>
+    </div>
+
+    <div class="md_cnt" id="modalBack" role="dialog" aria-modal="true" aria-labelledby="mdTit3">
+        <p class="mdTit3">작성된 내용을 취소하시겠습니까?<br>
+            취솨하시면 작성하신 정보가 저장되지 않습니다.
+        </p>
+        <div class="btn_wrap">
+            <button type="button" class="md_close_btn" >계속하기</button>
+            <button type="button"data-link="last">취소</button>
+        </div>
+    </div>
+
+
+    <!-- 메일 수신 모달 -->
+    <div class="md_cnt" id="modalAllowMail" role="dialog" aria-modal="true" aria-labelledby="mdTit1">
+        <h3 id="mdTit1">마케팅정보 메일 수신동의</h3>
+        <p>전송자 : 휴매니존</p>
+        <p>SMS 수신동의 일시 : 2021년 09월 01일 13시 50분</p>
+        <p>처리내용 : 수신동의 처리완료 </p>
+        <button type="button" class="btn_green md_close_btn" data-link="last">확인</button>
+        <em>&#40;내정보 수정에서 변경가능 / 휴대폰에서도 변경가능&#41;</em>
+    </div>
+
+    <div class="md_cnt" id="modalRefuseMail" role="dialog" aria-modal="true" aria-labelledby="mdTit1">
+        <h3 id="mdTit1">마케팅정보 메일 수신거부</h3>
+        <p>전송자 : 휴매니존</p> 
+        <p>SMS 수신동의 일시 : 2021년 09월 01일 13시 50분</p> 
+        <p>처리내용 : 수신거부 처리완료 </p>
+        <button type="button" class="btn_green md_close_btn" data-link="last">확인</button>
+        <em>&#40;내정보 수정에서 변경가능 / 휴대폰에서도 변경가능&#41;</em>
+    </div>
+ 
+      <!-- SMS 수신 모달 -->
+    <div class="md_cnt" id="modalAllowSMS" role="dialog" aria-modal="true" aria-labelledby="mdTit1">
+        <h3 id="mdTit1">마케팅정보 SMS 수신동의</h3>
+        <p>전송자 : 휴매니존</p>
+        <p>SMS 수신동의 일시 : 2021년 09월 01일 13시 50분</p> 
+        <p>처리내용 : 수신동의 처리완료 </p>
+        <button type="button" class="btn_green md_close_btn" data-link="last">확인</button>
+        <em>&#40;내정보 수정에서 변경가능 / 휴대폰에서도 변경가능&#41;</em>
+    </div>
+    <div class="md_cnt" id="modalRefuseSMS" role="dialog" aria-modal="true" aria-labelledby="mdTit1">
+        <h3 id="mdTit1">마케팅정보 SMS 수신거부</h3>
+        <p>전송자 : 휴매니존</p>
+        <p>SMS 수신동의 일시 : 2021년 09월 01일 13시 50분</p>
+        <p>처리내용 : 수신거부 처리완료 </p>
+        <button type="button" class="btn_green md_close_btn" data-link="last">확인</button>
+        <em>&#40;내정보 수정에서 변경가능 / 휴대폰에서도 변경가능&#41;</em>
+    </div>
+
+</body> 
+</html> 

@@ -1,0 +1,31 @@
+@charset "utf-8";
+.complete_wrap{
+    padding: 0;
+}
+.form_wrap input{
+    line-height: 20px;
+}
+.complete_wrap{
+    padding: 0;
+    margin: 0;
+}
+.form_email{
+    margin-top: 24px;
+}
+.complete_wrap dt{
+    font-size: 12px;
+}
+.complete_wrap dl{
+    margin: 0;
+}
+.complete_wrap p{
+    font-size: 12px;
+}
+.btn_close3{
+    position: absolute;
+    bottom: 8px;
+    right: 0 !important;
+}
+#email + .btn_close2{
+    bottom: 28px;
+}

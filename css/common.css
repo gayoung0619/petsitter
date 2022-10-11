@@ -1,0 +1,388 @@
+@charset "UTF-8";
+/* 1) fonts */
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@font-face {
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/NanumGothic/NanumGothicRegular.eot');
+    src: url('../fonts/NanumGothic/NanumGothicRegular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/NanumGothic/NanumGothicRegular.woff2') format('woff2'),
+        url('../fonts/NanumGothic/NanumGothicRegular.woff') format('woff'),
+        url('../fonts/NanumGothic/NanumGothicRegular.ttf') format('truetype'),
+        url('../fonts/NanumGothic/NanumGothicRegular.svg#NanumGothicRegular') format('svg');
+}
+@font-face {
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/NanumGothic/NanumGothicBold.eot');
+    src: url('../fonts/NanumGothic/NanumGothicBold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/NanumGothic/NanumGothicBold.woff2') format('woff2'),
+        url('../fonts/NanumGothic/NanumGothicBold.woff') format('woff'),
+        url('../fonts/NanumGothic/NanumGothicBold.ttf') format('truetype'),
+        url('../fonts/NanumGothic/NanumGothicBold.svg#NanumGothicBold') format('svg');
+}
+@font-face{
+    font-family: Gmarket;
+    font-style: normal;
+    font-weight: 300;
+    src: url('../fonts/GmarketSans/GmarketSansLight.eot');
+    src: url('../fonts/GmarketSansLight.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/GmarketSansLight.woff2') format('woff2'),
+         url('../fonts/GmarketSansLight.woff') format('woff'),
+         url('../fonts/GmarketSansLight.svg#GmarketSansLight') format('svg'),
+         url("../fonts/GmarketSans/GmarketSansLight.ttf") format("truetype");
+  }
+  @font-face{
+    font-family: Gmarket;
+    font-style: normal;
+    font-weight: 500;
+    src: url('../fonts/GmarketSans/GmarketSansMedium.eot');
+    src: url('../fonts/GmarketSans/GmarketSansMedium.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/GmarketSans/GmarketSansMedium.woff2') format('woff2'),
+         url('../fonts/GmarketSans/GmarketSansMedium.woff') format('woff'),
+         url('../fonts/GmarketSans/GmarketSansMedium.svg#GmarketSansMedium') format('svg'),
+         url("../font/GmarketSans/../fonts/GmarketSans/GmarketSansMedium.ttf") format("truetype");
+  }
+  @font-face{
+    font-family: Gmarket;
+    font-style: bold;
+    font-weight: 700;
+    src: url('../fonts/GmarketSans/GmarketSansBold.eot');
+    src: url('../fonts/GmarketSans/GmarketSansBold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/GmarketSans/GmarketSansBold.woff2') format('woff2'),
+         url('../fonts/GmarketSans/GmarketSansBold.woff') format('woff'),
+         url('../fonts/GmarketSans/GmarketSansBold.svg#GmarketSansBold') format('svg'),
+         url("../font/GmarketSans/../fonts/GmarketSans/GmarketSansBold.ttf") format("truetype");
+  }
+
+/* 2) tag-reset */
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, button{
+    margin: 0;
+    padding: 0;
+}
+h1, h2, h3, h4, h5, h6, strong{
+    font-size: 100%;
+    font-weight: normal;
+}
+ul, ol{
+    list-style: none;
+}
+a:link, a:visited, a:hover, a:active{
+    text-decoration: none;
+    color: inherit;
+}
+a{
+    -webkit-tap-highlight-color : transparent;
+}
+img{
+    vertical-align: top;
+    border: none;
+}
+button{
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+address, em{
+    font-style: normal;
+}
+header, nav, section, article, footer{
+    display: block;
+}
+header{
+    background-color: #FFFFFF;
+}
+*{
+    box-sizing: border-box;
+    -webkit-text-size-adjust: none;
+    outline: none;
+}
+
+/* 2-1)form, table 태그초기화 */
+th, td, fieldset, input[type="text"]{
+    margin: 0;
+    padding: 0;
+}
+table{
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+fieldset{
+    border: none;
+}
+caption, legend{
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+}
+legend{
+    position: absolute;
+}
+input, select, button, textarea{
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+}
+input[type="text"], 
+input[type="password"], 
+select{
+    border: 0.8px solid #E2E2E2;
+    border-radius: 10px;
+}
+input[type="submit"], 
+input[type="reset"]{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+input[type="password"]{
+    /* font: large Verdana,sans-serif;
+       letter-spacing: 1; */
+}
+input[type="password"]::placeholder{
+    font-family: 'Nanum Gothic', NanumGothic, sans-serif;
+    font-size: 14px;
+}
+
+input{
+    padding: 0 15px !important;
+    outline: none;
+}
+textarea{
+    resize: none;
+}
+input::placeholder {
+    color: #ACACAC;
+    font-weight: 400;
+}
+input:focus,
+textarea:focus{
+	outline:none;
+}
+input[type="checkbox"]{
+    display: none;
+}
+input[type="checkbox"] + label{
+    position: relative;
+    display: inline-block;
+    padding-left: 22px;
+}
+input[type="checkbox"] + label::before{
+    content:"";
+    position: absolute;
+    background: url(../images/checkbox.png) no-repeat top 4px left 3px / 9px 7px;
+    border: 1px solid #E2E2E2;
+    width: 16px;
+    height: 16px;
+    top: 1px;
+    left: 0;
+    border-radius: 50%;
+}
+input[type="checkbox"]:checked + label::after{
+    content:"";
+    position: absolute;
+    top: 1px;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    background: #9AC31C url(../images/checkbox_checked.png) no-repeat top 4px left 3px / 9px 7px;
+    border: 1px solid #9AC31C;
+    border-radius: 50%;
+}
+strong{
+    display: block;
+}
+body{
+    font-family: 'Nanum Gothic', NanumGothic, sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: -0.24px;
+    color: #626262;
+    line-height: 20px;
+    /* 아이폰 노치영역제어 */
+    padding-top: constant(safe-area-inset-top);
+    padding-top: env(safe-area-inset-top);
+}
+
+/* 스크롤바 모양 */
+::-webkit-scrollbar-track { background: #F5F5F5; }
+::-webkit-scrollbar-thumb { background: rgba(0,0,0, .3);border-radius: 100px;padding: 0 0.3px 0 0.3px;}
+
+/* 3) common class */
+.blind{
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: none;
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+}
+.clearfix::after{
+    content: "";
+    clear: both;
+    display: block;
+} 
+.wid97{
+    width: 97px;
+    height: 38px;
+    background: #F5F5F5;
+    border-radius: 10px;
+}
+.wid97.on{
+    background-color: #9AC31C;
+    color: #FFFFFF;
+}
+.wid100{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    background-color: #CCCCCC;
+    color: #FFFFFF;
+    font-size: 14px;
+}
+.btn_green.on{
+    background-color: #9AC31C;
+    color: #FFFFFF;
+}
+.hint_error{
+    color: #FD4B4B !important;
+    font-size: 10px;
+}
+.hint_auth{
+    color: #9AC31C;
+    font-size: 10px;
+}
+.c_r{
+    color: #FF5555 !important;
+}
+.c_g{
+    color: #9AC31C !important;
+}
+.c_ga{
+    color: #A3A3A3;
+}
+.strong{
+    font-weight: 700;
+}
+
+.select{
+    position: relative;
+}
+#dim2{
+    position: fixed;
+    z-index: 1000;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+}
+.select_wrap{
+    visibility: hidden;
+    position: absolute;
+    z-index: 1001;
+    top: 30px;
+    background: #FFFFFF;
+    width: 140px;
+}
+.select_wrap::before{
+    content:"";
+    position: absolute;
+    top: -15px;
+    right: 0;
+    width: 0px;
+    height: 0px;
+    border-top: 15px solid transparent;
+    border-right: 20px solid #ffffff;
+}
+.select_wrap li{
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    color: #A3A3A3;
+}
+.select_wrap li.on{
+    color: #626262;
+}
+.select_wrap li:nth-child(n+2){
+    border-top: 0.8px solid #E2E2E2;
+}
+#dim2.on, .select_wrap.on{
+    display: block;
+}
+
+
+.tit2{
+    font-size: 20px;
+    color: #373737;
+    line-height: 25px;
+    padding: 84px 0 24px 16px;
+} 
+.logo{
+    background: url(../images/logo2.png) no-repeat center / cover;
+}
+.sprite{
+    background: url(../images/login_icon.svg) no-repeat;
+    width: 24px;
+    height: 24px;
+}
+.sprite2{
+    background: url(../images/login_icon_02.svg) no-repeat;
+    width: 24px;
+    height: 24px;
+}
+.sprite3{
+    background: url(../images/main_menu_icon.svg) no-repeat;
+}
+
+
+
+
+
+/* 로딩바 표시 */
+#loading {
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    position:relative; 
+    position: fixed;
+    width: 100%;
+    filter:alpha(opacity=50);
+    -moz-opacity:0.5;
+    opacity : 0.5;
+}
+.loading {
+    background-color: white;
+    z-index: 1000;
+}
+
+#loading_img{
+    position:absolute; 
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    height:20px;
+    z-index: 1000;
+}
+
+
+.swiper-pagination-bullet{
+    width: 8px !important;
+    height: 8px !important;
+}
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet{
+    margin: 0 4px !important;
+}
+
+
+

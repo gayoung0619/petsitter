@@ -1,0 +1,99 @@
+@charset "utf-8";
+body{
+    width: 100%;
+}
+.goback_area{
+    background-color: transparent;
+}
+#map{
+    width: 500px;
+    height: 300px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.map_tit{
+    font-size: 14px;
+    line-height: 38px;
+    background: #FFFFFF;
+    margin: 68px 40px 0 40px;
+    text-align: center;
+    border-radius: 50px;
+    border: 0.8px solid #E2E2E2;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .06);
+    color: #373737;
+}
+.icon_position{
+    position: relative;
+    width: 42px;
+    height: 42px;
+    background-position: 5px -80px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.icon_position::after{
+    content: "";
+    background: url(../../images/icon_position.svg);
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 26px;
+    height: 26px;
+    color: #9AC31C;
+}
+.map_tit + button{
+    position: absolute;
+    bottom: 240px;
+    right: 16px;
+    border: 0.8px solid #E2E2E2;
+    background: #FFFFFF;
+    width: 40px;
+    height: 40px;
+}
+ button > .sprite2{
+    height: 16px;
+    width: 16px;
+    margin-left: 11px;
+}
+.mylocation{
+    position: fixed;
+    bottom: 66px;
+    width: calc(100% - 32px);
+    background: #FFFFFF;
+    text-align: center;
+    padding: 24px 0 28px 0;
+    color: #373737;
+    border-radius: 10px;
+    border: 0.8px solid #E2E2E2;
+    margin: 0 16px 16px 16px;
+}
+.mylocation strong{
+    font-size: 20px;
+}
+.mylocation strong + p{
+    margin: 24px 0 2px 0;
+}
+.mylocation + button{
+    position: fixed;
+    bottom: 26px;
+    width: calc(100% - 32px);
+    background: #9AC31C;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 10px;
+    font-size: 14px;
+    margin: 0 16px;
+}

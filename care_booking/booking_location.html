@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, viewport-fit=cover">
+  <title>휴매니존</title>
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/modal.css">
+  <link rel="stylesheet" href="../css/booking/booking.css">
+  <link rel="stylesheet" href="../css/booking/booking_location.css">
+
+  <script src="../js/jquery-1.12.4.min.js"></script>
+  <script src="../js/modal.js"></script>
+  <style>
+    .btn_green{
+      background-color: #9AC31C;
+    }
+  </style>
+
+</head>
+<body>
+    <div class="goback_area">
+      <div class="goback sprite md_open_btn" aria-haspopup="dialog" title="대화상자" data-href="#modal8"></div>
+      <p>날짜선택</p>
+    </div>
+
+    <div class="wrap">
+      <div class="progress_bar">
+        <div class="bar_green"></div>
+      </div>
+      <div class="address_tit">
+        <h3 class="tit2">나의 나눔돌봄 요청<br><span class="c_g">만남위치 선택하기</span></h3>
+        <button type="button">주소재설정</button>
+      </div>
+    </div>
+
+    <div class="area_wrap">
+      <strong>논현동</strong>
+      <p>강남구 논현동 81-10 101호 오감코퍼레이션</p>
+      <p><span>도로명</span>논현로134길9 101호 오감코퍼레이션</p>
+    </div>
+
+    <button type="button" class="btn_green wid100 ">다음</button> 
+
+    <div class="md_cnt" id="modal8" role="dialog" aria-modal="true" aria-labelledby="mdTit8">
+      <p class="mdTit8">작성된 내용을 취소하시겠습니까?<br>
+          취소하시면 작성하신 정보가 저장되지 않습니다.
+      </p>
+      <div class="btn_wrap"> 
+          <button type="button">계속하기</button>
+          <button type="button" class="md_close_btn" data-link="last">취소</button>
+      </div>
+    </div>
+   
+</body>
+
+
+
+</html>  

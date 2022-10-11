@@ -1,0 +1,34 @@
+@charset "utf-8";
+.tit2, .filter_wrap2 li{
+    background-color: #FFFFFF;
+}
+.filter_wrap2 {
+    margin: 0;
+}
+.filter_wrap2 ul{
+    margin: 0;
+}
+.filter_wrap2 ul li{
+    height: 80px;
+    line-height: 80px;
+    padding-top: 0;
+    padding-left: 81px;
+    margin-top: 1px;
+}
+.filter_wrap2 ul li .pic{
+    content:"";
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+    width: 52px;
+    height: 52px;
+}
+.filter_wrap2 ul li .pic img{
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+}
+.progress_bar .bar_green{
+    width: 20%;
+}

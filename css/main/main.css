@@ -1,0 +1,138 @@
+@charset "UTF-8";
+.currentposition p{
+    color: #000;
+    font-size: 14px;
+}
+.section:not(:first-child){
+    margin-top: 6px;
+    padding: 0 16px 24px 16px;
+}
+.section1{
+    margin-top: 24px;
+}
+.section1 .swiper-slide img{
+    height: 313px;
+    width: 100%;
+    object-fit: cover;
+}
+/* 가로스크롤바없애기 */
+.section .section_cnt ul::-webkit-scrollbar{
+    display: none;
+}
+.section .section_cnt .txt strong + p{
+    line-height: 14px;
+}
+.section2 .section_cnt ul,
+.section5 .section_cnt ul{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    /* 가로 스크롤바 없애기 */
+    overflow: hidden;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    margin: 24px 0 14px 0;
+}
+.section2 .section_cnt ul li{
+    margin-right: 14px;
+}
+.section2 .section_cnt ul .txt strong{
+    font-size: 10px;
+    display: inline-block;
+    padding-top: 6px ;
+    color: #373737;
+    width: 100%;
+    text-align: center;
+}
+.section_cnt .txt strong span{
+    color: #9AC31C;
+    padding-left: 2px;
+}
+.section2 .section_cnt .txt p{
+    font-size: 8px;
+    text-align: center;
+}
+.section3 .section_cnt .txt,
+.section4 .section_cnt .txt{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-align-content: space-between; 
+    align-content: space-between; 
+}
+.section3 .section_cnt ul li,
+.section4 .section_cnt ul li{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+.section3 .section_cnt ul li .txt,
+.section4 .section_cnt ul li .txt{
+    padding-left: 10px;
+    font-size: 12px;
+    line-height: 12px;
+}
+.section3 .section_cnt ul li .txt strong,
+.section4 .section_cnt ul li .txt strong{
+    font-size: 14px;
+    color: #373737;
+}
+/* .section3 .section_cnt ul li .txt p,
+.section4 .section_cnt ul li .txt p{
+    line-height: 14px;
+} */
+.section3 .section_cnt ul li .txt p span,
+.section4 .section_cnt ul li .txt p span{
+    color: #9AC31C;
+}
+.section5 .section_cnt{
+    padding: 0;
+}
+.section5 .section_cnt ul li{
+    width: 100%;
+}
+.section5 .section_cnt ul li .hospital1{
+    margin-right: 6px;
+}
+.section5 .section_cnt ul li .hospital1 img{
+    width: 100%;
+    height: auto;
+}
+.section5 .section_cnt ul li .hospital2 img{
+    width: 100%;
+    height: auto;
+}
+.section5 .section_cnt ul li{
+    padding-right: 9px;
+}
+.section5 .section_cnt ul li .txt{
+    padding-top: 14px;
+    text-align: center;
+    font-size: 10px;
+}
+.section5 .section_cnt ul li .txt p{
+    padding-top: 2px;
+}
+.section6 .section_cnt div img{
+    width: 100%;
+    height: auto;
+}
+.section6 .section_cnt div:last-of-type{
+    margin-top: 6px;
+}
+.section:last-child{
+    padding-bottom: 0;
+}
+.section:last-child .section_cnt{
+    padding: 34px 0;
+    border-bottom: none;
+}

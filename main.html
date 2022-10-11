@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, viewport-fit=cover">
+  <title>휴매니존</title>
+  <link rel="stylesheet" href="css/swiper-bundle.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/main/main.css">
+
+
+  <script src="js/jquery-1.12.4.min.js"></script>
+  <script src="js/swiper-bundle.min.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/swiper.js"></script>
+  <script>
+    $(document).ready(function () {
+        $('.lineclamp').each(function(){
+            var length = 30; //글자수
+            $(this).each(function(){
+                if($(this).text().length >= length){
+                    $(this).text($(this).text().substr(0,length)+'...');
+                }
+            });
+        });
+    });
+  </script>
+</head>
+<body>
+    <header>
+        <button class="aside_open" type="button"><div class="sprite"></div></button>
+        <div id="dim"></div>
+        <div class="aside_wrap">
+            <div class="aside_header">
+                <button class="aside_close" type="button"><div class="sprite"></div></button>
+                <h2>카테고리</h2>
+            </div>
+            <div class="aside_list">
+                <ul>
+                    <li>
+                        <a href="">
+                            <div class="aside_icon sprite3"></div>
+                            <em class="aside_txt">나눔돌봄</em>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div class="aside_icon sprite3"></div>
+                            <em class="aside_txt">피드</em>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div class="aside_icon sprite3"></div>
+                            <em class="aside_txt">동물병원</em>
+                        </a>
+                    </li>
+                    <li class="walk">
+                        <a href="">
+                            <div class="aside_icon sprite3"></div>
+                            <em class="aside_txt">산책하기</em>
+                        </a>
+                    </li>
+                    <li class="mypage">
+                        <a href="">
+                            <div class="aside_icon sprite3"></div>
+                            <em class="aside_txt">마이페이지</em>
+                        </a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <a href="">나눔돌봄 신청내역</a>
+                        <span class="sprite2"></span>
+                    </li>
+                    <li>
+                        <a href="">나눔돌봄 신청받은내역</a>
+                        <span class="sprite2"></span>
+                    </li>
+                </ul>
+<!--                <div class="login_area">-->
+<!--                    <p>신규 가입시 1,000 포인트 혜택!</p>-->
+<!--                    <div class="btn_box">-->
+<!--                        <button type="button" class="wid97">회원가입</button>-->
+<!--                        <button type="button" class="wid97">로그인</button>-->
+<!--                    </div>-->
+<!--                </div>-->
+            </div>
+            <div class="aside_footer">
+                <ul>
+                    <li><a href="">고객센터</a></li>
+                    <li><a href="">공지사항</a></li>
+                    <li><a href="">1:1문의하기</a></li>
+                </ul>
+            </div> 
+        </div>
+        <a href="">
+            <div class="currentposition">
+            <div class="sprite"></div>
+            <p>강남구 논현1동</p>
+        </div>
+        </a>
+        
+        <a href="">
+             <div class="alarm">
+            <div class="sprite"></div>
+            <div class="bd"></div>
+        </div>
+        </a>
+       
+        <nav class="floating">
+            <ul>
+                <li class="floating_home">
+                    <a href="">
+                        <div></div>
+                        <em>홈</em>
+                    </a>
+                </li>
+                <li class="floating_care">
+                    <a href="">
+                        <div></div>
+                        <em>나눔돌봄</em>
+                    </a>
+                </li>
+                <li class="floating_feed">
+                    <a href="">
+                        <div></div>
+                        <em>피드</em>
+                    </a>
+                </li>
+                <li class="floating_walk">
+                    <a href="">
+                        <div></div>
+                        <em>산책</em>
+                    </a>
+                </li>
+                <li class="floating_chat">
+                    <a href="">
+                        <div></div>
+                        <em>채팅</em>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section class="content">
+        <article class="section section1">
+            <div class="swiper-container">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                  <!-- Slides -->
+                  <div class="swiper-slide slide1">
+                      <a href=""><img src="images/slider1.jpg" alt=""></a>
+                  </div>
+                  <div class="swiper-slide slide2">
+                    <a href=""><img src="images/slider1.jpg" alt=""></a>
+                  </div>
+                  <div class="swiper-slide slide3">
+                    <a href=""><img src="images/slider1.jpg" alt=""></a>
+                  </div>
+                  <div class="swiper-slide slide4">
+                    <a href=""><img src="images/slider1.jpg" alt=""></a>
+                  </div>
+                  <div class="swiper-slide slide5">
+                    <a href=""><img src="images/slider1.jpg" alt=""></a>
+                  </div>
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+              </div>
+        </article>
+
+        <article class="section section2">
+            <div class="tit">
+                <h3>
+                    <a href="">
+                        <span>인기 나눔돌봄 인기신청자</span>
+                        <span class="sprite2"></span>
+                    </a>
+                </h3>
+            </div>
+            <div class="section_cnt">
+                <ul>
+                    <a href="">
+                       <li>
+                        <img src="images/profile.png" alt="">
+                        <div class="txt">
+                            <strong>작성된 닉네임<span>LV1</span></strong>
+                            <p>논현1동 · 초소형 활동가</p>
+                        </div>
+                    </li> 
+                    </a>
+                    
+                    <a href="">
+                        <li>
+                        <img src="images/profile.png" alt="">
+                        <div class="txt">
+                            <strong>작성된 닉네임<span>LV1</span></strong>
+                            <p>논현1동 · 초소형 활동가</p>
+                        </div>
+                    </li>
+                    </a>
+                    
+                    <a href="">
+                        <li>
+                        <img src="images/profile.png" alt="">
+                        <div class="txt">
+                            <strong>작성된 닉네임<span>LV1</span></strong>
+                            <p>논현1동 · 초소형 활동가</p>
+                        </div>
+                    </li>
+                    </a>
+                    
+                    <a href="">
+                        <li>
+                        <img src="images/profile.png" alt="">
+                        <div class="txt">
+                            <strong>작성된 닉네임<span>LV1</span></strong>
+                            <p>논현1동 · 초소형 활동가</p>
+                        </div>
+                    </li>
+                    </a>
+                    
+                    <a href="">
+                        <li>
+                        <img src="images/profile.png" alt="">
+                        <div class="txt">
+                            <strong>작성된 닉네임<span>LV1</span></strong>
+                            <p>논현1동 · 초소형 활동가</p>
+                        </div>
+                    </li>
+                    </a>
+                    
+                    <a href="">
+                        <li>
+                        <img src="images/profile.png" alt="">
+                        <div class="txt">
+                            <strong>작성된 닉네임<span>LV1</span></strong>
+                            <p>논현1동 · 초소형 활동가</p>
+                        </div>
+                    </li>
+                    </a>
+                    
+                </ul>
+            </div>
+        </article>
+
+        <article class="section section3">
+            <div class="tit">
+                <h3>
+                    <a href="">
+                        인기 커뮤니티 글
+                        <span class="sprite2"></span>
+                    </a>
+                </h3>
+            </div>
+            <div class="section_cnt">
+                <ul>
+                    <a href="">
+                        <li>
+                            <img src="images/profile.png" alt="">
+                            <div class="txt">
+                                <strong class="lineclamp">Amet minim mollit non deserunt ullamco est sit </strong>
+                                <p>Amet minim mollit non deserunt ullamco est sit aliqua
+                                    Velit officia consequat duis enim velit mollit. 
+                                    Exercitation veniam consequat sunt nostrud amet.
+                                </p>
+                                <p>작성된 닉네임 <span>LV1</span> · 논현1동</p>
+                            </div>
+                        </li>
+                    </a>
+                </ul>
+            </div>
+            <div class="section_cnt">
+                <ul>
+                    <a href="">
+                        <li>
+                            <img src="images/profile.png" alt="">
+                            <div class="txt">
+                                <strong class="lineclamp">Amet minim mollit non deserunt ullamco est sit </strong>
+                                <p>Amet minim mollit non deserunt ullamco est sit aliqua
+                                    Velit officia consequat duis enim velit mollit. 
+                                    Exercitation veniam consequat sunt nostrud amet.
+                                </p>
+                                <p>작성된 닉네임 <span>LV1</span> · 논현1동</p>
+                            </div>
+                        </li>
+                    </a>
+                </ul>
+            </div>
+            <div class="section_cnt">
+                <ul>
+                    <a href="">
+                        <li>
+                            <img src="images/profile.png" alt="">
+                            <div class="txt">
+                                <strong class="lineclamp">Amet minim mollit non deserunt ullamco est sit </strong>
+                                <p>Amet minim mollit non deserunt ullamco est sit aliqua
+                                    Velit officia consequat duis enim velit mollit. 
+                                    Exercitation veniam consequat sunt nostrud amet.
+                                </p>
+                                <p>작성된 닉네임 <span>LV1</span> · 논현1동</p>
+                            </div>
+                        </li>
+                    </a>
+                </ul>
+            </div>
+        </article>
+
+        <article class="section section4">
+            <div class="tit">
+                <h3>
+                    <a href="">
+                        인기 돌봄신청 글
+                        <span class="sprite2"></span>
+                    </a>
+                </h3>
+            </div>
+            <div class="section_cnt">
+                <ul>
+                    <a href="">
+                        <li>
+                            <img src="images/profile.png" alt="">
+                            <div class="txt">
+                                <strong class="lineclamp">Amet minim mollit non deserunt ullamco est sit </strong>
+                                <p>Amet minim mollit non deserunt ullamco est sit aliqua
+                                    Velit officia consequat duis enim velit mollit. 
+                                    Exercitation veniam consequat sunt nostrud amet.
+                                </p>
+                                <p>작성된 닉네임 <span>LV1</span> · 논현1동</p>
+                            </div>
+                        </li>
+                    </a>
+                </ul>
+            </div>
+            <div class="section_cnt">
+                <ul>
+                    <a href="">
+                        <li>
+                            <img src="images/profile.png" alt="">
+                            <div class="txt">
+                                <strong class="lineclamp">Amet minim mollit non deserunt ullamco est sit </strong>
+                                <p>Amet minim mollit non deserunt ullamco est sit aliqua
+                                    Velit officia consequat duis enim velit mollit. 
+                                    Exercitation veniam consequat sunt nostrud amet.
+                                </p>
+                                <p>작성된 닉네임 <span>LV1</span> · 논현1동</p>
+                            </div>
+                        </li>
+                    </a>
+                </ul>
+            </div>
+            <div class="section_cnt">
+                <ul>
+                    <a href="">
+                        <li>
+                            <img src="images/profile.png" alt="">
+                            <div class="txt">
+                                <strong class="lineclamp">Amet minim mollit non deserunt ullamco est sit </strong>
+                                <p>Amet minim mollit non deserunt ullamco est sit aliqua
+                                    Velit officia consequat duis enim velit mollit. 
+                                    Exercitation veniam consequat sunt nostrud amet.
+                                </p>
+                                <p>작성된 닉네임 <span>LV1</span> · 논현1동</p>
+                            </div>
+                        </li>
+                    </a>
+                </ul>
+            </div>
+        </article>
+
+        <article class="section section5">
+            <div class="tit">
+                <h3>
+                    <a href="">
+                        동물병원을 소개 합니다
+                        <span class="sprite2"></span>
+                    </a>
+                </h3>
+            </div>
+            <div class="section_cnt">
+                <ul>
+                    <li>
+                        <a href="">
+                            <div class="hospital1">
+                                <img src="images/hospital1.jpg" alt="">
+                            </div>
+                            <div class="txt">
+                                <strong>eeeeee동물병원</strong>
+                                <p>논현1동</p>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="">
+                            <div class="hospital2">
+                                <img src="images/hospital2.jpg" alt="">
+                            </div>
+                            <div class="txt">
+                                <strong>eeeeee동물병원</strong>
+                                <p>논현1동</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </article>
+
+        <article class="section section6">
+            <div class="section_cnt">
+                <a href="">
+                    <div>
+                        <img src="images/event1.jpg" alt="">
+                    </div>
+                </a>
+                <a href="">
+                    <div>
+                        <img src="images/event2.jpg" alt="">
+                    </div>
+                </a>
+            </div>
+        </article>
+    </section>
+    <footer>
+        <div class="footer_menu">
+            <ul>
+                <li><a href="">고객센터</a></li>
+                <li><a href="">공지사항</a></li>
+                <li><a href="">개인정보처리방침</a></li>
+                <li><a href="">이용약관</a></li>
+            </ul>
+        </div>
+        <div class="footer_info">
+            <address>
+                <span>&#40;주&#41; 광해기획</span>
+                <span>대표 &#58;  박종호</span>
+                <span>주소 &#58; 서울특별시 서초구 강남대로 95길 40, 7층</span>
+                <span>사업자등록번호  &#58; 788-81-01525</span>
+                <span>이메일 문의 &#58; pjh@humanizone.co.kr</span>
+                <span>고객상담팀 &#58; 02-545-3585</span>
+                <span>&#40;상담시간 월-금 &#58; AM 09&#58;00 - PM 18&#58;00 , 주말/공휴일 휴무&#41;</span>
+            </address>
+        </div>
+    </footer>
+</body>
+</html>

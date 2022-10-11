@@ -1,0 +1,190 @@
+@charset "utf-8";
+body{
+    background-color: #F5F5F5;
+}
+.tit2 {
+    background-color: #FFFFFF;
+}
+.tit2 span{
+    color: #9AC31C;
+}
+.filter_wrap2 {
+    margin: 0;
+    padding-top: 34px;
+    border-top: 0.8px solid #F5F5F5;
+}
+.filter_wrap ul{
+    margin: 0;
+}
+.progress_bar{
+    position: relative;
+    top: 60px;
+    width: 100%;
+    height: 4px;
+    background: #F5F5F5;
+}
+.progress_bar .bar_green{
+    height: 4px;
+    width: 20%;
+    background-color: #9AC31C;
+    border-radius: 0 100px 100px 0;
+    width: 40%;
+}
+.form_price input{
+    color: #626262;
+    font-size: 20px;
+}
+.form_price input::placeholder{
+    color: #626262;
+}
+.form_price + ul{
+    margin: 8px 16px 0 16px;
+}
+.form_price + ul li{
+    border: 0.8px solid #E2E2E2;
+    width: 80px;
+    line-height: 34px;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 14px;
+    float: left;
+}
+.form_price + ul li:not(:last-of-type){
+    margin-right: 6px;
+}
+
+.price_wrap li.on{
+    border:  none;
+    background-color: #9AC31C;
+    color: #FFFFFF;
+}
+.form_price fieldset > p{
+    line-height: 25px;
+    margin-top: 2px;
+}
+.form_intro, .my_intro{
+    background-color: #FFFFFF;
+    margin-top: 6px;
+    padding: 12px 16px;
+   
+}
+.tit2 + .form_intro{
+    margin-top: 14px;
+}
+.form_intro label, .my_intro dt{
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    padding-bottom: 24px;
+    line-height: 14px;
+    font-size: 14px;
+}
+.my_intro dd{
+    margin: 0;
+    padding: 0;
+}
+
+.form_intro label::after, .my_intro dt::after{
+    content:"";
+    position: absolute;
+    z-index: -1;
+    top: 9px;
+    left: 0;
+    background-color: #E4F9A5;
+    width: 100%;
+    height: 5px;
+}
+.my_intro .bd{
+    border: 0.8px dashed #E2E2E2;
+}
+.form_intro textarea{
+    border-top: 0.8px dashed #E2E2E2  !important;
+}
+
+.form_intro textarea{
+    display: block;
+    padding-top: 24px;
+    width: 100%; 
+    font-size: 12px;
+    border: none;
+    resize: none;
+    letter-spacing: -0.24px;
+}
+.form_intro:nth-last-child(2) textarea,
+.form_intro:nth-last-child(1) textarea{
+    height: 180px;
+}
+.form_intro textarea::placeholder{
+    font-size: 12px;
+    color: #A3A3A3;
+}
+.my_intro dd{
+    padding: 24px 80px 24px 0;
+    border-top: 0.8px dashed #E2E2E2;
+}
+.form_wrap{
+    padding: 0;
+}
+.form_wrap + p{
+    color: #A3A3A3;
+    margin-top: 2px;
+}
+
+.care_cnt{
+    margin-top: 1px;
+    background-color: #FFFFFF;
+    padding: 14px 16px 34px 16px;
+}
+.care_cnt dt{
+    color: #373737;
+    margin-top: 24px;
+}
+.care_cnt dd{
+    display: inline-block;
+    line-height: 35px;
+    border-bottom: 0.8px solid #E2E2E2;
+    width: calc(100% - 115px);
+    margin: 0;
+    padding: 0;
+}
+.care_cnt button, 
+.care_intro .intro_title button,
+.care_pic .pic_title button{
+    background-color: #9AC31C;
+    color: #FFFFFF;
+    margin-left: 14px;
+}
+.care_intro,
+.care_pic{
+    margin-top: 14px;
+}
+.care_intro .intro_title, .care_pic .pic_title{
+    position: relative;
+}
+.care_intro .intro_title .tit2, 
+.pic_title .tit2{
+    padding-top: 24px;
+}
+.care_intro .intro_title button, 
+.care_pic .pic_title button{
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.intro_title + .my_intro{
+    margin-top: 0;
+    border-top: 0.8px solid #F5F5F5;
+}
+.care_pic{
+    padding-bottom: 74px;
+}
+.care_pic .form_wrap{
+    padding-top: 24px;
+    margin-top: 1px;
+}
+.care_pic .pic
+.care_pic .img_wrap{
+    margin-top: 1px;
+    background-color: #FFFFFF;
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>휴매니존</title>
+    <link rel="stylesheet" href="../css/modal.css">
+    <link rel="stylesheet" href="../css/swiper-bundle.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/form_common.css">
+    <link rel="stylesheet" href="../css/mypage/mypage_progress.css">
+
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script src="../js/swiper-bundle.min.js"></script>
+    <script src="../js/swiper.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/modal2.js"></script>
+    <style>
+        body{
+            background-color: #FFFFFF;
+        }
+        .review_wrap{
+             margin: 64px 0 0 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="goback_area">
+        <div class="goback sprite"></div>
+        <p>리뷰글 보기</p>
+    </div> 
+
+    <div class="section">
+        <div class="review_wrap">
+            <div class="writer_info">
+                <div class="writer">
+                    <a href="">
+                        <div class="pic">
+                            <img src="../images/default_img.png" alt="">
+                        </div>
+                        <div class="info">
+                            <div class="review_tit2">
+                                <strong>리뷰작성자 닉네임</strong>
+                                <div class="rate_gray">
+                                    <img src="../images/rate_gray.png" alt="">
+                                    <div class="rate_green">
+                                        <img src="../images/rate_green.png" alt="">
+                                        <img src="../images/rate_green.png" alt="">
+                                        <img src="../images/rate_green.png" alt="">
+                                        <img src="../images/rate_green.png" alt="">
+                                        <img src="../images/rate_green.png" alt="">
+                                    </div>
+                                    <p>3.0</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="more">2021-01-01</div>
+                </div>
+            </div>
+    
+            <div class="writer_cnt">
+                <div class="review_top">
+                    <div class="dog_type">소형견</div>
+                    <div class="dog_type">노령견</div>
+                    <div class="dog_type">장애견</div>
+                </div>
+                <div class="review_cnt">
+                    <div class="img_area">
+                        <div class="img172">
+                            <img src="../images/test.jpg" alt="" class="md_pic_btn" aria-haspopup="dialog" title="대화상자" data-href="#modalPic">
+                        </div>
+                    </div>
+                    <p>
+                        <a href="">
+                            Amet minim mollit non deserunt ullamco est sit aliqua dolor do 
+                            amet sint. Velit officia consequat duis enim velit mollit. 
+                             Exercitation veniam consequat sunt nostrud amet.
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="md_cnt" id="modalPic" role="dialog" aria-modal="true">
+        <div class="modal_pic">
+            <div class="swiper-container modal_slider">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide modalpic slider1">
+                      <img src="../images/modal.jpg">
+                  </div>
+                  <div class="swiper-slide modalpic slider2">
+                      <img src="../images/modal.jpg">
+                  </div>
+                  <div class="swiper-slide modalpic slider3">
+                      <img src="../images/modal.jpg">
+                  </div>
+                  <div class="swiper-slide modalpic slider4">
+                      <img src="../images/modal.jpg">
+                  </div>
+                  <div class="swiper-slide modalpic slider5">
+                      <img src="../images/modal.jpg">
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+        <button type="button" class="close_btn md_close_btn" data-link="last"></button>
+    </div>
+
+
+</body>
+</html>             

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, viewport-fit=cover">
+  <title>휴매니존</title>
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/modal.css">
+  <link rel="stylesheet" href="../css/form_common.css">
+
+  <script src="../js/jquery-1.12.4.min.js"></script>
+  <script src="../js/common.js"></script>
+  <script src="../js/modal.js"></script>
+  <!-- <script>
+    $(document).ready(function () {
+      $('input').on('input', function () {
+          const email = $('input[type = "text"]');
+          if( email.val() == ''){
+              $('.btn_green').removeClass('on');
+          }else{
+              $('.btn_green').addClass('on');
+          }
+          $('.btn_close2').click(function (){
+                $('.btn_green').removeClass('on');
+          });
+      });
+    });
+   </script> -->
+</head>
+<body>
+    <div class="goback_area">
+        <div class="goback sprite md_open_btn"caria-haspopup="dialog" title="대화상자" data-href="#modalBack"></div>
+        <p>이메일 수정</p>
+    </div>
+
+    <h3 class="tit2">로그인시 사용할<br>
+        가입 이메일을 수정합니다. </h3> 
+
+    <form id="formEmail" class="form" action="">
+        <fieldset>
+            <legend class="blind">이메일변경 폼</legend>
+            <div class="form_wrap">
+                <label for="email">변경할 이메일주소</label>
+                <input type="text" placeholder="이메일 형식에 맞춰 작성해주세요" id="email">
+                <button type="button" class="sprite btn_close2"></button>
+            </div>
+            <p class="hint_error">*입력하신 이메일 형식이 잘못되었습니다. or 이미가입되어있는 이메일입니다.</p>
+        </fieldset>
+    </form>
+
+    <button type="button" class="btn_green wid100 md_open_btn" aria-haspopup="dialog" title="대화상자" data-href="#modalEmailModi">확인</button>
+
+
+
+    <div class="md_cnt" id="modalEmailModi" role="dialog" aria-modal="true" aria-labelledby="mdTit1">
+        <h3 id="mdTit1">고객님의 가입 이메일 수정이<br>
+            완료되었습니다</h3>
+        <p>고객님의 이메일 수정이 완료됬습니다.<br>
+            abcdefg@naver.com
+        </p>
+        <button type="button" class="btn_green">회원정보 페이지로 이동하기</button>
+        <button type="button" class="btn_green md_close_btn" data-link="last">메인페이지로 이동하기</button>
+    </div>
+
+    <div class="md_cnt" id="modalBack" role="dialog" aria-modal="true" aria-labelledby="mdTit3">
+        <p class="mdTit3">작성된 내용을 취소하시겠습니까?<br>
+            취솨하시면 작성하신 정보가 저장되지 않습니다.
+        </p>
+        <div class="btn_wrap">
+            <button type="button" class="md_close_btn">계속하기</button>
+            <button type="button"  data-link="last">취소</button>
+        </div>
+    </div>
+
+</body>
+</html> 

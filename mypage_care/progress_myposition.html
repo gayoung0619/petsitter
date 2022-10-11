@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>휴매니존</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/modal.css">
+    <link rel="stylesheet" href="../css/mypage/mypage_progress.css">
+
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script src="../js/modal.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.play_icon').click(function () {
+                $('.stop_icon').css('display', 'block').next().next().text('종료');
+                $('.play_icon').css('display', 'none')
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="goback_area">
+        <div class="goback sprite"></div>
+    </div> 
+
+    <div id="map" style="width:100%;height:100%;"></div>
+
+    <div class="operation_area">
+        <div class="operation_btn">
+            <div class="stop_icon md_open_btn" aria-haspopup="dialog" title="대화상자" data-href="#modalStop">
+                <img src="../images/btn_stop.png" alt="">
+            </div>
+            <div class="play_icon">
+                <img src="../images/btn_play.png" alt="">
+            </div>
+            <p>산책</p>
+        </div>
+        <div class="operation_camera">
+            <div class="camera_icon">
+                <img src="../images/btn_camera.png" alt="">
+                <div class="alarm_count">
+                    <span>1</span>
+                </div>
+                <div class="alarm_count5">
+                    <span>5</span>
+                </div>
+            </div>
+            <p>촬영</p>
+        </div>
+    </div>fflfll
+
+
+
+
+
+
+    <!-- <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f54ce666be90230e1fb6d699e883a375"></script>
+    <script>
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+        mapOption = { 
+            center: new kakao.maps.LatLng(37.515693486027935, 127.03091997710196), // 지도의 중심좌표
+            level: 3 // 지도의 확대 레벨
+        };
+
+        var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+
+        var imageSrc = '../images/icon_marker.png', // 마커이미지의 주소입니다    
+        imageSize = new kakao.maps.Size(42, 42), // 마커이미지의 크기입니다
+        imageOption = {offset: new kakao.maps.Point(27, 69)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+      
+        // 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+        var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
+        markerPosition = new kakao.maps.LatLng(37.515693486027935, 127.03091997710196); // 마커가 표시될 위치입니다
+
+        // 마커를 생성합니다
+        var marker = new kakao.maps.Marker({
+        position: markerPosition, 
+        image: markerImage // 마커이미지 설정 
+        });
+
+
+        // 지도를 클릭한 위치에 표출할 마커입니다
+        var marker = new kakao.maps.Marker({ 
+        // 지도 중심좌표에 마커를 생성합니다 
+        position: map.getCenter() 
+        }); 
+        // 지도에 마커를 표시합니다
+        marker.setMap(map);
+
+        // 지도에 클릭 이벤트를 등록합니다
+        // 지도를 클릭하면 마지막 파라미터로 넘어온 함수를 호출합니다
+        kakao.maps.event.addListener(map, 'click', function(mouseEvent) {        
+    
+        // 클릭한 위도, 경도 정보를 가져옵니다 
+        var latlng = mouseEvent.latLng; 
+    
+        // 마커 위치를 클릭한 위치로 옮깁니다
+        marker.setPosition(latlng);
+    
+        });
+    </script> -->
+
+    <!-- 산책종료 모달창 -->
+    <div class="md_cnt" id="modalStop" role="dialog" aria-modal="true" aria-labelledby="mdTit1">
+        <h3 id="mdTit1">산책을 <span class="c_r">종료</span><br>하시겠습니까 ?</h3>
+        <p>산책중 촬영된 사진과 함께<br>산책내용을 작성하실수있습니다.</p>
+       <button type="button" class="btn_green" data-link="first">산책종료</button>
+       <button type="button" class="md_close_btn btn_green" data-link="last">좀더 산책할게요</button> 
+   </div>
+
+
+
+
+
+</body>
+</html>          

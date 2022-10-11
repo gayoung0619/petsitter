@@ -1,0 +1,28 @@
+@charset "utf-8";
+.tit2 span{
+    color: #9AC31C;
+}
+.filter_wrap{
+    margin: 30px 16px;
+}
+.filter_wrap ul li{
+    position: relative;
+    width: 100%;
+    font-size: 14px;
+    padding-top: 16px;
+}
+.filter_wrap ul li:first-child{
+    padding-top: 0;
+}
+.filter_wrap ul li.on::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    background: url(../../images/feed_icon.png) no-repeat;
+    background-size: cover;
+    background-position: -99px 0;
+    width: 24px;
+    height: 16px;
+}

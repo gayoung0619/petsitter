@@ -1,0 +1,21 @@
+@charset "utf-8";
+.form{
+  padding: 0 16px;
+}
+.form label{
+  color: #373737;
+  display: block;
+  margin-bottom: 4px;
+}
+.form input{
+  border: none;
+  border-bottom: 0.8px solid #E2E2E2;
+  border-radius: 0;
+  padding: 0 0 8px 0 !important;
+  color: #A3A3A3;
+  width: calc(100% - 111px);
+}
+.form button{
+  margin-left: 10px;
+  color: #373737;
+}

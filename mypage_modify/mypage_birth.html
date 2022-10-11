@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, viewport-fit=cover">
+  <title>휴매니존</title>
+  <link rel="stylesheet" href="../css/nice-select.css">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/modal.css">
+  <link rel="stylesheet" href="../css/mypage/mypage.css">
+
+  <script src="../js/jquery-1.12.4.min.js"></script>
+
+  <script src="../js/jquery.nice-select.min.js"></script>
+  <script src="../js/jquery.nice-select.js"></script>
+
+  <script src="../js/modal.js"></script>
+  <script src="../js/common.js"></script>
+  <script>
+      $(document).ready(function () {
+        const year = $('.year');
+        const month = $('.month');
+        const day = $('.day');
+        $('select').on('change', function () {
+            if(year.val() && month.val() && day.val()){
+                $('.btn_green').css({'background-color' : '#9AC31C', 'color' : '#FFFFFF'});
+            }else{
+                $('.btn_green').removeAttr('style');
+            }
+        });
+
+        $('select').niceSelect();
+      });
+  </script>
+</head>
+<body>
+    <div class="goback_area">
+        <div class="goback sprite md_open_btn" aria-haspopup="dialog" title="대화상자" data-href="#modalBack"></div>
+        <p>생년월일</p>
+    </div>
+
+    <h3 class="tit2">생년월일 을 알려주세요</h3> 
+    
+    <div class="select_birth">
+        <select name="year" id="year" class="year" title="년도"></select>    
+        <select name="month" id="month" class="month" title="월"></select>
+        <select name="day" id="day" class="day" title="일"></select>
+    </div>
+
+
+    <button type="button" class="btn_green wid100 md_open_btn" aria-haspopup="dialog" title="대화상자" data-href="#modalBirth">저장</button>
+
+
+    <div class="md_cnt" id="modalBirth" role="dialog" aria-modal="true" aria-labelledby="mdTit1">
+        <h3 id="mdTit1">고객님의 생년월일 수정이<br>
+            완료되었습니다</h3>
+        <p>고객님의 생년월일 수정이 완료됐습니다.<br>
+            1999.01.01일 생일이 지정되었습니다
+        </p>
+        <button type="button">회원정보 페이지로 이동하기</button>
+        <button type="button" class="md_close_btn" data-link="last">메인페이지로 이동하기</button>
+    </div>
+
+    <div class="md_cnt" id="modalBack" role="dialog" aria-modal="true" aria-labelledby="mdTit3">
+        <p class="mdTit3">작성된 내용을 취소하시겠습니까?<br>
+            취솨하시면 작성하신 정보가 저장되지 않습니다.
+        </p>
+        <div class="btn_wrap">
+            <button type="button" class="md_close_btn">계속하기</button>
+            <button type="button"  data-link="last">취소</button>
+        </div>
+    </div>
+
+</body>
+</html> 

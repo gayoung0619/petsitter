@@ -1,0 +1,138 @@
+@charset "utf-8";
+.register_wrap{
+    display: flex;
+    justify-content: space-between;
+    vertical-align: middle;
+    margin: 0 16px;
+    padding: 24px;
+    border: 0.8px solid #E2E2E2;
+    border-radius: 10px;
+}
+.register_wrap .register_txt p{
+    font-size: 10px;
+    color: #A3A3A3;
+    line-height: 10px;
+}
+.register_wrap .icon{
+    background: url(../../images/pet_icon.png) no-repeat;
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+}
+.register_wrap:nth-of-type(n+2){
+    margin-top: 14px;
+}
+.register_wrap:nth-of-type(2) .icon{
+    background-position: -30px 0;
+}
+
+.form.pet_code{
+    margin-top: 0;
+}
+input.profile_code{
+    width: 100%;
+}
+.code_pet .complete_wrap dl dd{
+    padding-bottom: 14px;
+}
+
+.pic{
+    width: 52px;
+    height: 52px;
+    margin-right: 12px;
+}
+.pic img{
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+}
+form input
+form input::file-selector-button { display: none; }
+
+.complete_wrap dl dd{
+    display: flex;
+    align-items: center;
+}
+.complete_wrap dl button{
+    background: url(../../images/feed_icon.png);
+    background-position: -98px 0;
+    background-size: cover;
+    width: 24px;
+    height: 16px; 
+    bottom: 32px;
+    visibility: hidden;
+}
+.complete_wrap dl button.on{
+    visibility: visible;
+}
+.pic_register{
+    margin: 0 auto 10px;
+    text-align: center;
+}
+.pic_register img{
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+}
+.pic_register form{
+    position: relative;
+}
+.pic_register .edit{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    background: url(../../images/mypage_edit2.png) no-repeat;
+    background-position: 0 0;
+    color: #FFFFFF;
+    width: 91px;
+    height: 24px;
+    text-align: center;
+}
+.pic_register .register_icon,
+.pic_register .register_pic{
+    width: 110px;
+    height: 110px;
+    vertical-align: middle;
+    display: inline-block;
+    margin-bottom: 14px;
+}
+.pic_register .register_icon{
+    background: url(../../images/icon_register.png) no-repeat;
+    background-size: cover;
+}
+.pic_register .register_pic{
+    background: url(../../images/profile.png) no-repeat;
+    background-size: contain;
+    border-radius: 50%;
+}
+.pic_register p span{
+    display: inline-block;
+    background: url(../../images/feed_icon.png) no-repeat;
+    background-size: cover;
+    background-position: -60px 0;
+    width: 16px;
+    height: 10px;
+}
+
+.form{
+    margin-top: 24px;
+}
+
+.code_btn{
+    background: #9AC31C;
+    margin: 0 16px 0 16px;
+    width: calc(100% - 32px);
+    text-align: center;
+    height: 50px;
+    color: #FFFFFF;
+    border-radius: 10px;
+    margin-top: 14px;
+}
+.made_wrap dd p{
+    font-size: 16px;
+    color: #9AC31C;
+}
+.made_wrap button{
+    bottom: -52px;
+}

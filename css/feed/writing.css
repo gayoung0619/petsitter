@@ -1,0 +1,139 @@
+@charset "utf-8";
+.content{
+    position: relative;
+    margin-top: 60px;
+}
+.section{
+    font-size: 10px;
+}
+.content .section{
+    /* 줄넣기 */
+} 
+.section .more .time{
+    margin-top: 4px;
+}
+.section .filter_tab {
+    line-height: 24px;
+    font-size: 12px;
+    border-radius: 10px;
+    padding: 0 10px;
+}
+.reply{
+    padding: 6px 10px 0 43px;
+}
+.reply p{
+    line-height: 16px;
+    font-size: 12px;
+    color: #373737;
+}
+.reply .likes{
+    color: #A3A3A3;
+    padding-right: 6px;
+}
+.reply_btn{
+    padding-left: 38px;
+}
+.reply_btn button{
+    position: relative;
+}
+.reply_btn button::after{
+    content: "";
+    position: absolute;
+    top: 0s;
+    right: -15px;
+    background: url(../../images/login_icon.svg) no-repeat;
+    background-size: cover;
+    background-position: -72px 0;
+    width: 12px;
+    height: 12px;
+}
+.reply_btn.on button::after{
+    transform: rotate(180deg);
+}
+.reply_bd{
+    border: 0.8px solid #CCCCCC;
+    margin: 12px 16px 0 38px;
+    width: calc(100% - 38px);
+    line-height: 22px;
+    font-size: 10px;
+    color: #CCCCCC;
+    padding-left: 6px;
+    border-radius: 8px;
+}
+.section1 .feed_cnt h4{
+    font-size: 14px;
+}
+.section1 .feed_cnt p{
+    font-size: 12px;
+}
+.section2 .info div span, 
+.section3 .info div span{
+    color: #A3A3A3;
+}
+.section2 .more .more_btn, 
+.section3 .more .more_btn{
+    margin-right: 3px;
+}
+.writer_info .more_btn div{
+    margin-left: 9px !important;
+}
+.section2 .writer_info:nth-of-type(n+2){
+    padding: 12px 0 12px 38px;
+}
+.section2 .writer_info:nth-last-child(n+2){
+    padding-bottom: 0px;
+}
+.section2 .writer_info:nth-of-type(n+2) .likes, 
+.section3 .writer_info:nth-of-type(n+2) .likes{
+    color: #A3A3A3;
+}
+.panel{
+    visibility: hidden;
+    overflow: hidden;
+    max-height: 0;
+    transition: all 0.5s;
+}
+.panel.on{
+    visibility: visible;
+    max-height: 300px;
+}
+
+/* reply_box 피드글쓰기, 채팅페이지 */
+.reply_box{
+    position: fixed;
+    bottom: 0;
+    z-index: 1000;
+    width: 100%;
+    background: #F5F5F5;
+}
+.reply_box textarea{
+    background: #FFFFFF;
+    border-radius: 10px;
+    margin: 16px;
+    color: #626262;
+    height: 50px;
+    font-size: 14px;
+    border: none;
+    width: calc(100% - 32px);
+    padding: 18px 62px 18px 14px;
+    overflow: hidden;
+}
+.reply_box textarea::placeholder{ 
+    color: #A3A3A3;
+    font-size: 14px;
+    vertical-align: middle;
+}
+.reply_box button{
+    display: none;
+    position: absolute;
+    bottom: 32px;
+    right: 26px;
+    width: 42px;
+    height: 30px;
+    background-color: #9AC31C;
+    color: #FFFFFF;
+    border-radius: 10px;
+}
+.reply_box.on button{
+    display: block;
+}

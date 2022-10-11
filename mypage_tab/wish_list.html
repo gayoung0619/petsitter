@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, viewport-fit=cover">
+  <title>휴매니존</title>
+  <link rel="stylesheet" href="../css/swiper-bundle.css">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/modal.css">
+  <link rel="stylesheet" href="../css/form_common.css">
+  <link rel="stylesheet" href="../css/feed/feed.css"> 
+  <link rel="stylesheet" href="../css/mypage_tab/mypage_tab.css"> 
+
+  <script src="../js/jquery-1.12.4.min.js"></script>
+  <script src="../js/swiper-bundle.min.js"></script>
+  <script src="../js/swiper.js"></script>
+  <script src="../js/tab2.js"></script>
+  <script src="../js/modal.js"></script>
+  <script src="../js/modal2.js"></script>
+  <script src="../js/common.js"></script>
+  <script>
+    //Javascript, 페이징 무한스크롤링
+    var count = 0;
+    //스크롤 바닥 감지
+    window.onscroll = function(e) {
+        //추가되는 임시 콘텐츠
+        //window height + window scrollY 값이 document height보다 클 경우,
+        if((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+            //실행할 로직 (콘텐츠 추가)
+            count++;
+            var addContent1 = '<article class="section feed"><a href=""><div class="feed_top"><div class="filter_tab bg_g">분실/실종</div><div class="time"><p>10분전</p></div></div><div class="feed_cnt"><h4>Amet minim mollit non deserunt ullamco est sit</h4><p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.     Velit officia consequat duis enim velit mollit.     Exercitation veniam consequat sunt nostrud amet.</p></div></a><div class="feed_bottom"><p>작성된 닉제임<span>LV1</span> · 논현1동</p><div class="comment_wrap"><span class="comment">1,000</span><div class="loves">1,687 </div></div></div></article>'
+            //article에 추가되는 콘텐츠를 append
+            $('#tabpanel1').append(addContent1);
+
+            var addContent2 = '<div class="writer_wrap c_g"><div class="writer_info2"><a href=""><div class="writer"><div class="pic"><img src="../images/default_img.png" alt=""></div><div class="info"><p>논현1동 · 작성된 닉네임 <span>LV1</span></p><p>획득타이틀</p></div><div class="horoscope"><span class="star"></span><span>5.0</span></div> </div></a></div><div class="writer_cnt2"><div class="time">08:00 - 09:00</div><div class="point">30,000P</div><p>“Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.”</p><div class="cnt_bottom"><div class="care_type">산책돌봄</div><div class="care_type">방문돌봄</div><div class="care_type">위탁돌봄</div></div></div></div>'
+                //article에 추가되는 콘텐츠를 append
+            $('.writer_wrapper').append(addContent2);
+        }
+    };
+
+
+
+
+
+    $(document).ready(function(){
+        var loading = $('<div id="loading" class="loading"></div><img id="loading_img" alt="loading" src="../images/viewLoading.gif" />').appendTo(document.body).hide();
+        $(window).ajaxStart(function(){
+            loading.show();
+        })
+        .ajaxStop(function(){
+            loading.hide();
+        });
+    });
+    </script>
+  <style>
+      body{
+          background-color: #F5F5F5;
+      }
+      .content{
+          margin-top: 61px;
+      }
+      .content .section{
+          padding: 14px 16px;
+      }
+      .content .writer_wrapper{
+          padding: 0 16px;
+      }
+      .content:last-of-type{
+          padding-bottom: 8px;
+      }
+  </style> 
+</head>
+<body>
+    <div class="goback_area">
+        <div class="goback sprite"></div>
+        <p>나의찜내역</p> 
+    </div>
+
+
+
+    <div class="main_tab">
+        <ul role="tablist" aria-label="돌봄 신청된 내역" class="tablist">
+            <li role="tab" aria-controls="tabpanel1" id="tab1" class="tab first">피드 찜내역</li>
+            <li role="tab" aria-controls="tabpanel2" id="tab2" class="tab last">나눔돌봄 찜내역</li>
+        </ul>
+
+
+        <div role="tabpanel" aria-labelledby="tab1" id="tabpanel1"  class="tabpanel">
+            <article class="section feed">
+                <a href="">
+                    <div class="feed_top">
+                        <div class="filter_tab bg_g">분실/실종</div>
+                        <div class="time"><p>10분전</p></div>
+                    </div>
+                    <div class="feed_cnt">
+                        <h4>Amet minim mollit non deserunt ullamco est sit</h4>
+                        <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
+                            Velit officia consequat duis enim velit mollit. 
+                            Exercitation veniam consequat sunt nostrud amet.
+                        </p>
+                    </div>
+                </a>
+                <div class="feed_bottom">
+                    <p>작성된 닉제임<span>LV1</span> · 논현1동</p>
+                    <div class="comment_wrap">
+                        <span class="comment">1,000</span>
+                        <div class="loves">1,687 </div>
+                    </div>
+                </div>
+            </article>
+    
+            <article class="section">
+                <a href="">
+                    <div class="feed_top">
+                        <div class="filter_tab bg_gr">강아지</div>
+                        <div class="time"><p>14시간 전</p></div>
+                    </div>
+                </a>
+                <div class="feed_cnt">
+                    <a href="">
+                        <h4>Amet minim mollit non deserunt ullamco est sit</h4>
+                        <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
+                            Velit officia consequat duis enim velit mollit. 
+                            Exercitation veniam consequat sunt nostrud amet.</p>
+                            <div class="img_area">
+                    </a>
+                    <div class="img172">
+                        <img src="../images/test.jpg" alt="" class="md_pic_btn" aria-haspopup="dialog" title="대화상자" data-href="#modalPic">
+                    </div>
+                </div>
+                </div>
+                <div class="feed_bottom">
+                    <p>작성된 닉네임 <span>LV1</span> · 논현1동</p>
+                    <div class="comment_wrap">
+                        <span class="comment">1,000</span>
+                        <div class="loves">1,687 </div>
+                    </div>
+                </div>
+            </article>
+    
+            
+    
+            <article class="section feed">
+                <a href="">
+                    <div class="feed_top">
+                        <div class="filter_tab bg_g">분실/실종</div>
+                        <div class="time"><p>10분전</p></div>
+                    </div>
+                    <div class="feed_cnt">
+                        <h4>Amet minim mollit non deserunt ullamco est sit</h4>
+                        <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
+                            Velit officia consequat duis enim velit mollit. 
+                            Exercitation veniam consequat sunt nostrud amet.
+                        </p>
+                    </div>
+                </a>
+                <div class="feed_bottom">
+                    <p>작성된 닉제임<span>LV1</span> · 논현1동</p>
+                    <div class="comment_wrap">
+                        <span class="comment">1,000</span>
+                        <div class="loves">1,687 </div>
+                    </div>
+                </div>
+            </article>
+    
+            
+    
+            <article class="section feed">
+                <a href="">
+                    <div class="feed_top">
+                        <div class="filter_tab bg_g">분실/실종</div>
+                        <div class="time"><p>10분전</p></div>
+                    </div>
+                    <div class="feed_cnt">
+                        <h4>Amet minim mollit non deserunt ullamco est sit</h4>
+                        <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
+                            Velit officia consequat duis enim velit mollit. 
+                            Exercitation veniam consequat sunt nostrud amet.
+                        </p>
+                    </div>
+                </a>
+                <div class="feed_bottom">
+                    <p>작성된 닉제임<span>LV1</span> · 논현1동</p>
+                    <div class="comment_wrap">
+                        <span class="comment">1,000</span>
+                        <div class="loves">1,687 </div>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+        <div role="tabpanel" aria-labelledby="tab2" id="tabpanel2"  class="tabpanel">
+            <article class="section writer_wrapper">
+                <div class="writer_wrap c_g">
+                    <div class="writer_info2">
+                        <a href="">
+                            <div class="writer">
+                                <div class="pic">
+                                    <img src="../images/default_img.png" alt="">
+                                </div>
+                                <div class="info">
+                                    <p>논현1동 · 작성된 닉네임 <span>LV1</span></p>
+                                    <p>획득타이틀</p>
+                                </div>
+                                <div class="horoscope">
+                                    <span class="star"></span>
+                                    <span>5.0</span>
+                                </div> 
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="writer_cnt2" onclick="location.href=''">
+                        <div class="time">08:00 - 09:00</div>
+                        <div class="point">30,000P</div>
+                        <p>“Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
+                            Velit officia consequat duis enim velit mollit.”</p>
+                            <div class="cnt_bottom">
+                                   <div class="care_type">산책돌봄</div>
+                                   <div class="care_type">방문돌봄</div>
+                                   <div class="care_type">위탁돌봄</div>
+                            </div>
+                    </div>
+                </div>
+
+                <div class="writer_wrap c_g">
+                    <div class="writer_info2">
+                        <a href="">
+                            <div class="writer">
+                                <div class="pic">
+                                    <img src="../images/default_img.png" alt="">
+                                </div>
+                                <div class="info">
+                                    <p>논현1동 · 작성된 닉네임 <span>LV1</span></p>
+                                    <p>획득타이틀</p>
+                                </div>
+                                <div class="horoscope">
+                                    <span class="star"></span>
+                                    <span>5.0</span>
+                                </div> 
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="writer_cnt2" onclick="location.href=''">
+                        <div class="time">08:00 - 09:00</div>
+                        <div class="point">30,000P</div>
+                        <p>“Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
+                            Velit officia consequat duis enim velit mollit.”</p>
+                            <div class="cnt_bottom">
+                                   <div class="care_type">산책돌봄</div>
+                                   <div class="care_type">방문돌봄</div>
+                                   <div class="care_type">위탁돌봄</div>
+                            </div>
+                    </div>
+                </div>
+                
+                <div class="writer_wrap c_r">
+                    <div class="writer_info2">
+                        <a href="">
+                            <div class="writer">
+                                <div class="pic">
+                                    <img src="../images/default_img.png" alt="">
+                                </div>
+                                <div class="info">
+                                    <p>논현1동 · 작성된 닉네임 <span>LV1</span></p>
+                                    <p>획득타이틀</p>
+                                </div>
+                                <div class="horoscope">
+                                    <span class="star"></span>
+                                    <span>5.0</span>
+                                </div> 
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="writer_cnt2" onclick="location.href=''">
+                        <div class="time">08:00 - 09:00</div>
+                        <div class="point">30,000P</div>
+                        <p>“Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
+                            Velit officia consequat duis enim velit mollit.”</p>
+                            <div class="cnt_bottom">
+                                   <div class="care_type">산책신청</div>
+                                   <div class="care_type">방문신청</div>
+                                   <div class="care_type">위탁신청</div>
+                            </div>
+                    </div>
+                </div>
+    
+            </article>
+
+        </div>
+    
+    </div>
+
+    <div class="feed_btn">
+        <button class="top_btn" type="button"></button>
+    </div>
+
+
+
+    <!-- 피드글쓰기 모달창 -->
+    <div class="md_cnt" id="modalReportRg" role="dialog" aria-mod al="true" aria-labelledby="mdTit1">
+        <h3 id="mdTit1">피드글을 <span>등록</span> 하시겠습니까?</h3>
+        <p>피드글을 등록하시려면 등록을 선택해주세요</p>
+       <button type="button">피드 글쓰기</button>
+       <button type="button">닫기</button>
+       <button type="button" class="md_close_btn sprite" data-link="last"></button>
+   </div>
+
+
+   <div class="md_cnt" id="modalPic" role="dialog" aria-modal="true">
+    <div class="modal_pic">
+        <div class="swiper-container modal_slider">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide modalpic slider1">
+                  <img src="../images/modal.jpg">
+              </div>
+              <div class="swiper-slide modalpic slider2">
+                  <img src="../images/modal.jpg">
+              </div>
+              <div class="swiper-slide modalpic slider3">
+                  <img src="../images/modal.jpg">
+              </div>
+              <div class="swiper-slide modalpic slider4">
+                  <img src="../images/modal.jpg">
+              </div>
+              <div class="swiper-slide modalpic slider5">
+                  <img src="../images/modal.jpg">
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+    <button type="button" class="close_btn md_close_btn" data-link="last"></button>
+  </div>
+
+</body>
+
+
+</html> 

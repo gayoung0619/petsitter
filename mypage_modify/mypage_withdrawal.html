@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, viewport-fit=cover">
+  <title>휴매니존</title>
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/modal.css">
+  <link rel="stylesheet" href="../css/mypage/mypage.css">
+
+  <script src="../js/jquery-1.12.4.min.js"></script>
+  <script src="../js/modal.js"></script>
+  <script src="../js/common.js"></script>
+  <style>
+      
+  </style>
+</head>
+<body>
+    <div class="goback_area">
+        <div class="goback sprite md_open_btn"caria-haspopup="dialog" title="대화상자" data-href="#modal8"></div>
+        <p>회원탈퇴</p>
+    </div>
+
+    <h3 class="tit2">회원 탈퇴시<br>꼭 확인해주세요</h3>
+
+    <div class="withdrawal_policy">
+        <ul>
+            <li>휴매니존 회원 탈퇴시 회원정보가 필요한 서비스는 이용이 불가합니다. 이외의 앱사용은 가능합니다.</li>
+            <li>휴매니존 회원 탈퇴시 고객님의 보유 포인트, 쿠폰, 확보한 타이틀은 복구가 불가합니다.</li>
+            <li>휴매니존 회원 탈퇴 후 재가입시 탈퇴전 회원정보,거래정보 및 포인트, 쿠폰, 확보한 타이틀은 복구가 불가합니다</li>
+            <li>휴매니존 회원 탈퇴 시 회원가입남용, 서비스 부정사용 등을 위한 보관해야하는 정보는 회원탈퇴 후에도 일정기관 보관됩니다. 자세한 사항은 휴매니존 개인정보 처리방침에서 확인가능합니다.</li>
+        </ul>
+    </div>
+
+    <div class="allow_box">
+        <input type="checkbox" id="allow_all" name="allow_all">
+        <label for="allow_all">유의사항을 모두 확인하였습니다.</label>
+    </div>
+
+    <h4 class="tit2">정말 계정을 삭제하시겠어요?</h4>
+
+    <button type="button" class="withdrawal_btn md_open_btn" aria-haspopup="dialog" title="대화상자" data-href="#modalWDCancel">더 사용해 볼래요</button>
+    <button type="button" class="withdrawal_btn md_open_btn" aria-haspopup="dialog" title="대화상자" data-href="#modalWDConfirm">네 삭제할게요</button>
+
+
+
+   
+    <div class="md_cnt" id="modalWDConfirm" role="dialog" aria-modal="true" aria-labelledby="mdTit1">
+        <h3 id="mdTit1">고객님의 회원탈퇴가<br>완료되었습니다</h3>
+        <p>그동안 저희 휴매니존을 사용해 주셔서 감사합니다.
+            더 나은 휴매니존이 되겠습니다 
+        </p>
+        <button type="button" class="btn_green md_close_btn">완료</button>
+    </div>
+
+    <div class="md_cnt" id="modalWDCancel" role="dialog" aria-modal="true" aria-labelledby="mdTit1">
+        <h3 id="mdTit1">고객님의 회원탈퇴가<br>취소 되었습니다</h3>
+        <p>그동안 저희 휴매니존을 사용해 주셔서 감사합니다.더 나은 휴매니존이 되겠습니다</p>
+        <button type="button" class="btn_green md_close_btn">완료</button>
+    </div>
+
+    <div class="md_cnt" id="modal8" role="dialog" aria-modal="true" aria-labelledby="mdTit8">
+        <p class="mdTit8">작성된 내용을 취소하시겠습니까?<br>
+            취소하시면 작성하신 정보가 저장되지 않습니다.
+        </p>
+        <div class="btn_wrap"> 
+            <button type="button">계속하기</button>
+            <button type="button" class="md_close_btn" data-link="last">취소</button>
+        </div>
+    </div>
+
+
+</body> 
+</html> 

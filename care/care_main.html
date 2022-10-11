@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, viewport-fit=cover">
+  <title>휴매니존</title>
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/modal.css">
+  <link rel="stylesheet" href="../css/care/care_main.css"> 
+
+  <script src="../js/jquery-1.12.4.min.js"></script>
+  <script src="../js/modal.js"></script>
+  <script src="../js/common.js"></script>
+  <script>
+    //Javascript, 페이징 무한스크롤링
+    var count = 5;
+    //스크롤 바닥 감지
+    window.onscroll = function(e) {
+    //추가되는 임시 콘텐츠
+    //window height + window scrollY 값이 document height보다 클 경우,
+    if((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+    	//실행할 로직 (콘텐츠 추가)
+        count++;
+        var addContent = '<article class=" section section' + count + '"><div class="writer_info2"><a href=""><div class="writer"><div class="pic"><img src="../images/default_img.png" alt=""></div><div class="info"><p>작성된 닉네임 <span>LV1</span></p><p>논현1동 · 초소형 활동가</p></div><div class="horoscope"><span class="star"></span><span>5.0</span></div></div></a></div><div class="writer_cnt2"><a href=""><div class="time">08:00 - 09:00</div><div class="point">30,000P</div><p>“Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.”</p></a><div class="cnt_bottom"><div class="care_type">산책돌봄</div><div class="loves">1,687 </div></div></div></article>'
+        //article에 추가되는 콘텐츠를 append
+            $('.content').append(addContent);
+        }
+    };
+
+    $(document).ready(function(){
+        var loading = $('<div id="loading" class="loading"></div><img id="loading_img" alt="loading" src="../images/viewLoading.gif" />').appendTo(document.body).hide();
+        $(window).ajaxStart(function(){
+           loading.show();
+        })
+        .ajaxStop(function(){
+            loading.hide();
+        });
+    });
+  </script>
+
+</head>
+<body>
+    <div class="goback_area">
+        <div class="goback sprite"></div>
+        <p>나눔돌봄</p>
+        <div class="alarm">
+            <div class="sprite"></div>
+            <div class="bd"></div>
+        </div>
+    </div>
+    <nav class="floating">
+        <ul>
+            <li class="floating_home">
+                <a href="">
+                    <div></div>
+                    <em>홈</em>
+                </a>
+            </li>
+            <li class="floating_care">
+                <a href="">
+                    <div></div>
+                    <em>나눔돌봄</em>
+                </a>
+            </li>
+            <li class="floating_feed">
+                <a href="">
+                    <div></div>
+                    <em>피드</em>
+                </a>
+            </li>
+            <li class="floating_walk">
+                <a href="">
+                    <div></div>
+                    <em>산책</em>
+                </a>
+            </li>
+            <li class="floating_chat">
+                <a href="">
+                    <div></div>
+                    <em>채팅</em>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <section class="content">
+        <article class="section section1">
+            <div class="select">
+                <p class="select_btn">최신순</p>
+                <div class="sprite2"></div>
+                <div id="dim_op15"></div>
+                <div class="select_wrap">
+                    <ul>
+                        <li class="on">최신순</li>
+                        <li>별점순</li>
+                        <li>좋아요순</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="section section2">
+            <div class="writer_info2">
+                <a href="">
+                    <div class="writer">
+                        <div class="pic">
+                            <img src="../images/default_img.png" alt="">
+                        </div>
+                        <div class="info">
+                            <p>작성된 닉네임 <span>LV1</span></p>
+                            <p>논현1동 · 초소형 활동가</p>
+                        </div>
+                        <div class="horoscope">
+                            <span class="star"></span>
+                            <span>5.0</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="writer_cnt2">
+                <a href="">
+                    <div class="time">08:00 - 09:00</div>
+                    <div class="point">30,000P</div>
+                    <p>“Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
+                        Velit officia consequat duis enim velit mollit.”</p>
+                </a>
+                <div class="cnt_bottom">
+                    <div class="care_type">산책돌봄</div>
+                    <div class="loves">1,687 </div>
+                </div>
+            </div>
+        </article>
+
+        <article class="section section3">
+            <div class="writer_info2">
+                <a href="">
+                    <div class="writer">
+                        <div class="pic">
+                            <img src="../images/default_img.png" alt="">
+                        </div>
+                        <div class="info">
+                            <p>작성된 닉네임 <span>LV1</span></p>
+                            <p>논현1동 · 초소형 활동가</p>
+                        </div>
+                        <div class="horoscope">
+                            <span class="star"></span>
+                            <span>5.0</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="writer_cnt2">
+                <a href="">
+                    <div class="time">08:00 - 09:00</div>
+                    <div class="point">30,000P</div>
+                    <p>“Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
+                        Velit officia consequat duis enim velit mollit.”</p>
+                </a>
+                <div class="cnt_bottom">
+                    <div class="care_type">산책돌봄</div>
+                    <div class="loves">1,687 </div>
+                </div>
+            </div>
+        </article>
+
+        <article class="section section4">
+            <div class="writer_info2">
+                <a href="">
+                    <div class="writer">
+                        <div class="pic">
+                            <img src="../images/default_img.png" alt="">
+                        </div>
+                        <div class="info">
+                            <p>작성된 닉네임 <span>LV1</span></p>
+                            <p>논현1동 · 초소형 활동가</p>
+                        </div>
+                        <div class="horoscope">
+                            <span class="star"></span>
+                            <span>5.0</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="writer_cnt2">
+                <a href="">
+                    <div class="time">08:00 - 09:00</div>
+                    <div class="point">30,000P</div>
+                    <p>“Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
+                        Velit officia consequat duis enim velit mollit.”</p>
+                </a>
+                    <div class="cnt_bottom">
+                           <div class="care_type">산책돌봄</div>
+                           <div class="loves">1,687 </div>
+                    </div>
+            </div>
+        </article>
+    </section>
+
+    <div class="feed_btn">
+        <button class="write_btn md_open_btn" type="button" aria-haspopup="dialog" title="대화상자" data-href="#modalCareRg"></button>
+        <button class="top_btn" type="button"></button>
+    </div>
+
+
+    <div class="md_cnt" id="modalCareRg" role="dialog" aria-modal="true" aria-labelledby="mdTit1">
+        <h3 id="mdTit1">나눔돌봄 글을 <span>등록</span> 하시겠습니까?</h3>
+        <p>나눔돌봄 글을 등록하시려면 등록을 선택해주세요</p>
+        <button type="button">글 작성하기</button>
+        <button type="button">닫기</button>
+        <button type="button" class="md_close_btn sprite" data-link="last"></button>
+    </div>
+    
+
+
+</body>
+</html> 

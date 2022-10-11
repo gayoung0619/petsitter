@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>휴매니존</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/modal.css">
+    <link rel="stylesheet" href="../css/mypage/mypage_progress.css">
+
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script src="../js/tab.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/modal.js"></script>
+    
+    <script>
+        $(document).ready(function () {
+          $('textarea').on('input', function () {
+              const textarea = $('textarea');
+              if(textarea.val() == '' ){
+                  $('.btn_green').removeAttr('style');
+              }else if (textarea.val() ){
+                  $('.btn_green').css({'background-color' : '#9AC31C', 'color' : '#FFFFFF'});
+              }
+          });
+        });
+    </script>
+    <style>
+        body{
+            background-color: #FFFFFF;
+        }
+        .btn_green{
+            background-color: #9AC31C;
+        }
+    </style>
+</head>
+<body>
+    <div class="goback_area">
+        <div class="goback sprite"></div>
+        <p>산책등록</p>
+    </div> 
+
+    <h3 class="tit2"><span class="c_g">등록된강아지이름</span><br>산책시간 : 00:00:00</h3>
+
+    <div class="walk_pic">
+        <ul>
+            <li>
+                <img src="../images/profile.png" alt="">
+                <div class="bd_close"></div>
+            </li>
+            <li>
+                <img src="../images/profile.png" alt="">
+                <div class="bd_close"></div>
+            </li>
+            <li>
+                <img src="../images/profile.png" alt="">
+                <div class="bd_close"></div>
+            </li>
+            <li>
+                <img src="../images/profile.png" alt="">
+                <div class="bd_close"></div>
+            </li>
+            <li>
+                <img src="../images/profile.png" alt="">
+                <div class="bd_close"></div>
+            </li>
+            <li>
+                <img src="../images/profile.png" alt="">
+                <div class="bd_close"></div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="memo_tit">
+        <p>산책메모</p>
+    </div>
+
+    <div class="memo_cnt">
+        <textarea name="" id="" placeholder="산책시 특이사항 / 전달 내용을 입력해주세요"></textarea>
+    </div>
+
+    <button type="button" class="wid100 btn_green">저장</button>
+
+    
+
+
+
+</body>
+</html>             

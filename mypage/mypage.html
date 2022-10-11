@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, viewport-fit=cover">
+  <title>휴매니존</title>
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/modal.css">
+  <link rel="stylesheet" href="../css/form_common.css">
+  <link rel="stylesheet" href="../css/mypage/mypage.css">
+
+  <script src="../js/jquery-1.12.4.min.js"></script>
+  <script src="../js/modal.js"></script>
+  <script src="../js/common.js"></script>
+  <style>
+      .goback_area{
+          background: transparent;
+      }
+      .goback_area .goback{
+          background: url(../images/icon_goback_white.png) no-repeat center / cover;
+          width: 24px;
+          height: 24px;
+      }
+      .goback_area p{
+          color: #FFFFFF;
+      }
+      body{
+          background-color: #F5F5F5;
+      }
+      .wid100{
+          background-color: #9AC31C;
+      }
+  </style>
+</head>
+<body>
+    <div class="goback_area">
+        <div class="goback"></div>
+        <p>마이페이지</p>
+    </div>
+    
+    <div class="bg_circle">
+        <div class="profile_wrap">
+            <div class="profile_left">
+                <p><span>작성된 닉네임</span> <span>LV1</span></p>
+                <button type="button">프로필 보기</button>
+            </div>
+    
+            <div class="profile_right">
+                <div class="profile_logoG">
+                    <img src="../images/mypage_profile_g.png" alt="">
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="point_box">
+            <div class="point_bd">
+                <p>보유포인트</p>
+                <p>1,000P</p>
+            </div>
+            <button type="button">포인트 충전</button>
+        </div>
+
+        <div class="list_box">
+            <ul>
+                <li>
+                    <a href="">
+                        <div class="list_icon">
+                        <img src="../images/icon_wish.png" alt="">
+                        </div>
+                        <p>나의 찜내역</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <div class="list_icon">
+                            <img src="../images/icon_point.png" alt="">
+                        </div>
+                        <p>포인트 내역</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <div class="list_icon">
+                            <img src="../images/icon_gift.png" alt="">
+                        </div>
+                        <p>이벤트</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="list_bottom">
+            <ul>
+                <a href=""><li>활동 알림내역</li></a>
+                <a href=""><li>공지사항</li></a>
+                <a href=""><li>1:1 문의내역</li></a>
+                <a href=""><li>고객센터</li></a>
+                <a href=""><li>앱설정</li></a>
+                <a href=""><li>내정보관리</li></a>
+            </ul>
+        </div>
+
+
+    </div>
+    <button type="button" class="wid100 md_open_btn" aria-haspopup="dialog" title="대화상자" data-href="#modalLogout">로그아웃</button>
+
+
+
+    <!-- 로그아웃 모달창 -->
+    <div class="md_cnt" id="modalLogout" role="dialog" aria-modal="true" aria-labelledby="mdTit1">
+        <h3 id="mdTit1">로그아웃<br>정말 로그아웃 하시나요?</h3>
+        <p>로그아웃시<br>일부페이지사용이 제한됩니다</p>
+        <div class="btn_wrap">
+            <button type="button" data-link="first">로그아웃</button>
+            <button type="button" class="md_close_btn" data-link="last">취소</button>
+        </div>
+    </div>
+
+</body>
+</html>  
